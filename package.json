@@ -32,7 +32,8 @@
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
-    "toastr": "2.1.2"
+    "toastr": "2.1.2",
+    "express": "4.13.4"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",
@@ -55,7 +56,6 @@
     "eslint-watch": "2.1.11",
     "eventsource-polyfill": "0.9.6",
     "expect": "1.19.0",
-    "express": "4.13.4",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.8.5",
     "jsdom": "8.5.0",
