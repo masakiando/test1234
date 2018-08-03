@@ -8,7 +8,7 @@ var compression = require('compression');
 const app = express();
 app.use(cors());
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5000));//heroku port
 
 app.use(compression());
 app.use(express.static('dist'));
