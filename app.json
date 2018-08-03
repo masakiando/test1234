@@ -1,6 +1,6 @@
 {
   "name": "Node API example",
   "description": "A simple API built in Node and Express hosted on Heroku",
-  "repository": "https://github.com/masakiando/heroko-deploy-practice-20180726",
+  "repository": "https://github.com/masakiando/test1234",
   "keywords": ["node", "express", "static"]
 }
