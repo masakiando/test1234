@@ -5,7 +5,7 @@ var open = require('open');
 var compression = require('compression');
 var bodyParser = require('body-parser');//
 //api Server
-var startkit = require('./startkit');
+// var startkit = require('./startkit');
 
 /*eslint-disable no-console */
 
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 5000));//heroku port
 
-app.use('/api/startkit', startkit);
+// app.use('/api/startkit', startkit);
 
 app.use(compression());
 app.use(express.static('dist'));
