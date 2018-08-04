@@ -1,0 +1,16 @@
+{
+    "channel": "explicit",
+    "explicit": true,
+    "genre": "explicit",
+    "id": 1,
+    "name": "hello",
+    "rating": 4
+}
+{
+    "channel": "hihi",
+    "explicit": true,
+    "genre": "hehe",
+    "id": 2,
+    "name": "huhuhu",
+    "rating": 5
+}
