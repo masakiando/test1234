@@ -1,7 +1,7 @@
 var startkit = require('./startkitModel');
 // *** queries *** //
 
-export function getAll() {
+function getAll() {
   return startkit.collection()
   .fetch()
   .then(function(data) {
