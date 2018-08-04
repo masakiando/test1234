@@ -3,11 +3,13 @@ var express = require('express');
 var path = require('path');
 var open = require('open');
 var compression = require('compression');
+var bodyParser = require('body-parser');
+
 /*eslint-disable no-console */
 
 const app = express();
 app.use(cors());
-
+app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 5000));//heroku port
 
 app.use(compression());
