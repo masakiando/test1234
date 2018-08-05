@@ -1,6 +1,6 @@
 exports.seed = function(knex, Promise) {
-  return knex('startkit').del() // Deletes ALL existing entries
-    .then(function() { // Inserts seed entries one by one in series
+  /* return knex('startkit').del() // Deletes ALL existing entries
+    .then(function() { */ // Inserts seed entries one by one in series
       return knex('startkit').insert({
         name: 'Suits',
         channel: 'USA Network',
