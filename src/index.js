@@ -8,11 +8,11 @@ const Header = () => {
     <nav className="nav nav--center">
       <IndexLink to="/">Home</IndexLink>
       {" | "}
-      <Link to="/a">A</Link>
+      <Link to="/a">Aふぉん</Link>
       {" | "}
-      <Link to="/b">B</Link>
+      <Link to="/b">Bとても</Link>
       {" | "}
-      <Link to="/c">C</Link>
+      <Link to="/c">C愛してる</Link>
     </nav>
   );
 };
