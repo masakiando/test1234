@@ -14,7 +14,7 @@ function getAll() {
 function saveStartkit(data) {
   console.log('hai queries dayo'.blue);
   console.log(data);
-  const { channel, explicit, genre, name, rating } = data;
+  var { channel, explicit, genre, name, rating } = data;
   return startkit.forge(
     { channel, explicit, genre, name, rating }).save()
   .then(function(data) {

@@ -1,1 +1,1 @@
-web: knex migrate:latest && knex seed run && node tools/distServer.js
+web: knex seed:run --env production && node tools/distServer.js
