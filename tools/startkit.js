@@ -15,8 +15,18 @@ router.get('/', function(req, res, next) {
 
 // *** CRETAE *** //
 router.post('/', (req, res) => {
+  console.log('hai stertkitServer dayo'.blue);
   console.log(req.body);
-  res.send("req OK");
-});
+  const data = req.body;
+  // validateInput(req.body)
+  // .then( ({ errors, isValid }) => {
+  // });
+  queries.saveStartkit(data)
+    .then(data => res.json({success: true}))
+    .catch(error => {
+      res.status(500).json({error: error}),
+      console.log('ue error dayo server log mitene'.red);
+    });
+});//end post
 
 module.exports = router;
