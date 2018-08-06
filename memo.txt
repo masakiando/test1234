@@ -1,0 +1,10 @@
+git add .
+git commit -m ""
+git push
+git push heroku master
+
+yarn start
+
+heroku restart
+heroku ps:scale web=0
+heroku ps:scale web=1
