@@ -3,8 +3,13 @@ var startkit = require('./startkitModel');
 // *** queries *** //
 
 function getAll() {
-  return startkit.collection();
+  return startkit.collection()
+  .fetch()
+  .then(function(data) {
+    return data;
+  });
 }
+
 
 function saveStartkit(data) {
   console.log('hai queries dayo'.blue);
