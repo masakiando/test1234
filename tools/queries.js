@@ -4,12 +4,7 @@ var startkit = require('./startkitModel');
 
 function getAll() {
   return startkit.collection();
-  // .fetch()
-  // .then(function(data) {
-  //   return data;
-  // });
 }
-
 
 function saveStartkit(data) {
   console.log('hai queries dayo'.blue);

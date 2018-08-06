@@ -22,7 +22,10 @@ router.post('/', (req, res) => {
   // .then( ({ errors, isValid }) => {
   // });
   queries.saveStartkit(data)
-    .then(data => res.json({success: true}))
+    .then(data => {
+      res.json({success: true}),
+      console.log('oo sasuga dayo OK desu'.green);
+    })
     .catch(error => {
       res.status(500).json({error: error}),
       console.log('ue error dayo server log mitene'.red);
