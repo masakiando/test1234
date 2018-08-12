@@ -1,10 +1,39 @@
 git add .
-git commit -m ""
+git commit -m "a"
 git push
 git push heroku master
-
-yarn start
 
 heroku restart
 heroku ps:scale web=0
 heroku ps:scale web=1
+yarn start
+
+http test
+# data insert(post,put)する*.jsonはProjectsRootに置く
+$
+http -v get localhost:3000/api/startkit
+$
+http -v get localhost:3000/api/startkit/49
+$
+http -v post localhost:3000/api/startkit<demoreq.json
+$ put
+http -v put localhost:3000/api/startkit/21<demoreq.json
+$
+http -v delete localhost:3000/api/startkit/49
+
+curl -X GET http://127.0.0.1:3000/api/startkit
+curl -X GET http://127.0.0.1:3000/api/startkit/1
+curl -X POST --data "name=Whisky&breed=annoying&age=3&sex=f" \http://127.0.0.1:3000/api/startkit
+curl -X PUT --data "name=Whisky&breed=annoying&age=3&sex=f" \http://127.0.0.1:3000/api/startkit
+curl -X DELETE http://127.0.0.1:3000/api/startkit
+
+knex migrate:make <XXXXX>
+knex migrate:latest --env development
+knex migrate:latest --env test
+knex seed:make <XXXXX> --env development
+knex seed:run --env development
+knex seed:make <XXXXX> --env test
+knex seed:run --env test
+
+import Validator from 'validator';
+import isEmpty from 'lodash/isEmpty';

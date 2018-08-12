@@ -3,12 +3,23 @@ var startkit = require('./startkitModel');
 // *** queries *** //
 
 function getAll() {
-  return startkit.collection();
+  return startkit.collection()
+  .fetch()
+  .then(function(data) {
+    return data;
+  });
 }
 
-function saveStartkit(data) {
-  console.log('hai queries dayo'.blue);
-  console.log(data);
+function getSingle(stertkitID) {
+  return startkit.where('id', stertkitID)
+  .fetch()
+  .then(function(data) {
+    return data;
+  });
+}
+
+
+function add(data) {
   var channel = data.channel;
   var explicit = data.explicit;
   var genre = data.genre;
@@ -21,9 +32,9 @@ function saveStartkit(data) {
     return data;
   });
 }
-//
 
 module.exports = {
   getAll: getAll,
-  saveStartkit: saveStartkit
+  add: add,
+  getSingle: getSingle
 };
