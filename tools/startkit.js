@@ -1,6 +1,5 @@
 var express =  require('express');
 var colors =  require('colors');
-var queries = require('./queries');
 var Startkit = require('./startkitModel');
 
 var router = express.Router();
@@ -10,7 +9,8 @@ console.log('starting stertkitServer...'.white);
 
 // return ALL stertkit
 router.get('/', function(req, res, next) {
-  queries.getAll()
+  Startkit.collection()
+  .fetch()
   .then(function(data) {
     res.status(200).
     json({
@@ -86,13 +86,13 @@ router.post('/', function (req, res, next) {
           status: 'error',
           message: req.body.name+' '+'startkit_name_not_unique.',
           error: err
-        })
+        });
       } else if(err.code === "23502"){//column null error
         res.status(400).json({
           status: 'error',
           message: err.column+'_column does not exist.'+'(非NULL違反)',
           error: err
-        })
+        });
       } else {
         res.status(500).json({
           error: err
