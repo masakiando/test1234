@@ -9,19 +9,20 @@ console.log('starting stertkitServer...'.white);
 
 // return ALL stertkit
 router.get('/', function(req, res, next) {
-  Startkit.collection()
-  .fetch()
-  .then(function(data) {
-    res.status(200).
-    json({
-      status: 'success',
-      data: data,
-      message: 'Retrieved ALL stertkit'
-    });
-  })
-  .catch(function(err) {
-    return next(err);
-  });
+  res.send('send shows back');//red test用
+  // Startkit.collection()
+  // .fetch()
+  // .then(function(data) {
+  //   res.status(200).
+  //   json({
+  //     status: 'success',
+  //     data: data,
+  //     message: 'Retrieved ALL stertkit'
+  //   });
+  // })
+  // .catch(function(err) {
+  //   return next(err);
+  // });
 });
 
 // *** GET Single *** //
