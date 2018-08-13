@@ -25,9 +25,27 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 //ファイルをオクテットストリームとして送信します。
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile(path.join( __dirname, '../src/index.html'));
 });
+
+// development error handler
+// will print stacktrace
+
+
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  console.log(err);
+  err.status = 404;
+  res.status(err.status || 500);
+  res.json({
+    message: err.message,
+    error: err,
+    status: 'error'
+  });
+});
+
+
 
 app.listen(port, function(err) {
   if (err) {

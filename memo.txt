@@ -8,7 +8,13 @@ heroku ps:scale web=0
 heroku ps:scale web=1
 yarn start
 
-http test
+yarn init
+yarn install
+yarn add <>
+yarn add -D <>
+yarn remove <>
+
+http
 # data insert(post,put)する*.jsonはProjectsRootに置く
 $
 http -v get localhost:3000/api/startkit

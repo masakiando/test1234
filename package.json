@@ -54,6 +54,8 @@
     "babel-preset-react": "6.5.0",
     "babel-preset-react-hmre": "1.1.1",
     "babel-register": "6.8.0",
+    "chai": "3.5.0",
+    "chai-http": "2.0.1",
     "cheerio": "0.22.0",
     "compression": "1.6.1",
     "cross-env": "1.0.7",
