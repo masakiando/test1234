@@ -34,7 +34,6 @@ router.get('/:id',function (req, res, next) {
   })
   .fetch()
   .then(function (data) {
-    console.log(data);
     if(data) {
       res.status(200)
       .json({

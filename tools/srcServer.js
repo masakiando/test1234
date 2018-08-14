@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
     status: 'error'
   });
 });
-console.log(!module.parent);
+
 if(!module.parent) {
   app.listen(port, function(err) {
     if (err) {
@@ -54,7 +54,5 @@ if(!module.parent) {
     }
   });
 }
-
-
 
 module.exports = app;
