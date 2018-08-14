@@ -44,15 +44,17 @@ app.use(function(req, res, next) {
     status: 'error'
   });
 });
+console.log(!module.parent);
+if(!module.parent) {
+  app.listen(port, function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      // open(`http://localhost:${port}`);
+    }
+  });
+}
 
 
-
-app.listen(port, function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    // open(`http://localhost:${port}`);
-  }
-});
 
 module.exports = app;
