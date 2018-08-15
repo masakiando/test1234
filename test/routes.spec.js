@@ -61,3 +61,82 @@ chai.use(chaiHttp);
       });
     });
   });
+
+  //Post We now want to add an item to our database.
+describe('POST /api/startkit', function() {
+  it('should add a show', function(done) {
+    chai.request(server)
+    .post('/api/startkit')
+    .send({
+      name: 'Family Guy',
+      channel : 'Fox',
+      genre: 'Comedy',
+      rating: 4,
+      explicit: true
+    })
+    .end(function(err, res) {
+      res.should.have.status(200);
+      res.should.be.json; // jshint ignore:line
+      res.body.should.be.a('object');
+      res.body.status.should.equal('success');
+      res.body.message.should.equal('Inserted one startkit');
+      res.body.data.should.have.property('name');
+      res.body.data.name.should.equal('Family Guy');
+      res.body.data.should.have.property('channel');
+      res.body.data.channel.should.equal('Fox');
+      res.body.data.should.have.property('genre');
+      res.body.data.genre.should.equal('Comedy');
+      res.body.data.should.have.property('rating');
+      res.body.data.rating.should.equal(4);
+      res.body.data.should.have.property('explicit');
+      res.body.data.explicit.should.equal(true);
+      done();
+    });
+  });
+  });
+
+  describe('PUT /api/startkit/:id', function () {
+  it('should update a show', function (done) {
+    chai.request(server)
+    .put('/api/startkit/1')
+    .send({
+      rating: 4,
+      explicit: true
+    })
+    .end(function (err, res) {
+      console.log(res.body.data);
+      res.should.have.status(200);
+      res.should.be.json;
+      res.body.should.be.a('object');
+      console.log(res.body.data);
+      res.body.data.should.have.property('name');
+      res.body.data.name.should.equal('Suits');
+      res.body.data.should.have.property('channel');
+      res.body.data.channel.should.equal('USA Network');
+      res.body.data.should.have.property('genre');
+      res.body.data.genre.should.equal('Drama');
+      res.body.data.should.have.property('rating');
+      res.body.data.rating.should.equal(4);
+      res.body.data.should.have.property('explicit');
+      res.body.data.explicit.should.equal(true);
+      done();
+    });
+  });
+  it('should NOT update a show if the id field is part of the request', function(done) {
+    chai.request(server)
+    .put('/api/startkit/1')
+    .send({
+      id: 20,
+      rating: 8,
+      explicit: true
+    })
+    .end(function(err, res) {
+      res.should.have.status(422);
+      res.should.be.json; // jshint ignore:line
+      res.body.should.be.a('object');
+      res.body.should.have.property('error');
+      res.body.error.should.equal('You cannot update the id field');
+      done();
+    });
+  });
+});

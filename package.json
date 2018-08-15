@@ -8,7 +8,7 @@
     "open:src": "babel-node ./node_modules/.bin/nodemon tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter spec tools/testSetup.js \"src/**/*.test.js\" \"test\"",
+    "test": "mocha --reporter spec  tools/testSetup.js  \"src/**/*.test.js\" \"test\"",
     "test:watch": "npm run test -- --watch",
     "knex": "knex migrate:rollback --env test && knex migrate:latest --env test && knex seed:run --env test",
     "build:html": "babel-node tools/buildHtml.js",

@@ -109,6 +109,15 @@ router.put('/:id', function(req, res, next) {
   .then(function (data) {
     console.log(data);
     data.save({
+      //どどいたカラムのみのpブジェクト作成してアップデート捨
+//       const {
+//   productName,
+//   category,
+//   shortSizePrice,
+//   tallSizePrice,
+//   grandeSizePrice,
+//   ventiSizePrice
+// } = req.body;
       id: req.params.id,
       channel: req.body.channel,
       explicit: req.body.explicit,
@@ -120,7 +129,7 @@ router.put('/:id', function(req, res, next) {
     console.log(a);
     res.status(200).json({
       status: 'success',
-      result: a,
+      data: a,
       message: 'put ONE stertkit'
     });
   })
@@ -144,7 +153,7 @@ router.delete('/:id', function (req, res, next) {
       .then(function (a) {
         res.status(200).json({
           status: 'success',
-          result: a,
+          data: a,
           message: 'delete ONE stertkit'
         });
       });
