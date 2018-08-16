@@ -1,5 +1,6 @@
 var express =  require('express');
 var colors =  require('colors');
+var isEmpty =  require('lodash/isEmpty');
 var Startkit = require('./startkitModel');
 
 var router = express.Router();
@@ -84,7 +85,7 @@ router.post('/', function (req, res, next) {
       if (err.code === "23505") {//unique error
         res.status(400).json({
           status: 'error',
-          message: req.body.name+' '+'startkit_name_not_unique.',
+          message: req.body.name+' '+'startkit_name_not_unique.',//再利用できるメッセーッジに変える
           error: err
         });
       } else if(err.code === "23502"){//column null error
@@ -100,45 +101,61 @@ router.post('/', function (req, res, next) {
       }
     });
 });
-// *** put show *** //
-router.put('/:id', function(req, res, next) {
-  Startkit.query({
-    where: { id: req.params.id }
-  })
-  .fetch()
-  .then(function (data) {
-    console.log(data);
-    data.save({
-      //どどいたカラムのみのpブジェクト作成してアップデート捨
-//       const {
-//   productName,
-//   category,
-//   shortSizePrice,
-//   tallSizePrice,
-//   grandeSizePrice,
-//   ventiSizePrice
-// } = req.body;
-      id: req.params.id,
-      channel: req.body.channel,
-      explicit: req.body.explicit,
-      genre: req.body.genre,
-      name: req.body.name,
-      rating: req.body.rating
-    })
-  .then(function(a) {
-    console.log(a);
-    res.status(200).json({
-      status: 'success',
-      data: a,
-      message: 'put ONE stertkit'
+function validateInput(data) {
+  return new Promise((resolve, reject) => {
+    var obj = data;
+    var array = [];
+    Object.keys(obj).forEach((key)=> {
+        if (/channel|explicit|genre|name|rating/.test(key)) {
+         console.log(true);
+         console.log(key);
+        } else {
+         console.log(false);
+         console.log(key);
+         array.push(key);
+        }
     });
-  })
-  .catch(function(err) {
-    res.status(500).json({
-      error: err
+    console.log(array);
+    console.log({isValid: isEmpty(array)});
+    resolve({
+      array,
+      isValid: isEmpty(array)//array null true
     });
   });
-});
+}
+// *** put show *** //
+router.put('/:id', function(req, res, next) {
+  validateInput(req.body)
+    .then( ({ array, isValid }) => {
+      console.log(array, isValid);
+      if (isValid) {
+          Startkit.query({
+            where: { id: req.params.id }
+          })
+          .fetch()
+          .then(function (data) {
+            data.save(req.body)
+          .then(function(a) {
+            res.status(200).json({
+              status: 'success',
+              data: a,
+              message: 'put ONE stertkit'
+            });
+          })
+          .catch(function(err) {
+            res.status(500).json({
+              error: err
+            });
+          });
+        });
+      } else {
+        res.status(400).json({
+          status: 'error',
+          message: array+' '+'key は　何？',
+          error: array
+        });
+      }
+  });
 });
 
 router.delete('/:id', function (req, res, next) {

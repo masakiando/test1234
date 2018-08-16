@@ -25,7 +25,7 @@ http -v get localhost:3000/api/startkit/49
 $
 http -v post localhost:3000/api/startkit<demoreq.json
 $ put
-http -v put localhost:3000/api/startkit/21<demoreq.json
+http -v put localhost:3000/api/startkit/91<demoreq.json
 $
 http -v delete localhost:3000/api/startkit/49
 

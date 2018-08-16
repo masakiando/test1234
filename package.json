@@ -32,6 +32,7 @@
     "fs": "0.0.1-security",
     "jquery": "2.2.3",
     "knex": "0.13.0",
+    "lodash": "^4.17.10",
     "nodemon": "^1.18.3",
     "npm-run-all": "1.8.0",
     "open": "0.0.5",
