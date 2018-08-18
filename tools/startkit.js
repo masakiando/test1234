@@ -81,11 +81,11 @@ router.post('/', function (req, res, next) {
         message: 'Inserted one startkit'
       });
     })
-    .catch(function(err) {
+    .catch(function(err) {//get database error res fun 作る全部で利用
       if (err.code === "23505") {//unique error
         res.status(400).json({
           status: 'error',
-          message: req.body.name+' '+'startkit_name_not_unique.',//再利用できるメッセーッジに変える
+          message: req.body.name+' '+'not_unique.',//再利用できるメッセーッジに変える
           error: err
         });
       } else if(err.code === "23502"){//column null error
@@ -101,61 +101,47 @@ router.post('/', function (req, res, next) {
       }
     });
 });
-function validateInput(data) {
-  return new Promise((resolve, reject) => {
-    var obj = data;
+
+function validPutObject(req, res, next) {
+    var obj = req.body;
     var array = [];
     Object.keys(obj).forEach((key)=> {
-        if (/channel|explicit|genre|name|rating/.test(key)) {
-         console.log(true);
-         console.log(key);
+        if (/id|channel|explicit|genre|name|rating/.test(key)) {
         } else {
-         console.log(false);
-         console.log(key);
          array.push(key);
         }
     });
-    console.log(array);
-    console.log({isValid: isEmpty(array)});
-    resolve({
-      array,
-      isValid: isEmpty(array)//array null true
-    });
-  });
+    if( !(isEmpty(array)) ){
+      res.status(400).json({
+        status: 'error',
+        message: array+' '+'key は　何???',
+        error: array
+      });
+    } else {
+      return next();
+    }
 }
 // *** put show *** //
-router.put('/:id', function(req, res, next) {
-  validateInput(req.body)
-    .then( ({ array, isValid }) => {
-      console.log(array, isValid);
-      if (isValid) {
-          Startkit.query({
-            where: { id: req.params.id }
-          })
-          .fetch()
-          .then(function (data) {
-            data.save(req.body)
-          .then(function(a) {
-            res.status(200).json({
-              status: 'success',
-              data: a,
-              message: 'put ONE stertkit'
-            });
-          })
-          .catch(function(err) {
-            res.status(500).json({
-              error: err
-            });
-          });
-        });
-      } else {
-        res.status(400).json({
-          status: 'error',
-          message: array+' '+'key は　何？',
-          error: array
-        });
-      }
+router.put('/:id', validPutObject, function(req, res, next) {
+  Startkit.query({
+    where: { id: req.params.id }
+  })
+  .fetch()
+  .then(function (data) {
+    data.save(req.body)
+  .then(function(a) {
+    res.status(200).json({
+      status: 'success',
+      data: a,
+      message: 'put ONE stertkit'
+    });
+  })
+  .catch(function(err) {
+    res.status(500).json({
+      error: err
+    });
   });
+});
 });
 
 router.delete('/:id', function (req, res, next) {
