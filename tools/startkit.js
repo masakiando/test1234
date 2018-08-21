@@ -29,14 +29,14 @@ function validPostObjectKey(req, res, next) {
 }
 
 function validPostObjectType(req, res, next) {
-  var { name, channel, genre, rating, explicit } = req.body;
+  // var { name, channel, genre, rating, explicit } = req.body;
   var errors = {};
   var message = '入力が必須です。';
-  if (!name) errors.name = message;
-  if (!channel) errors.channel = message;
-  if (!genre) errors.genre = message;
-  if (!rating) errors.rating = message;
-  if (!explicit) errors.explicit = message;
+  if (!req.body.name) errors.name = message;
+  if (!req.body.channel) errors.channel = message;
+  if (!req.body.genre) errors.genre = message;
+  if (!req.body.rating) errors.rating = message;
+  if (!req.body.explicit) errors.explicit = message;
   if( !isEmpty(errors) ) {
     res.status(400).json(errors);
   } else {
@@ -108,7 +108,6 @@ function validPutObjectKey(req, res, next) {
     }
 }
 function validPutObjectType(req, res, next) {
-  var { name, channel, genre, rating, explicit } = req.body;
   var obj = req.body;
   var errors = {};
   var message = '入力が必須です。';
@@ -235,9 +234,15 @@ function getSingle(req, res, next) {
 
 // post METHOD FUNCTION
 function post(req, res, next) {
-    var { channel, explicit, genre, name, rating } = req.body;
+    // var { channel, explicit, genre, name, rating } = req.body;
       Startkit.forge(
-        { channel, explicit, genre, name, rating })
+        {
+          channel: req.body.channel,
+          explicit: req.body.explicit,
+          genre: req.body.genre,
+          name: req.body.name,
+          rating: req.body.rating
+        })
       .save()
         .then(function(data) {
           res.status(200).json({
