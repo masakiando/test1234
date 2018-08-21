@@ -1,0 +1,48 @@
+//     _setting.scss
+@charset "utf-8";
+
+// Colors　//
+// DevColor //
+$haeder-base-dev: rgba(0, 0, 180, 0.8);
+$main-base-dev: rgba(180, 0, 0, 0.8);
+$footer-base-dev: rgba(0, 180, 0, 0.8);
+// DevColor End//
+$light-blue: #007bff;
+$warning-red: #dc3545;
+$OrangeRed :OrangeRed;
+$Tomato :Tomato;
+$headerFont :hsla(0,0%,100%,.9);
+
+$m-space: 15px;
+// Font //
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;//$XXXで呼び出し
+$rockwell: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;//$XXXで呼び出し
+// Mixins　　@include XXX で呼び出し
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin center-block() {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin headerfixed() {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@function headerfixed($valuea,$valueb) {
+	@return $valuea + $valueb;
+}
+// Functions  additionで呼び出し
+@function addition($valuea,$valueb) {
+	@return $valuea + $valueb;
+}

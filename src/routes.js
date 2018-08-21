@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 import { render } from 'react-dom';
 import { Route, IndexRoute, Link, IndexLink } from 'react-router';
 import App from './components/App';
-import Home from './components/home/Home';
+import Home from './components/home/IndexHome';
 import A_Page from './components/a_page/A_page';
 import B_Page from './components/b_page/B_page';
 import C_Page from './components/c_page/C_page';

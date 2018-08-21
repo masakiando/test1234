@@ -1,0 +1,33 @@
+// _buttons.scss
+.btn {
+  min-width: 100px;
+  padding: 10px;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px solid #333333;
+  @include border-radius(10px);
+}
+.btn-warning {
+   @extend .btn;//@extend .btn;クラス継承
+   color: $warning-red;
+   border-color: $warning-red;
+
+   &:hover,
+   &:focus {
+     background-color: $warning-red;
+     color: #ffffff;
+     boder-color: #ffffff;
+   }
+ }
+.btn-primary {
+ @extend .btn;
+ color: $light-blue;
+ border-color: $light-blue;
+
+ &:hover,
+ &:focus {
+   background-color: $light-blue;
+   color: #fff;
+   boder-color: #fff;
+ }
+}

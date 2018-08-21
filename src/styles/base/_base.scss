@@ -1,0 +1,598 @@
+body {//aに対して
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {//直下
+    margin: 0px;
+    padding: 0em;
+}
+
+header {
+  position: sticky;
+  top: 0; /* 一番上に表示 */
+  color: #fff;
+  z-index:1000000000;
+}
+
+.navigation-wrapper {
+  min-width: 1200px;
+  background-color: #f74d18;
+}
+
+.container {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1em 0em 0em 0em;
+}
+
+footer {
+  background-color: #fff;
+  border-top: 4px solid #ff5722;
+  color: rgba(0,0,0,.54);
+}
+
+nav {// header & footer
+  overflow: hidden;
+  display: flex;//初期値row
+  flex-direction: row; //横並びさせる
+  justify-content: space-between;
+  height: 3em;
+}
+
+.haeder-ul {
+  display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+}
+
+nav a {//aの中にあるすべてのbに対して
+    color: #fff;
+    text-decoration: none;
+    font-size: medium;
+    display:block;
+
+    &:hover {
+      opacity: 0.8;
+    }
+}
+
+nav, ul{//aとbに対して
+  margin: 0;
+  padding: 0;
+}
+
+nav li {//aの中にあるすべてのbに対して
+    font-size: large;
+    margin-right: 5px;
+    flex-grow: 1;//伸び率
+    text-align: center;
+    margin: 10px
+}
+
+ul, ol {//aとbに対して
+    list-style: none;
+    padding-left: 0;
+}
+
+main {//aに対して
+    padding: 20px;
+}
+
+h1 {
+    color: yellow;
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 20.5pt;
+    font-weight: normal;
+}
+
+h2 {
+  color: #fff;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+  color: #222;
+}
+
+.header-body {
+  display: grid;
+  grid-template-rows: 45px 40px;
+  grid-template-columns: 162px 1fr 100px;
+  grid-template-areas:
+    "areaA areaB areaD"
+    "areaA areaB areaD";
+  grid-gap: 1em;
+  padding: 0em;
+  background: #ff5722;
+}
+
+.header-body__grid-ItemA {
+    grid-area: areaA;
+    background: #ff5722;
+
+    img {
+      padding: 16;
+      padding-top: 0;
+    }
+}
+
+.header-body__grid-ItemB {
+    grid-area: areaB;
+    background: #ff5722;
+}
+
+.header-body__grid-ItemD {
+    grid-area: areaD;
+    background: #ff5722;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+
+    a {
+      padding: 1em 0em;
+    }
+}
+
+a[href='#top'] {
+    font-size: small;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.form__search {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+header form {
+  padding: 0px 10px;
+}
+
+form input {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #FFF;
+  width: 87%;
+  outline: 0;
+  border-radius: 5px;
+}
+
+form button {
+  font-size: 16px;
+  background-color: #f74d18;
+  color: #FFF;
+  border: 2px solid #f74d18;
+  border-radius: 1px;
+  min-width: 60px;
+  max-width: 190px;
+  border-radius: 50px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.fa-search{
+  font-size: 16px;
+  background-color: #f74d18;
+  color: #FFF;
+  border: 2px solid #f74d18;
+  min-width: 60px;
+  max-width: 190px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.form__category {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-shopping-cart {
+  color: #fff;
+  will-change: transform;
+  transform-origin: 0 100%;
+  transform: rotate(-11deg);
+  transition: transform .2s ease-out;
+  // animation: roter 2s infinite linear;
+
+  &:hover {
+    transform: rotate(0deg)
+  }
+}
+@keyframes roter {
+  form {
+    transform: rotate(0.00turn)
+  } to {
+    transform: rotate(1.00turn)
+  }
+}
+
+/* banner Component */
+.test1 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+
+}
+
+.test1-1 {
+  width: 786px;
+  height: 244px;
+  margin-right: 1em;
+  border-radius: 3px;
+}
+
+#css-slider {
+  width: 786px;
+  height: 244px;
+	overflow: hidden;
+  border-radius: 3px;
+  position: relative;
+  z-index: 10000;
+}
+
+.pre {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 3.5rem;
+  height: 6rem;
+  margin: auto;
+  background-color: rgba(0,0,0,.18);
+  transition: ease .3s all;
+  border-radius: 0.5em;
+  border: 0px;
+  outline: 0;
+  padding-left: 1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0,0,0,.36);
+  }
+
+  &__triangle {
+    margin-right: 10px;
+    border-top: 20px solid transparent;
+    border-right: 20px solid #fff;
+    border-bottom: 20px solid transparent;
+
+  }
+}
+
+.next{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 3.5rem;
+  height: 6rem;
+  margin: auto;
+  background-color: rgba(0,0,0,.18);
+  transition: ease .3s all;
+  border-radius: 0.5em;
+  border: 0px;
+  outline: 0;
+  background-color: rgba(0,0,0,.36);
+  cursor: pointer;
+
+  &__triangle {
+    margin-left: 10px;
+    border-top: 20px solid transparent;
+    border-left: 20px solid #fff;
+    border-bottom: 20px solid transparent;
+  }
+
+}
+
+.dots {
+  position: absolute;
+  bottom: 9px;
+  right: 150px;
+  left: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .dot {
+    // display: inline-block;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background-color: rgba(0,0,0,.26);
+
+    &.active {
+      background-color: #ff5722;
+    }
+  }
+}
+
+.auto {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: red;
+}
+
+.slide-item {
+  width: 786px;
+  height: 244px;
+	float: left;
+  // background-color: pink;
+  background-image: url("https://cf.shopee.vn/file/1fb450b3672e93050f1b46542a00149e");
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-size: 100% 100%;
+  border-radius: 3px;
+}
+
+.slider-wrapper {
+	left: 0;
+	will-change: transform;
+  -webkit-transition: .5s all linear;
+  position: relative;
+  // animation: slider 5s infinite;
+}
+
+// @keyframes slider {
+//   0% { transform: translateX(0); }
+//   33% { transform: translateX(-786px); }
+//   66% { transform: translateX(-1572px); }
+//   100% { transform: translateX(0); }
+// }
+
+.test1-2 {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+
+.test1-2-1 {
+  background-color: blue;
+  width: 100%;
+  flex-grow: 1;
+  margin-bottom: 0.5em;
+  border-radius: 3px;
+  background-image: url("https://cf.shopee.vn/file/0fa57dd07a6e8d70d5a3bff07f61c9be");
+  background-size: 100% 100%
+}
+
+.test1-2-2 {
+  background-color: green;
+  flex-grow: 1;
+  border-radius: 3px;
+  background-image: url("https://cf.shopee.vn/file/0aef3fed9d065b514cd9b9736213854e");
+  background-size: 100% 100%
+}
+
+
+/* MainPage hot-search */
+.hot-search {
+  display: grid;
+  grid-template-rows: 36px 90px;
+  grid-template-columns: 1200px;
+  grid-template-areas:
+    "areaA"
+    "areaB";
+  padding: 3em 0em;
+}
+
+.hot-search__grid-ItemA {
+  grid-area: areaA;
+  background-color: red;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+
+
+    span {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.hot-search__grid-ItemB {
+  grid-area: areaB;
+  background-color: blue;
+}
+
+
+.main-nav-container{
+  padding-top: 1em;
+}
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* Media Queries */
+
+@media (prefers-reduced-motion) {
+    body {
+        transition: none;
+    }
+}
+
+/*  hot-word Component  */
+.hotword__item-list {
+  display: flex;
+  flex-direction: row;
+
+  .hotword__item {
+    padding: 0px 5px;
+    margin-bottom: 1em;
+  }
+}
+.hotword__container {
+  position: relative;
+  z-index:1000;
+}
+.hotword__card-label {
+   position: absolute;
+   z-index:1000;
+   // text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   bottom: 0;
+   background-color: rgba(0,0,0,.4);
+   left: 0;
+   right: 0;
+   color: #fff;
+   text-align: center;
+   padding: 5px 0;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+
+   &:hover {
+     background-color: rgba(0,0,0,.7);
+   }
+}
+.hotword_img {
+  background-image: url('./images/hotword.80.110.png');
+  background-size: 100% 100%;
+}
+
+/*  Categor Component  */
+.categor__item-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  .categor__item {
+    padding: 0px 5px;
+    margin-bottom: 1em;
+  }
+}
+.categor__container {
+  position: relative;
+  z-index:1000;
+  height: 150px;
+  width: 110px;
+  background-color: rgba(255,255,255,1);
+}
+.categor_img__container {
+  padding-top: 10px;
+  height: 110px;
+  width: 110px;
+}
+.categor_img {
+  margin: auto;
+}
+.categor__card-label {
+   position: absolute;
+   z-index:1000;
+   // text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   background-color: rgba(255,255,255,1);
+   left: 0;
+   right: 0;
+   color: rgba(0,0,0,.8);
+   text-align: center;
+   padding: 5px 0;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+
+   &:hover {
+     background-color: rgba(0,0,0,.7);
+   }
+}
+.categor_img {
+  background-image: url(./images/categor.80.110.png);
+  background-size: 100% 100%;
+}
+
+// .sale-wrapper {
+// 	left: 0;
+// 	will-change: transform;
+//   -webkit-transition: .5s all linear;
+//   position: relative;
+// }
+// .sele-slide-item{
+//   width: 200px;
+//   height: 244px;
+// 	float: left;
+//   // background-color: pink;
+//   background-image: url("https://cf.shopee.vn/file/1fb450b3672e93050f1b46542a00149e");
+//   background-repeat: no-repeat;
+//   background-size:contain;
+//   background-size: 100% 100%;
+//   border-radius: 3px;
+// }
+
+@media (min-resolution: 3dppx) {
+
+}
+
+@media (orientation: landscape) {
+
+    body {
+        background: yellow;
+    }
+
+    header {
+        // background-color: #f74d18;
+
+      .grid-wrap {
+        background: #ff5722;
+        // position: sticky;
+        // top: 0;
+      }
+    }
+
+    footer {
+        background-color: #fff;
+    }
+}
+
+ul {
+  float: left;
+}
+@media (min-width: 800px) {
+
+}
+
+/* Between 400px and 800px */
+@media (min-width: 400px) and (max-width: 800px) {
+
+}
+
+@media (max-width: 450px) {
+    nav {
+      flex-direction: column; //横並びさせる
+    }
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: small;
+        font-weight: bold;
+    }
+    .haeder-ul {
+      flex-direction: column;
+    }
+}

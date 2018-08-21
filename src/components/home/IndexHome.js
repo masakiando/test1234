@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 
-const Home = () => {
+const Index = () => {
   return (
     <h2>hello Home</h2>
   );
 };
 
-export default Home;
+export default Index;
