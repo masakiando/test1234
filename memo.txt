@@ -18,14 +18,14 @@ yarn remove <>
 
 http
 # data insert(post,put)する*.jsonはProjectsRootに置く
-$
+$ GET ALL
 http -v get localhost:3000/api/startkit
-$
+$ GET ONE
 http -v get localhost:3000/api/startkit/49
-$
+$ POST ONE
 http -v post localhost:3000/api/startkit<demoreq.json
-$ put
-http -v put localhost:3000/api/startkit/91<demoreq.json
+$ PUT ONE
+http -v put localhost:3000/api/startkit/100<demoreq.json
 $
 http -v delete localhost:3000/api/startkit/49
 

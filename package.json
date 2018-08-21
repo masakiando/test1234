@@ -21,6 +21,7 @@
   "author": "Masaki Ando",
   "license": "MIT",
   "dependencies": {
+    "Validator": "^1.0.5",
     "babel-polyfill": "6.8.0",
     "body-parser": "1.18.3",
     "bookshelf": "^0.10.3",

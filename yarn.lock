@@ -6,6 +6,10 @@ Base64@~0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/Base64/-/Base64-0.2.1.tgz#ba3a4230708e186705065e66babdd4c35cf60028"
 
+Validator@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/Validator/-/Validator-1.0.5.tgz#5cd53cbf94fe1c3f0566c2af815d60f4acd347de"
+
 abab@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
