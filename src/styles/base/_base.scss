@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {//aに対して
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
@@ -15,12 +18,10 @@ header {
   color: #fff;
   z-index:1000000000;
 }
-
-.navigation-wrapper {
-  min-width: 1200px;
-  background-color: #f74d18;
+ul, ol {//aとbに対して
+    list-style: none;
+    padding-left: 0;
 }
-
 .container {
   width: 1200px;
   margin-right: auto;
@@ -34,18 +35,12 @@ footer {
   color: rgba(0,0,0,.54);
 }
 
-nav {// header & footer
+nav {//footer
   overflow: hidden;
   display: flex;//初期値row
   flex-direction: row; //横並びさせる
   justify-content: space-between;
-  height: 3em;
-}
-
-.haeder-ul {
-  display: flex;
-  flex-direction: row;
-  // flex-wrap: wrap;
+  // height: 3em;
 }
 
 nav a {//aの中にあるすべてのbに対して
@@ -57,24 +52,6 @@ nav a {//aの中にあるすべてのbに対して
     &:hover {
       opacity: 0.8;
     }
-}
-
-nav, ul{//aとbに対して
-  margin: 0;
-  padding: 0;
-}
-
-nav li {//aの中にあるすべてのbに対して
-    font-size: large;
-    margin-right: 5px;
-    flex-grow: 1;//伸び率
-    text-align: center;
-    margin: 10px
-}
-
-ul, ol {//aとbに対して
-    list-style: none;
-    padding-left: 0;
 }
 
 main {//aに対して
@@ -90,40 +67,13 @@ h1 {
 }
 
 h2 {
-  color: #fff;
+  color: green;
   margin: 0;
 }
 
 h3 {
   margin: 0;
   color: #222;
-}
-
-.header-body {
-  display: grid;
-  grid-template-rows: 45px 40px;
-  grid-template-columns: 162px 1fr 100px;
-  grid-template-areas:
-    "areaA areaB areaD"
-    "areaA areaB areaD";
-  grid-gap: 1em;
-  padding: 0em;
-  background: #ff5722;
-}
-
-.header-body__grid-ItemA {
-    grid-area: areaA;
-    background: #ff5722;
-
-    img {
-      padding: 16;
-      padding-top: 0;
-    }
-}
-
-.header-body__grid-ItemB {
-    grid-area: areaB;
-    background: #ff5722;
 }
 
 .header-body__grid-ItemD {
@@ -138,66 +88,13 @@ h3 {
     }
 }
 
-a[href='#top'] {
-    font-size: small;
-    font-weight: bold;
-    margin-left: 20px;
-}
-
-.form__search {
-  width: 100%;
-  background-color: #fff;
-  border-radius: 5px;
-}
-header form {
-  padding: 0px 10px;
-}
-
-form input {
-  background-color: #fff;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #FFF;
-  width: 87%;
-  outline: 0;
-  border-radius: 5px;
-}
-
-form button {
-  font-size: 16px;
-  background-color: #f74d18;
-  color: #FFF;
-  border: 2px solid #f74d18;
-  border-radius: 1px;
-  min-width: 60px;
-  max-width: 190px;
-  border-radius: 50px;
-
-  &:hover {
-    opacity: 0.7;
-  }
-}
-
-.fa-search{
-  font-size: 16px;
-  background-color: #f74d18;
-  color: #FFF;
-  border: 2px solid #f74d18;
-  min-width: 60px;
-  max-width: 190px;
-
-  &:hover {
-    opacity: 0.7;
-  }
-}
-
-.form__category {
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+// .hot-words__list {
+//   margin-top: 5px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: center;
+// }
 
 .fa-shopping-cart {
   color: #fff;
@@ -398,7 +295,7 @@ form button {
   h2 {
     margin: 0;
     padding: 0;
-    color: #fff;
+    color: green;
 
 
     span {
@@ -543,56 +440,54 @@ form button {
 //   border-radius: 3px;
 // }
 
-@media (min-resolution: 3dppx) {
+// @media (min-resolution: 3dppx) {
+//
+// }
+//
+// @media (orientation: landscape) {
+//
+//     body {
+//         background: yellow;
+//     }
+//
+//     header {
+//         // background-color: #f74d18;
+//
+//       .grid-wrap {
+//         background: #ff5722;
+//         // position: sticky;
+//         // top: 0;
+//       }
+//     }
+//
+//     footer {
+//         background-color: #fff;
+//     }
+// }
 
-}
 
-@media (orientation: landscape) {
-
-    body {
-        background: yellow;
-    }
-
-    header {
-        // background-color: #f74d18;
-
-      .grid-wrap {
-        background: #ff5722;
-        // position: sticky;
-        // top: 0;
-      }
-    }
-
-    footer {
-        background-color: #fff;
-    }
-}
-
-ul {
-  float: left;
-}
-@media (min-width: 800px) {
-
-}
-
-/* Between 400px and 800px */
-@media (min-width: 400px) and (max-width: 800px) {
-
-}
-
-@media (max-width: 450px) {
-    nav {
-      flex-direction: column; //横並びさせる
-    }
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav a {
-        font-size: small;
-        font-weight: bold;
-    }
-    .haeder-ul {
-      flex-direction: column;
-    }
-}
+// @media (min-width: 800px) {
+//
+// }
+//
+// /* Between 400px and 800px */
+// @media (min-width: 400px) and (max-width: 800px) {
+//
+// }
+//
+// @media (max-width: 450px) {
+//     nav {
+//       flex-direction: column; //
+//     }
+//     nav ul {
+//         flex-direction: column;
+//     }
+//
+//     nav a {
+//         font-size: small;
+//         font-weight: bold;
+//     }
+//     .haeder-ul {
+//       flex-direction: column;
+//     }
+// }

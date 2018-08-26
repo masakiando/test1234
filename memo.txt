@@ -1,4 +1,19 @@
-DROP TABLE テーブル名;
+"open:src": "babel-node ./node_modules/.bin/nod tools/srcServer.js",
+"start": "npm-run-all --parallel knex test:watch open:src lint:watch",
+"knex": "knex migrate:rollback --env test && knex migrate:latest --env test && knex seed:run --env test",
+DROP TABLE テーブル名;Table削除
+DELETE FROM テーブル名;Table内全行削除
+
+
+psql　psql起動
+CREATE DATABASE 任意DB名;　テーブル名作成
+注意　;;;;;;;;;;;;;;;;;;;ないとだめだよ！
+CREATE DATABASE　の　メッセージが出たらOK
+\l
+\c DB名　
+\d
+\d 「テーブル名」
+SELECT * FROM テーブル名」
 
 git add .
 git commit -m "a"

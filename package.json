@@ -4,13 +4,12 @@
   "description": "",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel knex test:watch open:src lint:watch",
-    "open:src": "babel-node ./node_modules/.bin/nodemon tools/srcServer.js",
+    "start": "npm-run-all --parallel lint:watch test:watch open:src ",
+    "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter spec  tools/testSetup.js  \"src/**/*.test.js\" \"test\"",
     "test:watch": "npm run test -- --watch",
-    "knex": "knex migrate:rollback --env test && knex migrate:latest --env test && knex seed:run --env test",
     "build:html": "babel-node tools/buildHtml.js",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
@@ -21,6 +20,7 @@
   "author": "Masaki Ando",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^1.5.1",
     "Validator": "^1.0.5",
     "babel-polyfill": "6.8.0",
     "body-parser": "1.18.3",
@@ -47,6 +47,8 @@
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
     "sass-loader": "^7.1.0",
+    "styled-components": "1.0.1",
+    "styled-media-query": "^2.0.2",
     "toastr": "2.1.2",
     "xlsx": "^0.13.3"
   },

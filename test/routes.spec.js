@@ -10,8 +10,26 @@ var should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('API Routes', function() {
-
+describe('API Routess', function() {
+  this.timeout(8000)
+  beforeEach(function(done) {
+    knex.migrate.rollback()
+    .then(function() {
+      knex.migrate.latest()
+      .then(function() {
+        return knex.seed.run()
+        .then(function() {
+          done();
+        });
+      });
+    });
+  });
+  afterEach(function(done) {
+  knex.migrate.rollback()
+  .then(function() {
+    done();
+  });
+});
 describe('Method that does not exist', function() {
   it('Responding to an error', function(done) {
     chai.request(server)

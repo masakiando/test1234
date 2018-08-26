@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import Header from './common/header/IndexHeader';
+import Header from './common/header/ManageHeaderPage';
 
 class App extends React.Component {
   render() {
