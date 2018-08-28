@@ -6294,7 +6294,7 @@ style-loader@0.13.1:
   dependencies:
     loader-utils "^0.2.7"
 
-styled-components@1.0.1:
+styled-components@1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-1.4.2.tgz#4fbb0e30b5adacd5c02ad7f6f1ff869c68fdc9a8"
   dependencies:
