@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 
 import HeaderMenu from './HeaderMenu';
 import HeaderBody from './HeaderBody';
@@ -27,5 +27,7 @@ class ManageHeaderPage extends React.Component {
     );
   }
 }
+
+
 export default ManageHeaderPage;
 /*<img src={small} srcSet={`${small} 300w, ${medium} 768w, ${large} 1280w`} />*/

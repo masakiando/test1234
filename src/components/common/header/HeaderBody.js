@@ -1,5 +1,6 @@
 //HeaderBody Component
 import React, {PropTypes} from 'react';
+
 import { Link, IndexLink } from 'react-router';
 import styled from 'styled-components';
 import media from "styled-media-query";
