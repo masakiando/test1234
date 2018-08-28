@@ -18,13 +18,14 @@ SELECT * FROM テーブル名」
 git add .
 git commit -m "a"
 git push
+heroku ps:scale web=1
 git push heroku master
-
+https://safe-brushlands-47729.herokuapp.com/
 heroku restart
 heroku ps:scale web=0
 heroku ps:scale web=1
 yarn start
-https://safe-brushlands-47729.herokuapp.com/
+
 
 yarn init
 yarn install
