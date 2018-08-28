@@ -13,7 +13,7 @@
     "build:html": "babel-node tools/buildHtml.js",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
-    "prebuild": "npm-run-all clean-dist test build:html",
+    "prebuild": "npm-run-all clean-dist test  build:html",
     "build": "babel-node tools/build.js",
     "postbuild": "babel-node tools/distServer.js"
   },
@@ -21,7 +21,6 @@
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^1.5.1",
-    "D": "^1.0.0",
     "Validator": "^1.0.5",
     "axios": "0.16.1",
     "babel-polyfill": "6.8.0",
