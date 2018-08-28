@@ -38,9 +38,9 @@ const HeaderBody = ({
                   onChange={onChange}/>
                 <div className="hot-words">
                   <Ul className="hot-words__list">
-                    <li>testddddd</li>
-                    <li>testiddddddd</li>
-                    <li>testsss</li>
+                    <li>test</li>
+                    <li>test</li>
+                    <li>test</li>
                     <li>test</li>
                     <li>test</li>
                     <li>test</li>
@@ -78,7 +78,7 @@ width: 1280px;
 background-color: ${color.siteBase};
 padding: .5em 0em;
 
-${media.between('0px', '450px')`
+${media.lessThan('small')`
   display:none;
 `}
 `;

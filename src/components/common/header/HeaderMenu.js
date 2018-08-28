@@ -12,7 +12,7 @@ width: 1280px;
 background-color: ${color.siteNav};
 padding: .5em 0em;
 
-${media.between('0px', '450px')`
+${media.lessThan('small')`
   display:none;
 `}
 `;
@@ -58,7 +58,7 @@ class HeaderMenu extends React.Component {
                <Ul>
                 <Li><Link to="/a">test</Link></Li>
                 <Li><Link to="/b">通知</Link></Li>
-                <Li><Link to="/c">ヘルプiii</Link></Li>
+                <Li><Link to="/c">ヘルプ</Link></Li>
                 <Li><Link to="/regis">サインアップ</Link></Li>
                 <Li><Link to="/login">サインイン</Link></Li>
                </Ul>

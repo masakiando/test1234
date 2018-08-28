@@ -21,7 +21,9 @@
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^1.5.1",
+    "D": "^1.0.0",
     "Validator": "^1.0.5",
+    "axios": "0.16.1",
     "babel-polyfill": "6.8.0",
     "body-parser": "1.18.3",
     "bookshelf": "^0.10.3",
@@ -41,6 +43,7 @@
     "pg": "4.5.3",
     "react": "15.0.2",
     "react-dom": "15.0.2",
+    "react-input-mask": "^2.0.3",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
