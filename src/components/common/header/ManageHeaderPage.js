@@ -11,8 +11,18 @@ class ManageHeaderPage extends React.Component {
     };
     this.updateSearchState = this.updateSearchState.bind(this);
   }
-  updateSearchState(event) {
-    return this.setState({search: event.target.value});
+  updateSearchState(e) {
+    // const item = document.getElementsByClassName('fa-shopping-cart')
+    // console.log(item[0].offsetLeft);
+    // console.log(item[0].offsetTop);
+    // const item2 = document.getElementsByClassName('move')
+    // console.log(item2[0].offsetLeft);
+    // let color = 'red'
+    // item2[0].style["background-color"] = color;
+    // item2[0].style["left"] = "1000px";
+    // item2[0].style["top"] = "-60px";
+
+    return this.setState({search: e.target.value});
   }
 
   render() {
