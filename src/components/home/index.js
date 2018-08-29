@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 
 import BannerPage from './banner/BannerPage';
+import HotwordPage from './hotword/HotwordPage';
   // <div style={cardStyle} className="move">move</div>
 let h = 225;
 let w = 225;
@@ -30,6 +31,7 @@ class MainPage extends React.Component {
         <main style={Style}>
           <div className="container">
             <BannerPage/>
+            <HotwordPage/>
 
           </div>
         </main>
