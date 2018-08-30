@@ -6,7 +6,7 @@ class FlashSale extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listPositon: 0,
+      listPositon: 0
     };
     this.nextseleOne = this.nextseleOne.bind(this);
   }

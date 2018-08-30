@@ -22,10 +22,8 @@ const HeaderBody = ({
               <i className="far fa-address-book"></i>
               <Link to="/">
                 <picture>
-                  <source
-                  srcSet={`${cocacola} 1x`}
-                  media="(max-width: 450px)"/>
-                  <img src={logo}  alt="logo"/>
+                  <source srcSet={cocacola}  media="(max-width: 450px)"/>
+                  <img src={logo} alt="logo"/>
                 </picture>
               </Link>
             </HeaderWithSearchWrapLogoSection>

@@ -1,4 +1,4 @@
-import MallCover from './mallcover.200.112.png';//deve_img
+var MallCover = require('./mallcover.200.112.png');
 import styled from 'styled-components';
 import React, {PropTypes} from 'react';
 

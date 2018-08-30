@@ -6,7 +6,6 @@ class HotwordPage extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
-
   render() {
     const {HelloHotwordPage, hotwords} = this.props;
 
@@ -16,7 +15,9 @@ class HotwordPage extends React.Component {
           <h2><span>{HelloHotwordPage}</span></h2>
         </div>
         <div className="hot-word__content">
-         <HotwordList hotwords={hotwords}/>
+         <HotwordList
+           hotwords={hotwords}
+          />
         </div>
       </div>
     );

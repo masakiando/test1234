@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import flashSaleImg from './product_0.173.173.png';//deve_img
+var flashSaleImg = require('./product_0.173.173.png');
 import styled from 'styled-components';
 
 const Img = styled.img`
@@ -69,7 +69,7 @@ margin: 'auto',
 top: 0,bottom: 0,left: 0,right: 0
 };
 const z = {
-color:'OrangeRed',
+color:'OrangeRed'
 };
 const y = {
 color:'OrangeRed',
