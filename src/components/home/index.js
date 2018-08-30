@@ -6,7 +6,33 @@ import BannerPage from './banner/BannerPage';
 import HotwordPage from './hotword/HotwordPage';
 import CategorPage from './categor/CategorPage';
 
+import FlashSalePage from './flashsale/FlashSalePage';
+// import MallCoverPage from './MallCoverPage';
+// import PopularPage from './PopularPage';
+
 import DailyPage from './daily/DailyPage';
+
+class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+        <main style={Style}>
+          <div className="container">
+            <BannerPage/>
+            <HotwordPage/>
+            <CategorPage />
+            <FlashSalePage />
+
+            <DailyPage/>
+          </div>
+        </main>
+    );
+  }
+}
+
+export default MainPage;
 //moving card
 // <div style={cardStyle} className="move">move</div>
 let h = 225;
@@ -26,24 +52,3 @@ let cardStyle = {
   WebkitFilter: "drop-shadow(0px 0px 5px #666)",
   filter: "drop-shadow(0px 0px 5px #666)"
 };
-
-class MainPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-        <main style={Style}>
-          <div className="container">
-            <BannerPage/>
-            <HotwordPage/>
-            <CategorPage />
-
-            <DailyPage/>
-          </div>
-        </main>
-    );
-  }
-}
-
-export default MainPage;
