@@ -7,7 +7,7 @@ import HotwordPage from './hotword/HotwordPage';
 import CategorPage from './categor/CategorPage';
 
 import FlashSalePage from './flashsale/FlashSalePage';
-// import MallCoverPage from './MallCoverPage';
+import MallCoverPage from './mallcover/MallCoverPage';
 // import PopularPage from './PopularPage';
 
 import DailyPage from './daily/DailyPage';
@@ -24,6 +24,7 @@ class MainPage extends React.Component {
             <HotwordPage/>
             <CategorPage />
             <FlashSalePage />
+            <MallCoverPage />
 
             <DailyPage/>
           </div>
