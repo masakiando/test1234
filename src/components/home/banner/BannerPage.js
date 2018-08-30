@@ -6,16 +6,16 @@ class Banner extends React.Component {
       this.state = {
           slides: [
             {
-              eachSlide: 'url("https://cf.shopee.vn/file/1fb450b3672e93050f1b46542a00149e")',
+              eachSlide: 'url("https://cf.shopee.vn/file/1fb450b3672e93050f1b46542a00149e")'
             },
             {
-              eachSlide: 'url("https://cf.shopee.vn/file/0d750afe1e5b4b2bf74b691c1d37d843")',
+              eachSlide: 'url("https://cf.shopee.vn/file/0d750afe1e5b4b2bf74b691c1d37d843")'
             },
             {
-              eachSlide: 'url("https://cf.shopee.vn/file/8721b6668f731660bbb0a75cf2c2a6ce")',
+              eachSlide: 'url("https://cf.shopee.vn/file/8721b6668f731660bbb0a75cf2c2a6ce")'
             },
             {
-              eachSlide: 'url("https://cf.shopee.vn/file/9e1353539e0735ab6f47040ac09e52b6")',
+              eachSlide: 'url("https://cf.shopee.vn/file/9e1353539e0735ab6f47040ac09e52b6")'
             }
           ],
           active: 0,
@@ -44,7 +44,7 @@ class Banner extends React.Component {
   intervalBetweenSlides() {
     if(true){
         if (this.state.active === this.state.max - 1) {
-            this.state.active = 0;
+          this.state.active = 0;
         } else {
             this.state.active++;
         }

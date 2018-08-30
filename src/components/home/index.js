@@ -1,9 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 
 import BannerPage from './banner/BannerPage';
 import HotwordPage from './hotword/HotwordPage';
-  // <div style={cardStyle} className="move">move</div>
+import DailyPage from './daily/DailyPage';
+//moving card
+// <div style={cardStyle} className="move">move</div>
 let h = 225;
 let w = 225;
 let Style = {
@@ -32,7 +35,7 @@ class MainPage extends React.Component {
           <div className="container">
             <BannerPage/>
             <HotwordPage/>
-
+            <DailyPage/>
           </div>
         </main>
     );

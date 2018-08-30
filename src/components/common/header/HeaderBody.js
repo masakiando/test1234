@@ -8,8 +8,7 @@ import { color } from './_setting_color';
 import TextInputSearch from '../TextInputSearch';
 var logo = require('./HeaderMenu.png');
 var cocacola = require('./cocacola-mobile.png');
-// import logo from './HeaderMenu.png';
-// import cocacola from './cocacola-mobile.png';
+
 
 const HeaderBody = ({
   onChange,
@@ -20,6 +19,7 @@ const HeaderBody = ({
         <Container>
           <Grid>
             <HeaderWithSearchWrapLogoSection>
+              <i className="far fa-address-book"></i>
               <Link to="/">
                 <picture>
                   <source
@@ -55,11 +55,7 @@ const HeaderBody = ({
           </HeaderWithSearchWrapSearchSection>
 
         <div className="header-body__grid-ItemD">
-           <a href="">
-             <i
-               className=" fas fa-shopping-cart fa-2x "
-               title="cart">
-             </i>
+           <a href=""><i className="fas fa-shopping-cart"></i>
           </a>
         </div>
 
