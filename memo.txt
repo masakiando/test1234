@@ -15,13 +15,18 @@ CREATE DATABASE　の　メッセージが出たらOK
 \d 「テーブル名」
 SELECT * FROM テーブル名」
 
+yarn start
+yarn build
+
 git add .
 git commit -m "a"
 git push
-git push heroku master
 heroku ps:scale web=1
-
+git push heroku master
 https://safe-brushlands-47729.herokuapp.com/
+heroku ps:scale web=0
+
+
 heroku restart
 heroku ps:scale web=0
 heroku ps:scale web=1
