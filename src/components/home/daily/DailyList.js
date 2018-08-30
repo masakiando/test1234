@@ -3,6 +3,72 @@ import React, {PropTypes} from 'react';
 var ProductImg = require('./product_0.190.190.png');
 import styled from 'styled-components';
 
+const PopularList  = ({
+  products,
+  listPositon,
+  imageUrl,
+  onError
+}) => {
+  return (
+    <Div>
+      <Ul>
+      {products.slice(0,60).map(product =>
+        <Li key={product.id}>
+          <a href="">
+          <Figure>
+            <DviImgFrame>
+              <Img onError={onError}src={imageUrl} alt=""/>
+            </DviImgFrame>
+            <Figcaption>
+              <div>
+                <P>{product.id}.{product.product_discrption}</P>
+              </div>
+              <DviPriceFlex>
+                <div>
+                  <span>
+                    i
+                    {product.sale_status === true ? <span style={a}>{product.price}</span> : product.price}
+                  </span>
+                  {product.sale_status === true &&
+                  <span>
+                    i
+                    {product.discount_price}
+                  </span>
+                  }
+                </div>
+                <div>
+                  {product.shipping_free === true && <span>i</span>}
+                </div>
+              </DviPriceFlex>
+              <DviPriceFlex>
+
+                <DviPriceFlex>
+                  <span>i</span>
+                  <div>({product.heart})</div>
+                </DviPriceFlex>
+
+                <DviPriceFlex>
+                  <div><span>i</span></div>
+                  <div>({product.star})</div>
+                </DviPriceFlex>
+
+              </DviPriceFlex>
+            </Figcaption>
+          </Figure>
+          </a>
+        </Li>
+      )}
+      </Ul>
+    </Div>
+  );
+};
+
+PopularList.propTypes = {
+  products: PropTypes.array,
+  listPositon: PropTypes.number,
+  imageUrl: PropTypes.string,
+  onError: PropTypes.func
+};
 const Div = styled.div`
 border-radius: 3px;
 margin: 1em auto;
@@ -61,68 +127,4 @@ padding: 0.1em 0.1em;
 const a = {
 textDecoration: 'line-through'
 };
-
-const PopularList  = ({
-  products,
-  listPositon
-}) => {
-  return (
-    <Div>
-      <Ul>
-      {products.slice(0,60).map(product =>
-        <Li key={product.id}>
-          <a href="">
-          <Figure>
-            <DviImgFrame>
-              <Img src={ProductImg} alt=""/>
-            </DviImgFrame>
-            <Figcaption>
-              <div>
-                <P>{product.id}.{product.product_discrption}</P>
-              </div>
-              <DviPriceFlex>
-                <div>
-                  <span>
-                    i
-                    {product.sale_status === true ? <span style={a}>{product.price}</span> : product.price}
-                  </span>
-                  {product.sale_status === true &&
-                  <span>
-                    i
-                    {product.discount_price}
-                  </span>
-                  }
-                </div>
-                <div>
-                  {product.shipping_free === true && <span>i</span>}
-                </div>
-              </DviPriceFlex>
-              <DviPriceFlex>
-
-                <DviPriceFlex>
-                  <span>i</span>
-                  <div>({product.heart})</div>
-                </DviPriceFlex>
-
-                <DviPriceFlex>
-                  <div><span>i</span></div>
-                  <div>({product.star})</div>
-                </DviPriceFlex>
-
-              </DviPriceFlex>
-            </Figcaption>
-          </Figure>
-          </a>
-        </Li>
-      )}
-      </Ul>
-    </Div>
-  );
-};
-
-PopularList.propTypes = {
-  products: PropTypes.array,
-  listPositon: PropTypes.number
-};
-
 export default PopularList;
