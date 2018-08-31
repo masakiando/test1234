@@ -52,10 +52,10 @@ const HeaderBody = ({
             </Form>
           </HeaderWithSearchWrapSearchSection>
 
-        <div className="header-body__grid-ItemD">
+        <HeaderWithSearchWrapCartSection>
            <a href=""><i className="fas fa-shopping-cart"></i>
           </a>
-        </div>
+        </HeaderWithSearchWrapCartSection>
 
      </Grid>
     </Container>
@@ -118,6 +118,18 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
+`;
+
+const HeaderWithSearchWrapCartSection = styled.div`
+grid-area: areaD;
+background: #ff5722;
+display: flex;
+// align-items: center;
+justify-content: center;
+
+a {
+  padding: 1em 0em;
+}
 `;
 
 export default HeaderBody;

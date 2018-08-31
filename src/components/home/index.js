@@ -5,11 +5,9 @@ import {Link} from 'react-router';
 import BannerPage from './banner/BannerPage';
 import HotwordPage from './hotword/HotwordPage';
 import CategorPage from './categor/CategorPage';
-
 import FlashSalePage from './flashsale/FlashSalePage';
 import MallCoverPage from './mallcover/MallCoverPage';
-// import PopularPage from './PopularPage';
-
+import PopularPage from './popular/PopularPage';
 import DailyPage from './daily/DailyPage';
 
 class MainPage extends React.Component {
@@ -25,6 +23,7 @@ class MainPage extends React.Component {
             <CategorPage />
             <FlashSalePage />
             <MallCoverPage />
+            <PopularPage />
 
             <DailyPage/>
           </div>
@@ -39,7 +38,8 @@ export default MainPage;
 let h = 225;
 let w = 225;
 let Style = {
-  position: 'relative'
+  position: 'relative',
+  backgroundColor: '#f5f5f5'
 };
 let cardStyle = {
   position: "absolute",

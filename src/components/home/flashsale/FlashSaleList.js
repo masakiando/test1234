@@ -10,7 +10,7 @@ display:block;
 margin:auto;
 `;
 const DviImgFrame = styled.div`
-padding-top:1em;
+padding:0.2em 0em;
 `;
 const Div = styled.div`
 border-radius: 3px;
@@ -20,6 +20,7 @@ height: 244px;
 overflow: hidden;
 border-radius: 3px;
 position: relative;
+background-color: #fff;
 `;
 
 const Ul = styled.ul`
@@ -34,7 +35,7 @@ float: left;
 height:240px;
 width: 200px;
 position: 'relative';
-background-color: rgba(0,0,0,.7);
+background-color: #fff;
 `;
 const Figure = styled.figure`
 margin:auto;

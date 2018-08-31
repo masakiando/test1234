@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 // import ProductImg from './product_0.190.190.png';//deve_img
+import { Link } from 'react-router';
 var ProductImg = require('./product_0.190.190.png');
 import styled from 'styled-components';
 
@@ -14,7 +15,7 @@ const PopularList  = ({
       <Ul>
       {products.slice(0,60).map(product =>
         <Li key={product.id}>
-          <a href="">
+          <Link to={`/singleproduct/${product.id}`}>
           <Figure>
             <DviImgFrame>
               <Img onError={onError}src={imageUrl} alt=""/>
@@ -55,7 +56,7 @@ const PopularList  = ({
               </DviPriceFlex>
             </Figcaption>
           </Figure>
-          </a>
+          </Link>
         </Li>
       )}
       </Ul>

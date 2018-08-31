@@ -156,7 +156,7 @@ class Banner extends React.Component {
           <div className="test1">
 
             <div className="test1-1">
-              <div id="css-slider"
+              <div className="banner__slider"
                 onMouseEnter={this.mouseEnter}
                 onMouseLeave={this.mouseLeave}>
                 <div className="slider-wrapper"
