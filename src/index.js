@@ -31,5 +31,5 @@ render(
         routes={routes}
       />
     </Provider>,
-    document.getElementById('app')
+  document.getElementById('app')
 );

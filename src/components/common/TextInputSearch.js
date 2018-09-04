@@ -17,7 +17,6 @@ const TextInputSearch = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className="form-control"
           type="text"/>
         <SearchButton type="submit">
           <ButtonIcon className="fa fa-search fa-2x" aria-hidden="true"/>
@@ -72,5 +71,8 @@ max-width: 190px;
 &:hover {
   opacity: 0.7;
 }
+`;
+
+const Label = styled.label`
 `;
 export default TextInputSearch;

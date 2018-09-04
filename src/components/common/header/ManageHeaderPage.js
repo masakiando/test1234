@@ -12,15 +12,15 @@ class ManageHeaderPage extends React.Component {
     this.updateSearchState = this.updateSearchState.bind(this);
   }
   updateSearchState(e) {
-    // const item = document.getElementsByClassName('fa-shopping-cart')
-    // console.log(item[0].offsetLeft);
-    // console.log(item[0].offsetTop);
-    // const item2 = document.getElementsByClassName('move')
-    // console.log(item2[0].offsetLeft);
-    // let color = 'red'
-    // item2[0].style["background-color"] = color;
-    // item2[0].style["left"] = "1000px";
-    // item2[0].style["top"] = "-60px";
+    const item = document.getElementsByClassName('fa-shopping-cart')
+    console.log(item[0].offsetLeft);
+    console.log(item[0].offsetTop);
+    const item2 = document.getElementsByClassName('move')
+    console.log(item2[0].offsetLeft);
+    let color = 'red'
+    item2[0].style["background-color"] = color;
+    item2[0].style["left"] = "1100px";
+    item2[0].style["top"] = "-20px";
 
     return this.setState({search: e.target.value});
   }
@@ -33,6 +33,7 @@ class ManageHeaderPage extends React.Component {
           onChange={this.updateSearchState}
           search={this.state.search}
         />
+        <div className="move">hello</div>
       </header>
     );
   }

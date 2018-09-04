@@ -1,7 +1,7 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
-export default function popularPReducer(
+export default function popularReducer(
   state = initialState.popularproducts, action) {
   switch (action.type) {
 

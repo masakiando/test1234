@@ -16,7 +16,7 @@
    &:focus {
      background-color: $warning-red;
      color: #ffffff;
-     boder-color: #ffffff;
+     border-color: #ffffff;
    }
  }
 .btn-primary {
@@ -28,6 +28,45 @@
  &:focus {
    background-color: $light-blue;
    color: #fff;
-   boder-color: #fff;
+   border-color: #fff;
  }
+}
+
+.btn-OrangeRed {
+  @extend .btn;
+  color: $OrangeRed;
+  border-color: $OrangeRed;
+
+  &:hover,
+  &:focus {
+    background-color: $OrangeRed;
+    color: #fff;
+    border-color: #fff;
+  }
+}
+
+.btn-chat, .btn-cart{
+  @extend .btn;
+  color: #00bfa5;
+  border-color: #00bfa5;
+
+  &:hover,
+  &:focus {
+    background-color: #00bfa5;
+    color: #fff;
+    border-color: #fff;
+  }
+}
+
+.btn-buy {
+  @extend .btn;
+  color: $OrangeRed;
+  border-color: $OrangeRed;
+
+  &:hover,
+  &:focus {
+    background-color: $OrangeRed;
+    color: #fff;
+    border-color: #fff;
+  }
 }

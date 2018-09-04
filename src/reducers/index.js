@@ -5,6 +5,7 @@ import products from './productReducer';
 import saleproducts from './flashSaleReducer';
 import popularproducts from './popularReducer';
 import malls from './mallReducer';
+import img from './productImagesReducer';
 
 const rootReducer = combineReducers({
   hotwords,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   products: products,
   saleproducts,
   popularproducts: popularproducts,
-  malls: malls
+  malls: malls,
+  img: img
 });
 
 export default rootReducer;

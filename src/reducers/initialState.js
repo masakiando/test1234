@@ -4,5 +4,6 @@ export default {
   products: [],
   saleproducts: [],
   popularproducts: [],
-  malls: []
+  malls: [],
+  img: []
 };

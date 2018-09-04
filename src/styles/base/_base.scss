@@ -1,5 +1,5 @@
-* {
-  box-sizing: border-box;
+*, ::after, ::before {
+    box-sizing: border-box;
 }
 body {//aに対して
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -27,6 +27,19 @@ ul, ol {//aとbに対して
   margin-right: auto;
   margin-left: auto;
   padding: 1em 0em 0em 0em;
+}
+
+.container::after, .container::before {
+    content: " ";
+    display: table;
+}
+.container:after {
+  content: '';
+  display: block;
+}
+
+.container::after {
+  clear: both;
 }
 
 footer {

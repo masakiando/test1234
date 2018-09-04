@@ -10,6 +10,7 @@ class Popular extends React.Component {
     };
     this.nextPopularOne = this.nextPopularOne.bind(this);
   }
+
   nextPopularOne(){
     const popularlist_length = this.props.popularproducts.length;//sale品の個数を取得
     const currentPositonValue = this.state.listPositon;

@@ -42,7 +42,7 @@ class Banner extends React.Component {
   }
 
   intervalBetweenSlides() {
-    if(true){
+
         if (this.state.active === this.state.max - 1) {
           this.state.active = 0;
         } else {
@@ -52,7 +52,7 @@ class Banner extends React.Component {
         this.setState({
             active: this.state.active
         });
-    }
+
 }
 
   mouseEnter() {

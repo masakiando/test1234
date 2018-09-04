@@ -6,7 +6,6 @@ const PopularList  = ({
   popularproducts,
   listPositon
 }) => {
-  //ul要素を移動させる距離をつくる
   const transition = listPositon * -200;
   return (
     <Div>
@@ -15,7 +14,7 @@ const PopularList  = ({
         transform: 'translateX(' + transition + 'px)'
       }}>
       {popularproducts.map(popularproduct =>
-        <Li key={popularproduct.id}>
+        <Li key={popularproduct.id} >
           <a href="">
             <Figure>
               <DviImgFrame>

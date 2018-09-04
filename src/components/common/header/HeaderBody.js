@@ -15,7 +15,7 @@ const HeaderBody = ({
   search
 }) => {
     return (
-      <HeaderWithSearchWrap>
+      <HeaderWithSearchWrap className="header__search">
         <Container>
           <Grid>
             <HeaderWithSearchWrapLogoSection>
@@ -72,6 +72,7 @@ const HeaderWithSearchWrap = styled.div`
 width: 1280px;
 background-color: ${color.siteBase};
 padding: .5em 0em;
+
 
 ${media.lessThan('small')`
   display:none;
