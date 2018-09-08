@@ -6,11 +6,11 @@ const PopularList  = ({
   popularproducts,
   listPositon
 }) => {
-  const transition = listPositon * -200;
+  const transition = listPositon * -180;
   return (
     <Div>
     <Ul style={{
-        width: ( popularproducts.length * 200 ) + 'px',
+        width: ( popularproducts.length * 180 ) + 'px',
         transform: 'translateX(' + transition + 'px)'
       }}>
       {popularproducts.map(popularproduct =>
@@ -61,12 +61,10 @@ PopularList.propTypes = {
   listPositon: PropTypes.number
 };
 const Div = styled.div`
-border-radius: 3px;
-margin: 1em auto;
-width: 1200px;
+margin: 1em 0em;
+width: 1080px;
 height: 313px;
 overflow: hidden;
-border-radius: 3px;
 position: relative;
 background-color:blue;
 `;
@@ -80,8 +78,8 @@ position: relative;
 const Li = styled.li`
 float: left;
 height:313px;
-width: 190px;
-margin: 0px 5px;
+width: 180px;
+margin: 0px;
 position: 'relative';
 background-color: rgba(0,0,0,.7);
 `;
@@ -94,7 +92,7 @@ padding: 0.5em 0em;
 const Img = styled.img`
 background-size: 100% 100%;
 height:190px;
-width: 190px;
+width: 180px;
 display:block;
 margin:auto;
 `;

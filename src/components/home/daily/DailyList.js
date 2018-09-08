@@ -87,8 +87,8 @@ background-color: red;
 const Li = styled.li`
 float: left;
 height:313px;
-width: 190px;
-margin: 0px 5px;
+width: 180px;
+margin: 0px;
 position: 'relative';
 // background-color: rgba(0,0,0,.7);
 `;
@@ -101,7 +101,7 @@ padding-top:0.1em;
 const Img = styled.img`
 background-size: 100% 100%;
 height:190px;
-width: 190px;
+width: 180px;
 display:block;
 margin:auto;
 `;

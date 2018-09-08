@@ -145,13 +145,19 @@ h3 {
 }
 
 /*  hot-word Component  */
+.hot-word {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .hotword__item-list {
   display: flex;
   flex-direction: row;
 
   .hotword__item {
-    padding: 0px 5px;
-    margin-bottom: 1em;
+    // padding: 0px 5px;
+    // margin-bottom: 1em;
   }
 }
 .hotword__container {
@@ -191,8 +197,8 @@ h3 {
   flex-grow: 1;
 
   .categor__item {
-    padding: 0px 5px;
-    margin-bottom: 1em;
+    // padding: 0px 5px;
+    // margin-bottom: 1em;
   }
 }
 .categor__container {

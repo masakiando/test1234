@@ -15,7 +15,7 @@ padding:0.2em 0em;
 const Div = styled.div`
 border-radius: 3px;
 margin: 1em auto;
-width: 1200px;
+width: 1080px;
 height: 244px;
 overflow: hidden;
 border-radius: 3px;
@@ -33,7 +33,7 @@ position: relative;
 const Li = styled.li`
 float: left;
 height:240px;
-width: 200px;
+width: 180px;
 position: 'relative';
 background-color: #fff;
 `;
@@ -80,11 +80,11 @@ const FlashSaleList  = ({
   saleproducts,
   listPositon
 }) => {
-  const transition = listPositon * -200;//ul要素を移動させる距離をつくる
+  const transition = listPositon * -180;//ul要素を移動させる距離をつくる
   return (
     <Div>
     <Ul style={{
-        width: ( saleproducts.length * 200 ) + 'px',
+        width: ( saleproducts.length * 180 ) + 'px',
         transform: 'translateX(' + transition + 'px)'
       }}>
       {saleproducts.map(saleproduct =>

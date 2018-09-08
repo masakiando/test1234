@@ -154,10 +154,18 @@ $modifier--text-color: #888;
   color: #757575;
 }
 
-.card {
+.sp-card {
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+  margin-bottom: 1em;
+}
+.bcard {
+  background: #fff;
+  border-radius: 3px;
+}
+.width-100 {
+  width: 100%;
 }
 
 .v-center, .v-center {

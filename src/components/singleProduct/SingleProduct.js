@@ -278,8 +278,8 @@ componentDidMount() {
                     </div>
                   </div>
 
-                  <a className="_3GXLnx card v-center"href="">
-                    <span class="_2p1gKo">shopee guarantee</span>
+                  <a className="_3GXLnx sp-card v-center"href="">
+                    <span className="_2p1gKo">shopee guarantee</span>
                     <span>Get the items you ordered or get your money back.</span>
                   </a>
 
@@ -362,7 +362,9 @@ const DviCenter = styled.div`
 `;
 const Container = styled.div`
 width: 1200px;
-margin: 0px 40px;
+margin-right: auto;
+margin-left: auto;
+padding: 1em 0em 0em 0em;
 `;
 
 const Grid = styled.div`

@@ -9,6 +9,7 @@ import SingleProduct from './components/singleProduct/SingleProduct';
 import A_Page from './components/a_page/A_page';
 import B_Page from './components/b_page/B_page';
 import C_Page from './components/c_page/C_page';
+import SignupPage from './components/signup/SignupPage';
 
 export default (
   <Route path="/" component={App}>
@@ -18,5 +19,6 @@ export default (
     <Route path="/a" component={A_Page} />
     <Route path="/b" component={B_Page} />
     <Route path="/c" component={C_Page} />
+    <Route path="/SignupPage" component={SignupPage} />
   </Route>
 );

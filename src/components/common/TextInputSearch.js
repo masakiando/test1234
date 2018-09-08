@@ -9,20 +9,21 @@ const TextInputSearch = ({
   onChange
 }) => {
   return (
-    <FormSearch>
+    <div>
       <label htmlFor="js-search-input"></label>
-      <div>
-        <FormInput
+      <InputWithSearchButtonFrame>
+        <Input
           name={name}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          type="text"/>
-        <SearchButton type="submit">
-          <ButtonIcon className="fa fa-search fa-2x" aria-hidden="true"/>
-        </SearchButton>
-      </div>
-    </FormSearch>
+          type="text"
+          />
+          <SearchButton type="submit">
+            <IconButton className="fa fa-search fa-2x" aria-hidden="true"/>
+          </SearchButton>
+      </InputWithSearchButtonFrame>
+    </div>
   );
 };
 
@@ -32,12 +33,14 @@ TextInputSearch.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string
 };
-const FormSearch = styled.div`
-width: 100%;
+
+const InputWithSearchButtonFrame = styled.div`
 background-color: #fff;
+border: 2px solid #FFF;
 border-radius: 5px;
 `;
-const FormInput = styled.input`
+
+const Input = styled.input`
 background-color: #fff;
 padding: 10px;
 font-size: 16px;
@@ -60,7 +63,7 @@ border-radius: 50px;
   opacity: 0.7;
 }
 `;
-const ButtonIcon = styled.i`
+const IconButton = styled.i`
 font-size: 16px;
 background-color: #f74d18;
 color: #FFF;

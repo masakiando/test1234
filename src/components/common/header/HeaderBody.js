@@ -86,7 +86,7 @@ margin: 0px 40px;
 //大文字注意
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 45px 40px;
+  grid-template-rows: 55px 45px;
   grid-template-columns: 162px 1fr 100px;
   grid-template-areas:
     "areaA areaB areaD"

@@ -5,7 +5,7 @@ import React, {PropTypes} from 'react';
 const Div = styled.div`
 border-radius: 3px;
 margin: 1em auto;
-width: 1200px;
+width: 1080px;
 height: 224px;
 overflow: hidden;
 position: relative;
@@ -24,7 +24,7 @@ flex-wrap: wrap;//親要素に収まらないアイテムは次の列に表示�
 const Li = styled.li`
 float: left;
 height:112px;
-width: 200px;
+width: 180;
 position: 'relative';
 background-color: rgba(0,0,0,.7);
 `;
@@ -34,20 +34,21 @@ padding-top:0em;
 const Img = styled.img`
 background-size: 100% 100%;
 height:112px;
-width: 202px;
+width: 180px;
 display:block;
 margin:auto;
 `;
 
 const MallCoverList = ({
   malls,
-  listPositon
+  listPositon,
+  width
 }) => {
-  const transition = listPositon * -200;//ul要素を移動させる距離をつくる
+  const transition = listPositon * -width;//ul要素を移動させる距離をつくる
   return (
     <Div>
       <Ul style={{
-          width: ( malls.length * 200/2 ) + 'px',
+          width: ( malls.length * width/2 ) + 'px',
           transform: 'translateX(' + transition + 'px)'
         }}>
         {malls.map(mall =>
@@ -64,9 +65,15 @@ const MallCoverList = ({
   );
 };
 
+MallCoverList.defaultProps = {
+  width: 180
+};
+
+
 MallCoverList.propTypes = {
   malls: PropTypes.array,
-  listPositon: PropTypes.number
+  listPositon: PropTypes.number,
+  width: PropTypes.number
 };
 
 export default MallCoverList;

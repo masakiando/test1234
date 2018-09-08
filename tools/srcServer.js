@@ -5,7 +5,8 @@ import config from '../webpack.config.dev';
 import open from 'open';
 import bodyParser from 'body-parser';
 //
-var startkit = require('./startkit');
+var startkit = require('./startkitServer');
+var users = require('./routes/usersServer');
 
 /* eslint-disable no-console */
 
@@ -14,6 +15,7 @@ const app = express();
 const compiler = webpack(config);
 
 app.use(bodyParser.json());
+app.use('/api/startkit', startkit);
 app.use('/api/startkit', startkit);
 
 //指定されたマウントミドルウェア指定されたパスに関数や機能を：要求されたパスのベースが一致したときに、ミドルウェア機能が実行されますpath。
