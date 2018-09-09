@@ -15,7 +15,7 @@ import routes from './routes';
 import './styles/styles.scss';
 import App from './components/App';
 // import redux from './redux'; // redux check
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 const store = configureStore();

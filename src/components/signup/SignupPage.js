@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import SignupForm from './SignupForm';
 import * as signupActions from '../../actions/signupActions';
 import * as flashMessagesActions from '../../actions/flashMessagesActions';
-import commonValidations from '../../../src/shared/validations/signupValidator';
+import commonValidations from '../../../tools/shared/validations/signupValidator';
 import toastr from 'toastr';
 
 class SignupPage extends React.Component {
@@ -84,9 +84,9 @@ class SignupPage extends React.Component {
     debugger;
     event.preventDefault();
 
-    if(!this.SignupFormIsValid()) { //falseなら処理終了
-      return;
-    }
+    // if(!this.SignupFormIsValid()) { //falseなら処理終了
+    //   return;
+    // }
 
     //Server Side userSignupRequest start
     this.setState({ errors: {}, isLoading: true });

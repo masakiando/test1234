@@ -29,7 +29,10 @@ export default {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
+      {test: /\.js$/, include: [
+        path.join(__dirname, 'src'),
+        path.join(__dirname, 'tools/shared')
+      ], loaders: ['babel']},
       {test: /(\.css)$/, loaders: ['style', 'css']},
       {
         test: /\.scss$/,

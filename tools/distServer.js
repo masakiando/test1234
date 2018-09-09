@@ -17,6 +17,8 @@ app.set('port', (process.env.PORT || 5000));//heroku port
 
 app.use('/api/startkit', startkit);
 
+app.use('/api/users', users);
+
 app.use(compression());
 app.use(express.static('dist'));
 
