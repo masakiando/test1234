@@ -2,7 +2,7 @@ var validator =  require('validator');
 var isEmpty =  require('lodash/isEmpty');
 
 function commonValidations(data) {
-  let errors = {};
+  var errors = {};
   const minUserNameLength = 5;
   const minPasswordLength = 5;
 
