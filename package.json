@@ -98,6 +98,6 @@
     "url": "https://github.com/coryhouse/pluralsight-redux-starter"
   },
   "engines": {
-    "node": "6.9.1"
+    "node": "5.7.0"
   }
 }
