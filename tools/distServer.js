@@ -6,6 +6,7 @@ var compression = require('compression');
 var bodyParser = require('body-parser');//
 //api Server
 var startkit = require('./startkitServer');
+var users = require('./routes/usersServer');
 
 /*eslint-disable no-console */
 

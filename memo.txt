@@ -26,6 +26,8 @@ git push heroku master
 https://safe-brushlands-47729.herokuapp.com/
 heroku ps:scale web=0
 
+heroku デプロイ失敗した時
+
 
 heroku restart
 heroku ps:scale web=0
