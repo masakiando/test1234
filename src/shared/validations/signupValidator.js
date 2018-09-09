@@ -2,7 +2,7 @@ import validator from 'validator';
 import isEmpty from 'lodash/isEmpty';
 
 export default function commonValidations(data) {
-  let errors = {};
+  var errors = {};
   const minUserNameLength = 5;
   const minPasswordLength = 5;
 
