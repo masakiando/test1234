@@ -39,7 +39,7 @@ describe('API Routess User', function() {
       username: '',
       timezone: '',
       email: '',
-      passwor: ''
+      password: ''
     })
     .end(function(err, res) {
       res.should.have.status(400);

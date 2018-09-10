@@ -1,8 +1,16 @@
 var express =  require('express');
+var commonControllers = require('../controller/serverControllers');
 var controllers = require('../controller/usersServerControllers');
 var User = require('../model/userModel');
 
 var router = express.Router();
+
+router.post(
+  '/',//API ROOT
+  controllers.validPostObjectType,
+  post,
+  commonControllers.errorsHandling
+);
 
 // post METHOD FUNCTION
 function post(req, res, next) {
@@ -17,12 +25,12 @@ function post(req, res, next) {
     email,
     password
   }).save()
+  .then(function(data) {
+    console.log(data);
+  })
+  .catch(function(err) {
+      return next(err);//errorsHandling
+  });
 }
-
-router.post(
-  '/',//API ROOT
-  controllers.validPostObjectType,
-  post
-);
 
 module.exports = router;
