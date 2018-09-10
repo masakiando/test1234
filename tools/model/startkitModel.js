@@ -1,4 +1,4 @@
-const bookshelf = require('./bookshelf');
+const bookshelf = require('../bookshelf');
 
 var startkit = bookshelf.Model.extend({
   tableName: 'startkit'

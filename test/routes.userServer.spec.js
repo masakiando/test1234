@@ -31,6 +31,18 @@ describe('API Routess User', function() {
   });
 });
   //
+  describe('Method that does not exist', function() {
+    it('Responding to an error', function(done) {
+      chai.request(server)
+      .options('/api/users')//req.method not method:options
+      .end(function(err, res) {
+        res.should.have.status(404);
+        res.should.be.json;
+        done();
+      });
+    });
+  });
+  //
   describe('post /api/users', function () {
   it('users database errors NOT TABLE', function (done) {
     chai.request(server)

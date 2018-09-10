@@ -1,5 +1,5 @@
 var express =  require('express');
-var commonControllers = require('../controller/serverControllers');
+var commonControllers = require('../controller/commonControllers');
 var controllers = require('../controller/usersServerControllers');
 var User = require('../model/userModel');
 
@@ -7,7 +7,7 @@ var router = express.Router();
 
 router.post(
   '/',//API ROOT
-  controllers.validPostObjectType,
+  // controllers.validPostObjectType,
   post,
   commonControllers.errorsHandling
 );

@@ -5,7 +5,7 @@ import config from '../webpack.config.dev';
 import open from 'open';
 import bodyParser from 'body-parser';
 //
-var startkit = require('./startkitServer');
+var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
 
 /* eslint-disable no-console */
@@ -37,7 +37,6 @@ app.get('/', function(req, res) {
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
-  console.log(err);
   err.status = 404;
   res.status(err.status || 500);
   res.json({
