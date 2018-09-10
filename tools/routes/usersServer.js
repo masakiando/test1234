@@ -33,4 +33,13 @@ function post(req, res, next) {
   });
 }
 
+// req.method get post put delete not
+router.use((req, res) => {
+  res.status(404).json({
+    errors: {
+      global: `Still working on it. Please try again later when we implement it`
+    }
+  });
+});
+
 module.exports = router;

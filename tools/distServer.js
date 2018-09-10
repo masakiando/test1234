@@ -5,7 +5,7 @@ var open = require('open');
 var compression = require('compression');
 var bodyParser = require('body-parser');//
 //api Server
-var startkit = require('./startkitServer');
+var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
 
 /*eslint-disable no-console */
