@@ -162,10 +162,10 @@ router.get(
 // Post flow
 router.post(
   '/',//API ROOT
-  validPostObjectKey,//Validator
-  validPostObjectType,//Validator
-  post,//REQ.METHOD TO FUNCTION
-  errorsHandling//TO DE.HANDLING
+  validPostObjectKey,//Validator(3)
+  validPostObjectType,//Validator(2)
+  post,//REQ.METHOD TO FUNCTION (0)
+  errorsHandling//TO DE.HANDLING(1)
 );
 // Post flow
 router.put(

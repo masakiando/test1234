@@ -10,7 +10,7 @@ var should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('API Routess', function() {
+describe('API Routess startkit', function() {
   this.timeout(14000)
   beforeEach(function(done) {
     knex.migrate.rollback()
