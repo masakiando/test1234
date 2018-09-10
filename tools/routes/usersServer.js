@@ -2,7 +2,7 @@ var express =  require('express');
 var commonControllers = require('../controller/commonControllers');
 var controllers = require('../controller/usersServerControllers');
 var User = require('../model/userModel');
-import bcrypt from 'bcrypt';
+var bcrypt = require('bcrypt');
 
 var router = express.Router();
 
