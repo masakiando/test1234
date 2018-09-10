@@ -4,8 +4,8 @@
 DROP TABLE テーブル名;Table削除
 DELETE FROM テーブル名;Table内全行削除
 
-
-psql　psql起動
+psql起動
+psql　
 CREATE DATABASE 任意DB名;　テーブル名作成
 注意　;;;;;;;;;;;;;;;;;;;ないとだめだよ！
 CREATE DATABASE　の　メッセージが出たらOK
@@ -48,7 +48,7 @@ http -v get localhost:3000/api/startkit
 $
 http -v get localhost:3000/api/startkit/49
 $
-http -v post localhost:3000/api/startkit<demoreq.json
+http -v post localhost:3000/api/users < demoreq.json
 $ put
 http -v put localhost:3000/api/startkit/91<demoreq.json
 $
@@ -60,13 +60,15 @@ curl -X POST --data "name=Whisky&breed=annoying&age=3&sex=f" \http://127.0.0.1:3
 curl -X PUT --data "name=Whisky&breed=annoying&age=3&sex=f" \http://127.0.0.1:3000/api/startkit
 curl -X DELETE http://127.0.0.1:3000/api/startkit
 
-knex migrate:make <XXXXX>
+knex migrate:make users
 knex migrate:latest --env development
 knex migrate:latest --env test
 knex seed:make <XXXXX> --env development
 knex seed:run --env development
 knex seed:make <XXXXX> --env test
 knex seed:run --env test
+
+knex migrate:rollback
 
 import Validator from 'validator';
 import isEmpty from 'lodash/isEmpty';

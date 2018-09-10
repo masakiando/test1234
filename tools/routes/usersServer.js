@@ -2,6 +2,7 @@ var express =  require('express');
 var commonControllers = require('../controller/commonControllers');
 var controllers = require('../controller/usersServerControllers');
 var User = require('../model/userModel');
+import bcrypt from 'bcrypt';
 
 var router = express.Router();
 
@@ -14,20 +15,18 @@ router.post(
 
 // post METHOD FUNCTION
 function post(req, res, next) {
-  const { username,
-          timezone,
+  const { user_name,
           email,
           password
         } = req.body;
+  const password_digest = bcrypt.hashSync(password, 10);
+
   User.forge({
-    username,
-    timezone,
+    user_name,
     email,
-    password
-  }).save()
-  .then(function(data) {
-    console.log(data);
-  })
+    password_digest
+  },{ hasTimestamps: true }).save()
+  .then(user => res.json({ success: true }))
   .catch(function(err) {
       return next(err);//errorsHandling
   });

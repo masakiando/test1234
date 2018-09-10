@@ -43,21 +43,21 @@ describe('API Routess User', function() {
     });
   });
   //
-  describe('post /api/users', function () {
-  it('users database errors NOT TABLE', function (done) {
-    chai.request(server)
-    .post('/api/users')
-    .send({
-      username: '',
-      timezone: '',
-      email: '',
-      password: ''
-    })
-    .end(function(err, res) {
-      res.should.have.status(400);
-      res.should.be.json;
-      done();
-    });
-  });
-});
+//   describe('post /api/users', function () {
+//   it('users database errors NOT TABLE', function (done) {
+//     chai.request(server)
+//     .post('/api/users')
+//     .send({
+//       username: '',
+//       timezone: '',
+//       email: '',
+//       password: ''
+//     })
+//     .end(function(err, res) {
+//       res.should.have.status(400);
+//       res.should.be.json;
+//       done();
+//     });
+//   });
+// });
 });

@@ -1,7 +1,6 @@
 {
-  "genre": "rrr",
-  "rating": 234,
-  "channel": "dd",
-  "name": "rrrssrooo",
-  "explicit": true
+  "username": "test1",
+  "timezone": "test1",
+  "email": "test1@gmail.com",
+  "password": "abcde1"
 }
