@@ -16,14 +16,15 @@ router.post(
 
 // post METHOD FUNCTION
 function post(req, res, next) {
-  const { user_name,
+  console.log(req.body);
+  const { username,
           email,
           password
         } = req.body;
   const password_digest = bcrypt.hashSync(password, 10);
-  const shop_name = user_name;
+  const shop_name = username;
 
-  let user = User.forge({user_name,email,password_digest,shop_name},{hasTimestamps: true });
+  let user = User.forge({username,email,password_digest,shop_name},{hasTimestamps: true });
   user.save()
   .then(user => {
   let shop = Shop.forge({user_id: user.get('id')},{hasTimestamps: true });

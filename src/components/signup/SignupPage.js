@@ -29,7 +29,6 @@ class SignupPage extends React.Component {
   }
 
   updaTetargetState(event) {
-    console.log(event.target.value);
     this.setState({
        [event.target.name]: event.target.value
      });
@@ -82,7 +81,7 @@ class SignupPage extends React.Component {
   onSignup(event) {
     debugger;
     event.preventDefault();
-
+    console.log(this.state);
     // if(!this.SignupFormIsValid()) { //falseなら処理終了
     //   return;
     // }
@@ -100,12 +99,13 @@ class SignupPage extends React.Component {
   }
 
   redirect() {
-    toastr.success('Signup saved');
-    this.props.flashMessagesActions.addFlashMessage({
-      type: 'success',
-      text: 'You signed up seccessfully. Welcome!'
-    });
-    this.context.router.push('/');
+    debugger;
+    // toastr.success('Signup saved');
+    // this.props.flashMessagesActions.addFlashMessage({
+    //   type: 'success',
+    //   text: 'You signed up seccessfully. Welcome!'
+    // });
+    // this.context.router.push('/');
     // browserHistory.push('/');
   }
   render() {
@@ -119,7 +119,6 @@ class SignupPage extends React.Component {
             email={this.state.email}
             password={this.state.password}
             passwordConfirmation={this.state.passwordConfirmation}
-            timezone={this.state.timezone}
             errors={this.state.errors}
             isLoading={this.state.isLoading}
             inValid={this.state.inValid}
