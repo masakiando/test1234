@@ -4,6 +4,7 @@
 DROP TABLE テーブル名;Table削除
 DELETE FROM テーブル名;Table内全行削除
 
+heroku pg:psql postgresql-XXXXX-XXXXX --app safe-XXXXXXXXX-XXXXX
 psql起動
 psql　
 CREATE DATABASE 任意DB名;　テーブル名作成
@@ -23,7 +24,7 @@ git commit -m "a"
 git push
 heroku ps:scale web=1
 git push heroku master
-https://safe-brushlands-47729.herokuapp.com/
+https://safe-brushlands-XXXXX.herokuapp.com/
 heroku ps:scale web=0
 
 heroku デプロイ失敗した時
