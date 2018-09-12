@@ -1,6 +1,6 @@
 const bookshelf = require('../bookshelf');
 
-const ShopModel = require('./ShopModel');
+const ShopModel = require('./shopModel');
 
 var user = bookshelf.Model.extend({
   tableName: 'users',
