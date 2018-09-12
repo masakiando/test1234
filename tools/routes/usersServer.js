@@ -2,6 +2,7 @@ var express =  require('express');
 var commonControllers = require('../controller/commonControllers');
 var controllers = require('../controller/usersServerControllers');
 var User = require('../model/userModel');
+var Shop = require('../model/shopModel');
 var bcrypt = require('bcrypt');
 
 var router = express.Router();
@@ -20,16 +21,17 @@ function post(req, res, next) {
           password
         } = req.body;
   const password_digest = bcrypt.hashSync(password, 10);
+  const shop_name = user_name;
 
-  User.forge({
-    user_name,
-    email,
-    password_digest
-  },{ hasTimestamps: true }).save()
+  let user = User.forge({user_name,email,password_digest,shop_name},{hasTimestamps: true });
+  user.save()
+  .then(user => {
+  let shop = Shop.forge({user_id: user.get('id')},{hasTimestamps: true });
+  shop.save()
   .then(user => res.json({ success: true }))
-  .catch(function(err) {
-      return next(err);//errorsHandling
-  });
+  .catch(function (err) {return next(err);});//errorsHandling
+  })
+  .catch(function (err) {return next(err);});//errorsHandling
 }
 
 // req.method get post put delete not
