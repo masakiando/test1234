@@ -49,7 +49,6 @@
 // //     .post('/api/users')
 // //     .send({
 // //       username: '',
-// //       timezone: '',
 // //       email: '',
 // //       password: ''
 // //     })

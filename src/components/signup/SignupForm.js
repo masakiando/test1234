@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react';
 import map from 'lodash/map';
 import classnames from 'classnames';
 import TextFieldGroup from '../common/TextFieldGroup';
-import timezones from '../../data/timezones';
 
 const SignupForm = ({
   onChange,
@@ -11,17 +10,12 @@ const SignupForm = ({
   email,
   password,
   passwordConfirmation,
-  timezone,
   errors,
   isLoading,
   inValid,
   checkUserExists
 }) => {
   // const { errors } = this.state;
-  const options = map(
-    timezones,
-    (val, key) => <option key={val} val={val}>{key}</option>
-  );
   return (
     <form onSubmit={onSignup}>
       <h1>Join our community!</h1>
@@ -63,27 +57,6 @@ const SignupForm = ({
         type="password"
       />
 
-      <div className={classnames("_panel")}>
-        <label className="control-label">Timezone</label>
-        <select
-          onChange={onChange}
-          name="timezone"
-          value={timezone}
-          className={classnames(
-            "form-control",
-            {'input-error': errors.timezone}
-          )}
-
-        >
-          <option value="" disabled>Choose Your timezones</option>
-          {options}
-        </select>
-        {errors.timezone ?
-           <div className="error-message">
-             {errors.timezone}
-           </div> : <div><br/></div>}
-      </div>
-
         <div className="sp-card">
           <button
             className={classnames('btn-signup width-100',
@@ -106,7 +79,6 @@ SignupForm.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   passwordConfirmation: PropTypes.string.isRequired,
-  timezone: PropTypes.string.isRequired,
   errors: PropTypes.object,
   isLoading: PropTypes.bool,
   inValid: PropTypes.object,

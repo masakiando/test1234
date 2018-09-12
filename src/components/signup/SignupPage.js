@@ -16,7 +16,6 @@ class SignupPage extends React.Component {
       email: '',
       password: '',
       passwordConfirmation: '',
-      timezone: '',
       errors: {},
       isLoading: false,
       inValid: {
