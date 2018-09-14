@@ -11,6 +11,7 @@ import B_Page from './components/b_page/B_page';
 import C_Page from './components/c_page/C_page';
 import Error404 from './components/errors/Error404Page.js';
 import SignupPage from './components/signup/SignupPage';
+import LoginPage from './components/login/LoginPage';
 
 export default (
   <Route path="/" component={App}>
@@ -22,7 +23,7 @@ export default (
     <Route path="/c" component={C_Page} />
 
     <Route path="/SignupPage" component={SignupPage} />
-
+    <Route path="/LoginPage" component={LoginPage} />
     <Route path="/*" component={Error404} />
   </Route>
 );
