@@ -17,9 +17,10 @@
   border-radius:2px;
   transform: rotate(45deg);
   -webkit-animation:box .8s infinite ;
+  animation: box .8s infinite linear;
 }
 
-@-webkit-keyframes box{
+@-webkit-keyframes box {
   0%{
     top:50px;
   }
@@ -38,6 +39,24 @@
   }
 }
 
+@keyframes box{
+  0%{
+    top:50px;
+  }
+  20%{
+    border-radius:2px;  /*從 20% 的地方才開始變形*/
+  }
+  50%{
+    top:80px;
+    border-bottom-right-radius:25px;
+  }
+  80%{
+    border-radius:2px;  /*到 80% 的地方恢復原狀*/
+  }
+  100%{
+    top:50px;
+  }
+}
 .box:after{
   content:'';
   position:absolute;
@@ -49,8 +68,24 @@
   background:#eaeaea;
   border-radius:100%;
   -webkit-animation:shadow .8s infinite ;
+  animation:shadow .8s infinite ;
 }
 @-webkit-keyframes shadow{
+  0%,100%{
+    left:54px;
+    width:40px;
+    background:#eaeaea;
+  }
+  50%{
+    top:126px;
+    left:50px;   /*讓陰影保持在原位*/
+    width:50px;
+    height:7px;
+    background:#eee;
+  }
+}
+
+@keyframes shadow{
   0%,100%{
     left:54px;
     width:40px;
