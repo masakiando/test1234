@@ -17,10 +17,13 @@
   border-radius:2px;
   transform: rotate(45deg);
   -webkit-animation:box .8s infinite ;
-  animation: box .8s infinite linear;
+  animation:box .8s infinite ;
+  background-image: url('./images/IMG_0568.jpg');
+  background-size: 100% 100%;
+
 }
 
-@-webkit-keyframes box {
+@-webkit-keyframes box{
   0%{
     top:50px;
   }
@@ -57,6 +60,7 @@
     top:50px;
   }
 }
+
 .box:after{
   content:'';
   position:absolute;
