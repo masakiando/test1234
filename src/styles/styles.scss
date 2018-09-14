@@ -1,12 +1,21 @@
+///////////////////////////////////
+// base
+///////////////////////////////////
  @import './base/setting';
  @import './base/base';
-
  @import './base/basesite';
-
+ ///////////////////////////////////
+ // components pages
+ ///////////////////////////////////
  @import './components/BannerPage';
  @import './components/SingleProduct.scss';
-
+ ///////////////////////////////////
+ // components module
+ ///////////////////////////////////
  @import './components/buttons';
  @import './components/site-navbar';
-
+ @import './components/bounce';
+ ///////////////////////////////////
+ // libs module
+ ///////////////////////////////////
 @import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
