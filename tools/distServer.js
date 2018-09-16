@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');//
 //api Server
 var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
-
+var acth = require('./routes/acthServer');
 /*eslint-disable no-console */
 
 const app = express();
@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 5000));//heroku port
 
 app.use('/api/startkit', startkit);
-
 app.use('/api/users', users);
+app.use('/api/acth', acth);
 
 app.use(compression());
 app.use(express.static('dist'));

@@ -17,6 +17,7 @@ CREATE DATABASE　の　メッセージが出たらOK
 SELECT * FROM テーブル名」
 
 yarn start
+srcServer.js書き換えしたならistServer.jsも変更する
 yarn build
 
 git add .
