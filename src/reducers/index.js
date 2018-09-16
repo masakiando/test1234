@@ -6,8 +6,10 @@ import saleproducts from './flashSaleReducer';
 import popularproducts from './popularReducer';
 import malls from './mallReducer';
 import img from './productImagesReducer';
+import authentication from './authenticationReducer';
 
 const rootReducer = combineReducers({
+  authentication,
   hotwords,
   categories: categories,
   products: products,

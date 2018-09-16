@@ -4,8 +4,13 @@
 DROP TABLE テーブル名;Table削除
 DELETE FROM テーブル名;Table内全行削除
 
+heroku psqlアクセス方法
+https://qiita.com/akiko-pusu/items/305e291465d6aac04bf3
 heroku pg:psql postgresql-XXXXX-XXXXX --app safe-XXXXXXXXX-XXXXX
-psql起動
+PyCharm
+https://pleiades.io/help/pycharm/connecting-to-a-database.html
+
+ローカルpsql起動
 psql　
 CREATE DATABASE 任意DB名;　テーブル名作成
 注意　;;;;;;;;;;;;;;;;;;;ないとだめだよ！

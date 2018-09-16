@@ -1,4 +1,8 @@
 export default {
+  authentication: {
+    isAuthenticated: false,
+    user: {}
+  },
   hotwords: [],
   categories: [],
   products: [],
