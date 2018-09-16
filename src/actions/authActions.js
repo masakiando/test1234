@@ -13,6 +13,7 @@ export function login(data) {
       const token = res.data.token;
       localStorage.setItem('jwtToken', token);
       setAuthenticationToken(token);
+      console.log(jwt.decode(token)); //node net,dns jwt.signしたtokenをdecodeで元に戻す
       dispatch(setCurrentUser(jwt.decode(token)));
     });
   };
