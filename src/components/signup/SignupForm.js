@@ -19,6 +19,11 @@ const SignupForm = ({
   return (
     <form onSubmit={onSignup}>
       <h1>Join our community!</h1>
+      {errors.form &&
+        <div className="alert alert-danger">
+          {errors.form}
+        </div>
+      }
       <TextFieldGroup
         onChange={onChange}
         name="username"

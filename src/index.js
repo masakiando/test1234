@@ -13,7 +13,8 @@ import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 
 import setAuthenticationToken from './utils/setAuthenticationToken';
-import jwt from 'jsonwebtoken';
+// import jwt from 'jsonwebtoken';
+import jwtDecode from 'jwt-decode';
 import { setCurrentUser } from './actions/authActions';
 
 import './styles/styles.scss';
@@ -35,7 +36,7 @@ store.dispatch(Malls());
 //jwtTokenをdecodeしそのユーザーデータをstoreに保管する
 if (localStorage.jwtToken) {
   setAuthenticationToken(localStorage.jwtToken);
-  store.dispatch(setCurrentUser(jwt.decode(localStorage.jwtToken)));
+  store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
 }
 
 render(

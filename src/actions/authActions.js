@@ -1,6 +1,7 @@
 import axios from 'axios';
 import setAuthenticationToken from '../utils/setAuthenticationToken';
-import jwt from 'jsonwebtoken';
+// import jwt from 'jsonwebtoken';
+import jwtDecode from 'jwt-decode';
 import * as types from './actionTypes';
 
 export function setCurrentUser(user) {
@@ -13,8 +14,8 @@ export function login(data) {
       const token = res.data.token;
       localStorage.setItem('jwtToken', token);
       setAuthenticationToken(token);
-      console.log(jwt.decode(token)); //node net,dns jwt.signしたtokenをdecodeで元に戻す
-      dispatch(setCurrentUser(jwt.decode(token)));
+      console.log(jwtDecode(token)); //node net,dns jwt.signしたtokenをdecodeで元に戻す
+      dispatch(setCurrentUser(jwtDecode(token)));
     });
   };
 }

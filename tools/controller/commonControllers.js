@@ -13,28 +13,22 @@ function checkIDisInteger(req, res, next) {
 }
 //Handling common database errors
 function errorsHandling(err, req, res, next) {
+  let errors = {};
  if(err.code === "42P01"){//not Table
-    res.status(400).json({
-      status: 'error',
-      message: 'parserOpenTable',
-      error: err
-   });
+     errors.form = 'parserOpenTable';
+     res.status(400).json(errors);
+
  } else if (err.code === "23505"){
-    res.status(400).json({
-      status: 'error',
-      message: req.body.name+' '+'not_unique.',
-      error: err
-   });
+     errors.form = req.body.name+' '+'not unique.';
+     res.status(400).json(errors);
+
  } else if(err.code === "23502") {
-    res.status(400).json({
-      status: 'error',
-      message: err.column+'_column does not exist.'+'(非NULL違反)',
-      error: err
-  });
+     errors.form = err.column+' '+'column does not exist.';
+     res.status(400).json(errors);
+
   } else {
-    res.status(500).json({
-      error: err
-    });
+    errors.form = 'ERROR';
+    res.status(500).json(errors);
   }
 }
 

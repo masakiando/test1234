@@ -8,7 +8,7 @@ router.post(
 );
 
 function post(req, res, next) {
-  res.status(201).json({ user: req.currentUser });
+  res.status(201).json({ user: req.userId });
 }
 
 module.exports = router;
