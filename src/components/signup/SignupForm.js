@@ -60,7 +60,7 @@ const SignupForm = ({
         <div className="sp-card">
           <button
             className={classnames('btn-signup width-100',
-                                 { 'has-error width-100': inValid.username || inValid.email || Object.keys(errors).length > 0},
+                                 { 'hello-error width-100': inValid.username || inValid.email || Object.keys(errors).length > 0},
                                  { 'warning-error width-100': isLoading }
                       )}
             disabled={inValid.username || inValid.email || isLoading}>

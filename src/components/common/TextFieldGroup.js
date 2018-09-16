@@ -14,7 +14,8 @@ const TextFieldGroup = ({
   return (
     <div className={
          classnames(
-           "_panel"
+           "form-group",
+           {'has-error': error}
          )}>
       <label className="control-label">
         {label}
@@ -26,7 +27,7 @@ const TextFieldGroup = ({
         type={type}
         name={name}
         className={classnames(
-          "form-control",
+          "",
           {'input-error': error}
         )}
         />

@@ -82,9 +82,9 @@ class SignupPage extends React.Component {
     debugger;
     event.preventDefault();
     console.log(this.state);
-    // if(!this.SignupFormIsValid()) { //falseなら処理終了
-    //   return;
-    // }
+    if(!this.SignupFormIsValid()) { //falseなら処理終了
+      return;
+    }
 
     //Server Side userSignupRequest start
     this.setState({ errors: {}, isLoading: true });

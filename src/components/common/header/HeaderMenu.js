@@ -60,7 +60,7 @@ class HeaderMenu extends React.Component {
                 <Li><Link to="/b">通知</Link></Li>
                 <Li><Link to="/c">ヘルプ</Link></Li>
                 <Li><Link to="/SignupPage">サインアップ</Link></Li>
-                <Li><Link to="/login">サインイン</Link></Li>
+                <Li><Link to="/LoginPage">サインイン</Link></Li>
                </Ul>
             </Nav>
           </Container>
