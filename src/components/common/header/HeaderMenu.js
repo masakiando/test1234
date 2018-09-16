@@ -1,6 +1,10 @@
 //HeaderMenu Component
 import React, {PropTypes} from 'react';
 import { Link, IndexLink } from 'react-router';
+import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as authActions from '../../../actions/authActions';
+
 import styled from 'styled-components';
 import media from "styled-media-query";
 import { color } from './_setting_color';
@@ -44,8 +48,20 @@ class HeaderMenu extends React.Component {
     this.state = {
       hello: 'hello'
     };
+    this.logout = this.logout.bind(this);
   }
+
+  logout(event) {
+    event.preventDefault();
+    console.log('logout');
+    this.props.actions.logout();
+    // .then(
+    //   () => this.context.router.push('/')
+    // );
+  }
+
   render() {
+    const { isAuthenticated } = this.props.authentication;
     return (
         <DivNavAndContainerWrap>
           <Container>
@@ -59,8 +75,8 @@ class HeaderMenu extends React.Component {
                 <Li><Link to="/a">test</Link></Li>
                 <Li><Link to="/b">通知</Link></Li>
                 <Li><Link to="/c">ヘルプ</Link></Li>
-                <Li><Link to="/SignupPage">サインアップ</Link></Li>
-                <Li><Link to="/LoginPage">サインイン</Link></Li>
+                {isAuthenticated ? <Li><Link to="/">マイページ</Link></Li> : <Li><Link to="/SignupPage">サインアップ</Link></Li>}
+                {isAuthenticated ? <Li><Link to="/" onClick={this.logout}>ログアウト</Link></Li> : <Li><Link to="/LoginPage">サインイン</Link></Li>}
                </Ul>
             </Nav>
           </Container>
@@ -69,4 +85,23 @@ class HeaderMenu extends React.Component {
   }
 }
 
-export default HeaderMenu;
+HeaderMenu.propTypes = {
+  authentication: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+};
+
+function mapStateToProps(state) {
+  debugger;
+  return {
+    authentication: state.authentication
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(authActions, dispatch)
+  };
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderMenu);
