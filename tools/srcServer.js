@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 //
 var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
+var acth = require('./routes/acthServer');
 
 /* eslint-disable no-console */
 
@@ -17,6 +18,7 @@ const compiler = webpack(config);
 app.use(bodyParser.json());
 app.use('/api/startkit', startkit);
 app.use('/api/users', users);
+app.use('/api/acth', acth);
 
 //指定されたマウントミドルウェア指定されたパスに関数や機能を：要求されたパスのベースが一致したときに、ミドルウェア機能が実行されますpath。
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -36,7 +38,7 @@ app.get('*', function(req, res) {
 
 
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  var err = new Error('Not Found Req Routes');
   err.status = 404;
   res.status(err.status || 500);
   res.json({
