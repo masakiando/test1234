@@ -8,6 +8,7 @@ import bodyParser from 'body-parser';
 var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
 var acth = require('./routes/acthServer');
+var buy = require('./routes/buyServer');
 
 /* eslint-disable no-console */
 
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 app.use('/api/startkit', startkit);
 app.use('/api/users', users);
 app.use('/api/acth', acth);
+app.use('/api/buy', buy);
 
 //指定されたマウントミドルウェア指定されたパスに関数や機能を：要求されたパスのベースが一致したときに、ミドルウェア機能が実行されますpath。
 app.use(require('webpack-dev-middleware')(compiler, {

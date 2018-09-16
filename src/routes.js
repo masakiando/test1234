@@ -12,6 +12,7 @@ import C_Page from './components/c_page/C_page';
 import Error404 from './components/errors/Error404Page.js';
 import SignupPage from './components/signup/SignupPage';
 import LoginPage from './components/login/LoginPage';
+import BuyPage from './components/buy/BuyPage';
 
 export default (
   <Route path="/" component={App}>
@@ -24,6 +25,9 @@ export default (
 
     <Route path="/SignupPage" component={SignupPage} />
     <Route path="/LoginPage" component={LoginPage} />
+
+    <Route path="/BuyPage" component={BuyPage} />
+
     <Route path="/*" component={Error404} />
   </Route>
 );

@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');//
 var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
 var acth = require('./routes/acthServer');
+var buy = require('./routes/buyServer');
 /*eslint-disable no-console */
 
 const app = express();
@@ -18,6 +19,7 @@ app.set('port', (process.env.PORT || 5000));//heroku port
 app.use('/api/startkit', startkit);
 app.use('/api/users', users);
 app.use('/api/acth', acth);
+app.use('/api/buy', buy);
 
 app.use(compression());
 app.use(express.static('dist'));
