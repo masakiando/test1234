@@ -2,6 +2,7 @@ import React from 'react';
 
 import HeaderMenu from './HeaderMenu';
 import HeaderBody from './HeaderBody';
+import FlashMessagesList from '../../flash/FlashMessagesList';
 
 class ManageHeaderPage extends React.Component {
   constructor(props) {
@@ -33,7 +34,6 @@ class ManageHeaderPage extends React.Component {
             onChange={this.updateSearchState}
             search={this.state.search}
           />
-
       </header>
     );
   }

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import TextFieldGroup from '../common/TextFieldGroup';
 import * as buyActions from '../../actions/buyActions';
+import * as flashMessagesActions from '../../actions/flashMessagesActions';
 
 class BuyPage extends React.Component {
   constructor(props, context) {
@@ -26,6 +27,10 @@ class BuyPage extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     this.props.actions.buy(this.state);
+    this.props.flashMessagesActions.addFlashMessage({
+      type: 'success',
+      text: 'Buy!'
+    });
   }
 
   render() {
@@ -56,12 +61,14 @@ class BuyPage extends React.Component {
 }
 
 BuyPage.propTypes = {
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  flashMessagesActions: PropTypes.object.isRequired
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(buyActions, dispatch)
+    actions: bindActionCreators(buyActions, dispatch),
+    flashMessagesActions: bindActionCreators(flashMessagesActions, dispatch)
   };
 }
 

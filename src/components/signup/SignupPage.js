@@ -101,13 +101,12 @@ class SignupPage extends React.Component {
   redirect() {
     debugger;
     // toastr.success('Signup saved');
-    // this.props.flashMessagesActions.addFlashMessage({
-    //   type: 'success',
-    //   text: 'You signed up seccessfully. Welcome!'
-    // });
-    // this.context.router.push('/');
-    // browserHistory.push('/');
-  }
+    this.props.flashMessagesActions.addFlashMessage({
+      type: 'success',
+      text: 'You signed up seccessfully. Welcome!'
+    });
+    this.context.router.push('/');
+    }
   render() {
     return (
       <div className="row">

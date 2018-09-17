@@ -9,5 +9,6 @@ export default {
   saleproducts: [],
   popularproducts: [],
   malls: [],
-  img: []
+  img: [],
+  flashMessages: []
 };

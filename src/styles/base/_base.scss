@@ -22,6 +22,11 @@ ul, ol {//aとbに対して
     list-style: none;
     padding-left: 0;
 }
+
+.app{
+  position: relative;
+}
+
 .container {
   width: 1200px;
   margin-right: auto;
@@ -66,7 +71,6 @@ nav a {//aの中にあるすべてのbに対して
       opacity: 0.8;
     }
 }
-
 main {//aに対して
     padding: 20px;
 }

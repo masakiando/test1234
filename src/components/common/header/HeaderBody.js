@@ -58,6 +58,7 @@ const HeaderBody = ({
         </HeaderWithSearchWrapCartSection>
 
      </Grid>
+
     </Container>
   </HeaderWithSearchWrap>
   );
