@@ -4,8 +4,6 @@ import styled from 'styled-components';
 const Div = styled.div`
 z-index:1000000000000000;
 position: absolute;
-
-
 height: 3em;
 width: 40%;
 border-radius: 0.5em;
@@ -13,6 +11,10 @@ background-color: #00bfa5;
 opacity: .9;
 font-size: 2em;
 border: 2px solid;
+padding: 1em;
+display:flex;
+align-items:center;
+justify-content:space-between;
 `;
 class FlashMessagesRow extends React.Component {
   constructor(props, context) {
@@ -47,11 +49,11 @@ class FlashMessagesRow extends React.Component {
           top: 60 * this.state.topindex + 10 + 'px',
           right: this.state.rightindex
       }}>
+        <span>{text}</span>
         <button
           onClick={this.onClose}
           className="close"><span>&times;</span>
         </button>
-        {text}
       </Div>
     );
   }

@@ -105,7 +105,7 @@ class SignupPage extends React.Component {
       type: 'success',
       text: 'You signed up seccessfully. Welcome!'
     });
-    this.context.router.push('/');
+    this.context.router.push('/LoginPage');
     }
   render() {
     return (

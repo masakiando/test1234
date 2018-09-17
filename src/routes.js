@@ -14,6 +14,8 @@ import SignupPage from './components/signup/SignupPage';
 import LoginPage from './components/login/LoginPage';
 import BuyPage from './components/buy/BuyPage';
 
+import requireAuth from './utils/requireAuth';
+
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
@@ -26,7 +28,7 @@ export default (
     <Route path="/SignupPage" component={SignupPage} />
     <Route path="/LoginPage" component={LoginPage} />
 
-    <Route path="/BuyPage" component={BuyPage} />
+    <Route path="BuyPage" component={requireAuth(BuyPage)} />
 
     <Route path="/*" component={Error404} />
   </Route>
