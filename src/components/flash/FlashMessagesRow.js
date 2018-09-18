@@ -9,7 +9,7 @@ width: 40%;
 border-radius: 0.5em;
 background-color: #00bfa5;
 opacity: .9;
-font-size: 2em;
+font-size: 1.5em;
 border: 2px solid;
 padding: 1em;
 display:flex;

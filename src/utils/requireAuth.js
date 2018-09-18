@@ -9,7 +9,7 @@ export default function(ComposedComponent) {
       if (!this.props.isAuthenticated) { //logout状態でWorkshopsPageにアクセスした時
         this.props.addFlashMessage({
           type: 'error',
-          text: 'このページにアクセスするにはログインする必要があります'
+          text: 'You need to login to access this page'
         });
         this.context.router.push('/LoginPage');
       }
