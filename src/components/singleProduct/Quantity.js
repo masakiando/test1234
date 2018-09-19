@@ -4,7 +4,7 @@ class Quantity extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {value: 1};
+    this.state = {value: this.props.quantity};
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
   }
@@ -38,6 +38,7 @@ class Quantity extends React.Component {
   }
 }
 Quantity.propTypes = {
-  product: PropTypes.object
+  product: PropTypes.objectisRequired,
+  quantity: PropTypes.number.isRequired
 };
 export default Quantity;
