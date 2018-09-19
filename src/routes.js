@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Route, IndexRoute, Link, IndexLink } from 'react-router';
 import App from './components/App';
 import Home from './components/home/index';
-import SingleProduct from './components/singleProduct/SingleProduct';
+import SingleProduct from './components/singleProduct/ManageSingleProductPage';
 
 import A_Page from './components/a_page/A_page';
 import B_Page from './components/b_page/B_page';
