@@ -8,8 +8,10 @@ import malls from './mallReducer';
 import img from './productImagesReducer';
 import authentication from './authenticationReducer';
 import flashMessages from './flashMessagesReducer';
+import cart from './cartReducer';
 
 const rootReducer = combineReducers({
+  cart,
   flashMessages,
   authentication,
   hotwords,

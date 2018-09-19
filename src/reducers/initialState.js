@@ -10,5 +10,6 @@ export default {
   popularproducts: [],
   malls: [],
   img: [],
-  flashMessages: []
+  flashMessages: [],
+  cart: []
 };

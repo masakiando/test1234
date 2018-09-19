@@ -12,7 +12,10 @@ import C_Page from './components/c_page/C_page';
 import Error404 from './components/errors/Error404Page.js';
 import SignupPage from './components/signup/SignupPage';
 import LoginPage from './components/login/LoginPage';
+
 import BuyPage from './components/buy/BuyPage';
+
+import CartPage from './components/cart/CartPage.js';
 
 import requireAuth from './utils/requireAuth';
 
@@ -27,6 +30,8 @@ export default (
 
     <Route path="/SignupPage" component={SignupPage} />
     <Route path="/LoginPage" component={LoginPage} />
+
+    <Route path="/CartPage" component={CartPage} />
 
     <Route path="BuyPage" component={requireAuth(BuyPage)} />
 

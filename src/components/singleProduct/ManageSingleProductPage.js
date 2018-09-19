@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as ProductActions from '../../actions/ProductActions';
+import * as CartActions from '../../actions/CartActions';
 import styled from 'styled-components';
 import Quantity from './Quantity';
 import AddItemtoCart from './AddtoCart';
@@ -18,6 +19,7 @@ class SingleProduct extends React.Component {
       quantity: 1
     };
     this.imgChange = this.imgChange.bind(this);
+    this.addItemToCart = this.addItemToCart.bind(this);
   }
 
 componentDidMount() {
@@ -38,6 +40,28 @@ componentDidMount() {
         product: Object.assign({}, nextProps.product)
       });
     }
+  }
+
+  addItemToCart(event) {
+    event.preventDefault();
+    console.log('hello');
+    this.props.cartActions.addItemToCart(this.state.product);
+    // let cart = [];
+    // let item_id = this.props.item.id;
+    // console.log(item_id);
+    // let item_product_name = this.props.item.product_name;
+    // console.log(item_product_name);
+    // if (typeof window !== "undefined") {
+    //   if (localStorage.getItem('cart')) {
+    //     cart = JSON.parse(localStorage.getItem('cart'))
+    //   }
+    //   cart.push({
+    //     product: 'test',
+    //     quantity: 1
+    //   })
+    //   localStorage.setItem('cart', JSON.stringify(cart))
+    //
+    // }
   }
 
   isActive(value){
@@ -271,7 +295,7 @@ componentDidMount() {
                           <span>chat now</span>
                         </button>
 
-                        <AddItemtoCart item={product} quantity={this.state.quantity}/>
+                        <AddItemtoCart onAdd={this.addItemToCart} />
 
                         <button className="btn-buy">
                           <span>buy now</span>
@@ -296,6 +320,7 @@ SingleProduct.propTypes = {
   product: PropTypes.object.isRequired,
   im: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,
+  cartActions: PropTypes.object.isRequired,
   Id: PropTypes.string.isRequired
 };
 
@@ -344,7 +369,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(ProductActions, dispatch)
+    actions: bindActionCreators( ProductActions, dispatch ),
+    cartActions: bindActionCreators( CartActions, dispatch )
   };
 }
 
