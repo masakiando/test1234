@@ -15,7 +15,7 @@ import LoginPage from './components/login/LoginPage';
 
 import BuyPage from './components/buy/BuyPage';
 
-import CartPage from './components/cart/CartPage.js';
+import ManageCartPage from './components/cart/ManageCartPage.js';
 
 import requireAuth from './utils/requireAuth';
 
@@ -31,7 +31,7 @@ export default (
     <Route path="/SignupPage" component={SignupPage} />
     <Route path="/LoginPage" component={LoginPage} />
 
-    <Route path="/CartPage" component={CartPage} />
+    <Route path="/ManageCartPage" component={ManageCartPage} />
 
     <Route path="BuyPage" component={requireAuth(BuyPage)} />
 

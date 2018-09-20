@@ -45,6 +45,6 @@ render(
         history={browserHistory}
         routes={routes}
       />
-    </Provider>,
+  </Provider>,
   document.getElementById('app')
 );

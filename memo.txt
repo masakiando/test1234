@@ -4,6 +4,9 @@
 DROP TABLE テーブル名;Table削除
 DELETE FROM テーブル名;Table内全行削除
 
+
+
+
 heroku psqlアクセス方法
 https://qiita.com/akiko-pusu/items/305e291465d6aac04bf3
 heroku pg:psql postgresql-XXXXX-XXXXX --app safe-XXXXXXXXX-XXXXX
@@ -40,12 +43,17 @@ heroku ps:scale web=0
 heroku ps:scale web=1
 yarn start
 
+nvm use 8.9.0
 
+yarn global add
 yarn init
 yarn install
 yarn add <>
 yarn add -D <>
 yarn remove <>
+
+react-monocle react-monocle
+monocle -b src/index.js -c src/index.html
 
 http
 # data insert(post,put)する*.jsonはProjectsRootに置く

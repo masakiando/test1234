@@ -27,15 +27,9 @@ const PopularList  = ({
               <DviPriceFlex>
                 <div>
                   <span>
-                    i
-                    {product.sale_status === true ? <span style={a}>{product.price}</span> : product.price}
+                    i{product.sale_status === true ? <span style={a}>{product.price}</span> : product.price}
                   </span>
-                  {product.sale_status === true &&
-                  <span>
-                    i
-                    {product.discount_price}
-                  </span>
-                  }
+                     {product.sale_status === true && <span>i{product.discount_price}</span>}
                 </div>
                 <div>
                   {product.shipping_free === true && <span>i</span>}

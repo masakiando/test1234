@@ -2,6 +2,53 @@ import React, {PropTypes} from 'react';
 var flashSaleImg = require('./product_0.173.173.png');
 import styled from 'styled-components';
 
+const FlashSaleList  = ({
+  saleproducts,
+  listPositon
+}) => {
+  const transition = listPositon * -180;//ul要素を移動させる距離をつくる
+  return (
+    <Div>
+    <Ul style={{
+        width: ( saleproducts.length * 180 ) + 'px',
+        transform: 'translateX(' + transition + 'px)'
+      }}>
+      {saleproducts.map(saleproduct =>
+        <Li key={saleproduct.id}>
+          <a href="">
+            <Figure>
+              <DviImgFrame>
+                <Img src={flashSaleImg} alt=""/>
+              </DviImgFrame>
+              <Figcaption>
+                <div>
+                  <span style={z}>₱</span>
+                  <span style={y}>900</span>
+                </div>
+                <div style={a}>
+                  <div style={b}>
+                    <div style={c}></div>
+                  </div>
+                  <span style={d}>10 {saleproduct.id} </span>
+                </div>
+              </Figcaption>
+            </Figure>
+          </a>
+        </Li>
+      )}
+    </Ul>
+
+  </Div>
+  );
+};
+
+FlashSaleList.propTypes = {
+  saleproducts: PropTypes.array,
+  listPositon: PropTypes.number
+};
+
+
+export default FlashSaleList;
 const Img = styled.img`
 background-size: 100% 100%;
 height:173px;
@@ -76,50 +123,3 @@ const y = {
 color:'OrangeRed',
 fontSize: '1em'
 };
-const FlashSaleList  = ({
-  saleproducts,
-  listPositon
-}) => {
-  const transition = listPositon * -180;//ul要素を移動させる距離をつくる
-  return (
-    <Div>
-    <Ul style={{
-        width: ( saleproducts.length * 180 ) + 'px',
-        transform: 'translateX(' + transition + 'px)'
-      }}>
-      {saleproducts.map(saleproduct =>
-        <Li key={saleproduct.id}>
-          <a href="">
-            <Figure>
-              <DviImgFrame>
-                <Img src={flashSaleImg} alt=""/>
-              </DviImgFrame>
-              <Figcaption>
-                <div>
-                  <span style={z}>₱</span>
-                  <span style={y}>900</span>
-                </div>
-                <div style={a}>
-                  <div style={b}>
-                    <div style={c}></div>
-                  </div>
-                  <span style={d}>10 {saleproduct.id} </span>
-                </div>
-              </Figcaption>
-            </Figure>
-          </a>
-        </Li>
-      )}
-    </Ul>
-
-  </Div>
-  );
-};
-
-FlashSaleList.propTypes = {
-  saleproducts: PropTypes.array,
-  listPositon: PropTypes.number
-};
-
-
-export default FlashSaleList;

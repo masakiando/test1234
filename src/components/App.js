@@ -1,13 +1,13 @@
 import React, {PropTypes} from 'react';
-import Header from './common/header/ManageHeaderPage';
+import ManageHeaderPage from './common/header/ManageHeaderPage';
 import FlashMessagesList from './flash/FlashMessagesList';
 
 class App extends React.Component {
   render() {
     return (
         <div className="app">
-          <FlashMessagesList/ >
-          <Header/>
+          <FlashMessagesList />
+          <ManageHeaderPage/>
             {this.props.children}
         </div>
     );

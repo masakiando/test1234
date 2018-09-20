@@ -53,7 +53,7 @@ const HeaderBody = ({
           </HeaderWithSearchWrapSearchSection>
 
         <HeaderWithSearchWrapCartSection>
-           <Link to="/CartPage"><i className="fas fa-2x fa-shopping-cart"></i></Link>
+           <Link to="/ManageCartPage"><i className="fas fa-2x fa-shopping-cart"></i></Link>
         </HeaderWithSearchWrapCartSection>
 
      </Grid>
