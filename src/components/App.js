@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import ManageHeaderPage from './common/header/ManageHeaderPage';
+import Header from './common/header/index';
 import FlashMessagesList from './flash/FlashMessagesList';
 
 class App extends React.Component {
@@ -7,7 +7,7 @@ class App extends React.Component {
     return (
         <div className="app">
           <FlashMessagesList />
-          <ManageHeaderPage/>
+          <Header/>
             {this.props.children}
         </div>
     );

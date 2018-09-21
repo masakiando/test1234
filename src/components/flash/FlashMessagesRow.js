@@ -1,21 +1,7 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 import styled from 'styled-components';
-const Div = styled.div`
-z-index:1000000000000000;
-position: absolute;
-height: 3em;
-width: 40%;
-border-radius: 0.5em;
-background-color: #00bfa5;
-opacity: .9;
-font-size: 1.5em;
-border: 2px solid;
-padding: 1em;
-display:flex;
-align-items:center;
-justify-content:space-between;
-`;
+
 class FlashMessagesRow extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -74,3 +60,19 @@ FlashMessagesRow.defaultProps = {
 };
 
 export default FlashMessagesRow;
+
+const Div = styled.div`
+z-index:1000000000000000;
+position: absolute;
+height: 3em;
+width: 40%;
+border-radius: 0.5em;
+background-color: #00bfa5;
+opacity: .9;
+font-size: 1.5em;
+border: 2px solid;
+padding: 1em;
+display:flex;
+align-items:center;
+justify-content:space-between;
+`;
