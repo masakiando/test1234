@@ -20,6 +20,7 @@
   "author": "Masaki Ando",
   "license": "MIT",
   "dependencies": {
+    "@blueprintjs/core": "^1.40.0",
     "axios": "0.16.1",
     "babel-eslint": "^9.0.0",
     "babel-polyfill": "6.8.0",
@@ -43,8 +44,9 @@
     "open": "0.0.5",
     "pg": "^7.4.3",
     "prop-types": "^15.6.2",
+    "rc-tooltip": "3.0.0",
     "react": "15.0.2",
-    "react-addons-css-transition-group": "15.5.2",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "15.0.2",
     "react-image-gallery": "^0.8.10",
     "react-input-mask": "^2.0.3",

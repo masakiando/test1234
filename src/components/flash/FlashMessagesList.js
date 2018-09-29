@@ -39,7 +39,6 @@ FlashMessagesList.propTypes = {
 };
 
 function mapStateToProps(state) {
-  debugger;
   return {
     //下記がPropになる
     messages: state.flashMessages

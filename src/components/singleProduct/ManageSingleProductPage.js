@@ -44,8 +44,10 @@ componentDidMount() {
 
   addItemToCart(event) {
     event.preventDefault();
-    console.log('hello');
+    console.log('addItemToCart');
+    console.log(this.state.product.shop_id);
     this.props.cartActions.addItemToCart(this.state.product);
+    this.props.cartActions.addItemShopId(this.state.product.shop_id);
     // let cart = [];
     // let item_id = this.props.item.id;
     // console.log(item_id);
@@ -282,7 +284,7 @@ componentDidMount() {
                         <div className="itemB itemB-grid">
                           <Quantity product={this.state.product} quantity={this.state.quantity}/>
                           <span className="order-quantity__stock-count">
-                            {product.number_of_stocks}piece available
+                            {product.produc_quantity}piece available
                           </span>
                         </div>
                       </div>

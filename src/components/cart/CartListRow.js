@@ -2,13 +2,13 @@ import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 
 const CartListRow = ({
-  item
+  product
 }) => {
     return (
     <Tr>
       <td><input type="checkbox"/></td>
-      <td>{item.cover}</td>
-      <td>{item.product_name}</td>
+      <td>{product.products_cover}</td>
+      <td>{product.product_name}</td>
       <td>
         <select className="form-control">
           <option value="" disabled>Choose Your timezones</option>
@@ -20,18 +20,20 @@ const CartListRow = ({
       <td>
         <div>
           <span>
-            {item.sale_status === true ? <Span > ¥{item.price}</Span> : <span>¥{item.price}</span>}
+            {product.sale_status === true ? <Span > ¥{product.price}</Span> : <span>¥{product.price}</span>}
           </span>
-             {item.sale_status === true && <span>  ¥{item.discount_price}</span>}
+             {product.sale_status === true && <span>  ¥{product.discount_price}</span>}
         </div>
       </td>
       <td>f</td>
+      <td>f</td>
+      <td>���</td>
     </Tr>
   );
 };
 
 CartListRow.propTypes = {
-  item: PropTypes.object.isRequired
+  product: PropTypes.object.isRequired
 };
 
 export default CartListRow;

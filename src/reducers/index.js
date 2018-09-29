@@ -9,8 +9,10 @@ import img from './productImagesReducer';
 import authentication from './authenticationReducer';
 import flashMessages from './flashMessagesReducer';
 import cart from './cartReducer';
+import shopIdList from './shopsReducer';
 
 const rootReducer = combineReducers({
+  shopIdList: shopIdList,
   cart,
   flashMessages,
   authentication,

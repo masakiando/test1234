@@ -3,7 +3,7 @@ import media from "styled-media-query";
 export const color = {
   siteNav: '#f74d18',
   siteBase: '#ff5722'
-}
+};
 // ************ HeaderMenu ************ //
 export const Wrap = styled.div`
 width: 1280px;

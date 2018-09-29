@@ -17,6 +17,8 @@ import setAuthenticationToken from './utils/setAuthenticationToken';
 import jwtDecode from 'jwt-decode';
 import { setCurrentUser } from './actions/authActions';
 
+import 'normalize.css/normalize.css';
+import '@blueprintjs/core/dist/blueprint.css';
 import './styles/styles.scss';
 import App from './components/App';
 // import redux from './redux'; // redux check

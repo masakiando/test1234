@@ -11,5 +11,6 @@ export default {
   malls: [],
   img: [],
   flashMessages: [],
-  cart: []
+  cart: [],
+  shopIdList: []
 };

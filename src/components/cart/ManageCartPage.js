@@ -14,31 +14,42 @@ class CartPage extends React.Component {
     };
   } //.
 
+  test2(shop) {
+    // return ( <div>{shop.shopId}</div>);
+    var result = this.props.cart.map( function( product, index, array ) {
+      if( shop.shopId == product.shop_id ) {
+          return (
+            <div key={index}>
+              <div>{product.product_name}</div>
+              <div>{product.price}</div>
+
+            </div>
+          );
+      }
+    });
+
+    return result;
+  }
+
+  test() {
+    return this.props.shopIdList.map( (shop, index) => (
+        <div key={index}>
+          <div>{shop.shopId}</div>
+          {this.test2(shop)}
+        </div>
+        )
+    );
+  }
+
   render() {
-    const {cart} = this.props;
+    const {cart, shopIdList} = this.props;
 
     return (
       <div>
         <Container>
+           {this.test()}
            <DiscountMessage />
-
-           <table className="table">
-             <thead>
-             <tr>
-               <th>
-                 <input type="checkbox"/>
-               </th>
-               <th>Title</th>
-               <th>Author</th>
-               <th>Category</th>
-               <th>Length</th>
-               <th>aaaaa</th>
-             </tr>
-             </thead>
-           </table>
-
-           <CartList cart={cart}/>
-            <span>₫200000以上のご注文で送料無料（最高40,000円）</span>
+           <CartList cart={cart} shopIdList={shopIdList} />
         </Container>
       </div>
     );
@@ -46,12 +57,14 @@ class CartPage extends React.Component {
 }
 
 CartPage.propTypes = {
-  cart: PropTypes.array.isRequired
+  cart: PropTypes.array.isRequired,
+  shopIdList: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
   return {
-    cart: state.cart
+    cart: state.cart,
+    shopIdList: state.shopIdList
   };
 }
 

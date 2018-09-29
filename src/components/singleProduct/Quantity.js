@@ -10,9 +10,9 @@ class Quantity extends React.Component {
   }
 
   increment() {
-    console.log(this.props.product.number_of_stocks);
+    console.log(this.props.product.produc_quantity);
     this.setState(prevState => {
-        value: prevState.value >= this.props.product.number_of_stocks ?  this.props.product.number_of_stocks : ++prevState.value;
+        value: prevState.value >= this.props.product.produc_quantity ?  this.props.product.produc_quantity : ++prevState.value;
         // value: ++prevState.value;
     });
   }

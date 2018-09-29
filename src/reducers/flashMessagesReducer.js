@@ -5,7 +5,6 @@ import findIndex from 'lodash/findIndex';
 
 export default function flashMessagesReducer(
   state = initialState.flashMessages, action) {
-    debugger;
   const index = findIndex(state, { id: action.id });
   console.log(index);
   let newMessageId = shortid.generate();

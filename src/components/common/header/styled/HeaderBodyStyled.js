@@ -3,7 +3,7 @@ import media from "styled-media-query";
 export const color = {
   siteNav: '#f74d18',
   siteBase: '#ff5722'
-}
+};
 // ************ HeaderBody ************ //
 export const Wrap = styled.div`
 background-color: ${color.siteBase};

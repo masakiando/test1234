@@ -3,35 +3,52 @@ import CartListRow from './CartListRow';
 import styled from 'styled-components';
 
 const CartList = ({
-  cart
+  cart, shopIdList
 }) => {
   return (
-    <table className="table">
+    <table className="">
       <thead>
-      <tr>
-        <th>
-          <input type="checkbox"/>
-          <spna>ffffffffffffffff</spna>
-        </th>
-        <th>
-          <Span>ssssssssssss</Span>
-        </th>
-      </tr>
+        <tr>
+          <th><input type="checkbox"/></th>
+          <th>製品</th>
+          <th>NA</th>
+          <th>NA</th>
+          <th>単価</th>
+          <th>数量</th>
+          <th>金額</th>
+          <th>アクション</th>
+        </tr>
       </thead>
+
+      <thead>
+        <tr>
+          <th><input type="checkbox"/></th>
+          <th>NA</th>
+          <th>NA</th>
+          <th>NA</th>
+          <th>NA</th>
+          <th>NA</th>
+          <th>NA</th>
+          <th>NA</th>
+        </tr>
+      </thead>
+
       <tbody>
-      {cart.map((item, i) =>
+      {cart.map((product, i) =>
         <CartListRow
           key={i}
-          item={item}
+          product={product}
         />
       )}
       </tbody>
+      <span>₫200000以上のご注文で送料無料（最高40,000円）</span>
     </table>
   );
 };
 
 CartList.propTypes = {
-  cart: PropTypes.array.isRequired
+  cart: PropTypes.array.isRequired,
+  shopIdList: PropTypes.array.isRequired
 };
 
 export default CartList;
@@ -39,3 +56,7 @@ export default CartList;
 const Span = styled.span`
 "float: right;
 `;
+
+// {shopIdList.map((shop, i) =>
+//   <div key={i}> {shop.shopId}</div>
+// )}

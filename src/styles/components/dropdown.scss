@@ -1,0 +1,132 @@
+.f_r_sb {
+  display: flex;//初期値row
+  flex-direction: row; //子要素を横並びさせる
+  justify-content: space-between;
+}
+.f_r {
+  display: flex;//初期値row
+  flex-direction: row; //子要素を横並びさせる
+}
+
+.fa-angle-right{
+  padding: 0em 1em;
+}
+
+.boundary {
+  color: gray;
+
+  .fa-list{
+    padding-right: .5em;
+    font-size: 1.2em;
+    letter-spacing: .5px;
+  }
+}
+
+
+.dropdown {
+	box-shadow: 0 4px 10px rgba(#7C4DFF, .2);
+	margin: 50px auto;
+	outline: none;
+	transition: box-shadow .1s linear;
+	width: 800px;
+
+	&.active {
+		box-shadow: 0 10px 30px rgba(#7C4DFF, .2);
+	}
+
+	&.active > .trigger {
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+.trigger {
+  @extend .f_r_sb;
+	border-radius: 5px 5px 0px 0px;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px;
+	width: 100%;
+  border-style: solid;
+
+  &__inner {
+    @extend .f_r_sb;
+
+    .fa-check{
+      color: rgb(14, 237, 137);
+    }
+  }
+}
+
+.boundary {
+  width: 100%;
+  padding: 10px;
+  border-width: 0px 1px;
+  border-color: #00bfa5;
+  border-style: solid;
+}
+.contents {
+  @extend .f_r_sb;
+}
+
+.content {
+  white-space: nowrap;
+  background: #fff;
+	border-radius: 0 0 5px 5px;
+  display: inline-block;
+	width: 100%;
+}
+
+.item {
+  @extend .f_r_sb;
+	padding: 10px;
+	transition: background .1s linear;
+  letter-spacing: .5px;
+
+	&:hover {
+		background-color: rgba(255,87,34,0.1);
+    color: #ff5722;
+		cursor: pointer;
+
+	}
+
+  &.active {
+    background: #fff;
+    color: #ff5722;
+    font-weight: bold;
+  }
+}
+
+/* Styling not related to the demonstrated feature */
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+
+* {
+	box-sizing: border-box;
+}
+
+.contentanime {
+    animation: fadeIn .5s ease-in 0s 1 normal;
+    -webkit-animation: fadeIn .5s ease-in 0s 1 normal;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      width:20%;
+    }
+    100% {
+      opacity: 1;
+      width:100%;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    width:20%;
+  }
+  100% {
+    opacity: 1;
+    width:100%;
+  }
+}
