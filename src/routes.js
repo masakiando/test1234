@@ -4,6 +4,9 @@ import { render } from 'react-dom';
 import { Route, IndexRoute, Link, IndexLink } from 'react-router';
 import App from './components/App';
 import Home from './components/home/index';
+import CoursesPage from './components/course/CoursesPage';
+import ManageCoursePage from './components/course/ManageCoursePage';
+
 import SingleProduct from './components/singleProduct/ManageSingleProductPage';
 
 import A_Page from './components/a_page/A_page';
@@ -22,6 +25,11 @@ import requireAuth from './utils/requireAuth';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
+      <Route path="courses" component={CoursesPage} />
+      <Route path="course" component={ManageCoursePage} />
+      <Route path="course/:id" component={ManageCoursePage} />
+
+
     <Route path="/singleproduct/:id" component={SingleProduct} />
 
     <Route path="/a" component={A_Page} />

@@ -32,7 +32,7 @@ git commit -m "m"
 git push
 heroku ps:scale web=1
 git push heroku master
-https://safe-brushlands-XXXXX.herokuapp.com/
+https://safe-brushlands-47729.herokuapp.com/
 heroku ps:scale web=0
 
 heroku デプロイ失敗した時

@@ -1,6 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
 import configureStore from './store/configureStore';
+import {loadCourses} from './actions/courseActions';
+import {loadAuthors} from './actions/authorActions';
+
 import { loadHotwords } from './actions/HotwordActions';
 import { Categories } from './actions/CategorActions';
 import { loadProducts } from './actions/ProductActions';
@@ -20,12 +23,18 @@ import { setCurrentUser } from './actions/authActions';
 import 'normalize.css/normalize.css';
 import '@blueprintjs/core/dist/blueprint.css';
 import './styles/styles.scss';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/toastr/build/toastr.min.css';
+
 import App from './components/App';
 // import redux from './redux'; // redux check
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const store = configureStore();
+store.dispatch(loadCourses());
+store.dispatch(loadAuthors());
+
 store.dispatch(loadHotwords());
 store.dispatch(Categories());
 store.dispatch(loadProducts());

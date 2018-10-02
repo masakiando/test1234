@@ -37,4 +37,5 @@ function commonValidations(data) {
   };
 }
 
-module.exports = commonValidations;
+
+export default commonValidations;

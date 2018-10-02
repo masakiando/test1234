@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import { Link, IndexLink } from 'react-router';
-import TextInputSearch from '../TextInputSearch';
+import TextInputSearch from '../TextInput_&_Search';
 import {
          Wrap,Container,
            Grid,
@@ -8,6 +8,9 @@ import {
 } from './styled/HeaderBodyStyled';
 var logo = require('./images/site_log.png');
 var cocacola = require('./images/cocacola-mobile.png');
+import LoadingDots from '../LoadingDots';
+import {connect} from 'react-redux';
+
 
 class HeaderBody extends React.Component {
   constructor(props) {
@@ -57,9 +60,23 @@ class HeaderBody extends React.Component {
          </CartSection>
         </Grid>
       </Container>
+      {this.props.loading &&<LoadingDots interval={100} dots={20}/>}
+      {!this.props.loading &&<span>&nbsp;</span>}
     </Wrap>
     );
   }
 }
 
-export default HeaderBody;
+HeaderBody.propTypes = {
+  loading: PropTypes.bool.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  debugger;
+  return {
+    courses: state.courses,
+    loading: state.ajaxCallsInProgress > 0
+  };
+}
+
+export default connect(mapStateToProps, null)(HeaderBody);

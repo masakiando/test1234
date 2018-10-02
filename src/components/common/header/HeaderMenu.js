@@ -28,7 +28,7 @@ class HeaderMenu extends React.Component {
                 <Li><Link to="/c">接続</Link></Li>
              </Ul>
              <Ul>
-              <Li><Link to="/a">test</Link></Li>
+              <Li><Link to="/courses">test</Link></Li>
               <Li><Link to="/b">通知</Link></Li>
               <Li><Link to="/c">ヘルプ</Link></Li>
               {isAuthenticated ? <Li><Link to="/">マイページ</Link></Li> : <Li><Link to="/SignupPage">サインアップ</Link></Li>}
