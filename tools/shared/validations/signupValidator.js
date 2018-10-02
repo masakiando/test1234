@@ -38,4 +38,4 @@ function commonValidations(data) {
 }
 
 
-export default commonValidations;
+module.exports = commonValidations;
