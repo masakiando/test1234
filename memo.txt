@@ -4,9 +4,6 @@
 DROP TABLE テーブル名;Table削除
 DELETE FROM テーブル名;Table内全行削除
 
-
-
-
 heroku psqlアクセス方法
 https://qiita.com/akiko-pusu/items/305e291465d6aac04bf3
 heroku pg:psql postgresql-XXXXX-XXXXX --app safe-XXXXXXXXX-XXXXX
@@ -14,15 +11,18 @@ PyCharm
 https://pleiades.io/help/pycharm/connecting-to-a-database.html
 
 ローカルpsql起動
-psql　
+psql
 CREATE DATABASE 任意DB名;　テーブル名作成
 注意　;;;;;;;;;;;;;;;;;;;ないとだめだよ！
 CREATE DATABASE　の　メッセージが出たらOK
 \l
-\c DB名　
+\c DB名
+\c test1234demotest
+\c test1234demodev
 \d
 \d 「テーブル名」
-SELECT * FROM テーブル名」
+SELECT * FROM
+テーブル名」
 
 yarn start
 srcServer.js書き換えしたならdistServer.jsも変更する
@@ -73,13 +73,23 @@ curl -X GET http://127.0.0.1:3000/api/startkit/1
 curl -X POST --data "name=Whisky&breed=annoying&age=3&sex=f" \http://127.0.0.1:3000/api/startkit
 curl -X PUT --data "name=Whisky&breed=annoying&age=3&sex=f" \http://127.0.0.1:3000/api/startkit
 curl -X DELETE http://127.0.0.1:3000/api/startkit
-
-knex migrate:make users
+//
+// ***** migrate *****//
+生成
+knex migrate:make categories
+実行
 knex migrate:latest --env development
+実行
 knex migrate:latest --env test
-knex seed:make <XXXXX> --env development
+
+// ***** シード *****//
+開発生成
+knex seed:make categories --env development
+開発実行
 knex seed:run --env development
-knex seed:make <XXXXX> --env test
+テスト生成
+knex seed:make categories --env test
+テスト実行
 knex seed:run --env test
 
 knex migrate:rollback

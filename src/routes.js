@@ -10,6 +10,7 @@ import ManageCoursePage from './components/course/ManageCoursePage';
 import SingleProduct from './components/singleProduct/ManageSingleProductPage';
 
 import A_Page from './components/a_page/A_page';
+import D_Page from './components/d_page/D_page';
 import AddProdcut from './components/addProdcut/index';
 import ToolTip from './components/c_page/ToolTip';
 import Error404 from './components/errors/Error404Page.js';
@@ -35,6 +36,7 @@ export default (
     <Route path="/a" component={A_Page} />
     <Route path="/b" component={AddProdcut} />
     <Route path="/c" component={ToolTip} />
+    <Route path="/d" component={D_Page} />
 
     <Route path="/SignupPage" component={SignupPage} />
     <Route path="/LoginPage" component={LoginPage} />

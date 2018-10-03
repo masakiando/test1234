@@ -22,6 +22,10 @@
     "jquery": true,
     "mocha": true
   },
+    "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
   "rules": {
     "quotes": 0,
     "no-console": 0,

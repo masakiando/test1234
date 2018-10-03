@@ -63,3 +63,4 @@ typings/
 yarn.lock
 memo1.txt
 .idea
+.env
