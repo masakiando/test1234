@@ -152,7 +152,7 @@ class Banner extends React.Component {
 
   render() {
     return (
-      <div className="  banner ">
+      <div className="mycontainer  banner ">
           <div className="test1">
 
             <div className="test1-1">

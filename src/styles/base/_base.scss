@@ -35,23 +35,23 @@ table,thead,tbody,tfoot,tr, td,th{
   position: relative;
 }
 
-.container {
+.mycontainer {
   width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 40px;
+  margin-left: 40px;
   padding: 1em 0em 0em 0em;
 }
 
-.container::after, .container::before {
+.mycontainer::after, .mycontainer::before {
     content: " ";
     display: table;
 }
-.container:after {
+.mycontainer:after {
   content: '';
   display: block;
 }
 
-.container::after {
+.mycontainer::after {
   clear: both;
 }
 
@@ -80,7 +80,7 @@ nav a {//aの中にあるすべてのbに対して
     }
 }
 main {//aに対して
-    padding: 20px;
+    // padding: 20px;
 }
 
 h1 {
@@ -156,50 +156,6 @@ h3 {
     }
 }
 
-/*  hot-word Component  */
-.hot-word {
-  width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.hotword__item-list {
-  display: flex;
-  flex-direction: row;
-
-  .hotword__item {
-    // padding: 0px 5px;
-    // margin-bottom: 1em;
-  }
-}
-.hotword__container {
-  position: relative;
-  z-index:1000;
-}
-.hotword__card-label {
-   position: absolute;
-   z-index:1000;
-   // text-overflow: ellipsis;
-   overflow: hidden;
-   white-space: nowrap;
-   bottom: 0;
-   background-color: rgba(0,0,0,.4);
-   left: 0;
-   right: 0;
-   color: #fff;
-   text-align: center;
-   padding: 5px 0;
-   -moz-box-sizing: border-box;
-   box-sizing: border-box;
-
-   &:hover {
-     background-color: rgba(0,0,0,.7);
-   }
-}
-.hotword_img {
-  background-image: url('./images/hotword.80.110.png');
-  background-size: 100% 100%;
-}
 
 /*  Categor Component  */
 .categor__item-list {
@@ -209,8 +165,8 @@ h3 {
   flex-grow: 1;
 
   .categor__item {
-    // padding: 0px 5px;
-    // margin-bottom: 1em;
+    padding: 0px 5px;
+    margin-bottom: 1em;
   }
 }
 .categor__container {

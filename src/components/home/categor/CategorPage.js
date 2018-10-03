@@ -10,7 +10,7 @@ class Categor extends Component {
   render() {
     const { HelloCategorPage, categories } = this.props;
     return (
-      <div className="categor">
+      <div className="categor mycontainer">
         <div className="categor__title">
           <h2><span>{HelloCategorPage}</span></h2>
         </div>

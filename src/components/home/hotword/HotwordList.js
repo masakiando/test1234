@@ -8,9 +8,9 @@ const HotwordList  = ({
       {hotwords.map(hotword =>
         <li className="hotword__item"
             key={hotword.id}>
-           <a href="" className="hotword__card">
-             <div className="hotword__container">
-               <div className="hotword_img"
+           <a href="" className="">
+             <div className="hotword-label_to_hotword-limg">
+               <div className="hotword-img"
                   style={
                     {
                       backgroundImage: `url(require("images/hotwords/${hotword.cover}"))`,
@@ -19,7 +19,7 @@ const HotwordList  = ({
                     }
                   }
                     />
-               <div className="hotword__card-label">
+                  <div className="hotword-label">
                  {hotword.label}
               </div>
              </div>

@@ -17,7 +17,6 @@ class MainPage extends React.Component {
   render() {
     return (
         <main style={Style}>
-          <div className="container">
             <BannerPage/>
             <HotwordPage/>
             <CategorPage />
@@ -26,7 +25,6 @@ class MainPage extends React.Component {
             <PopularPage />
 
             <DailyPage/>
-          </div>
         </main>
     );
   }
