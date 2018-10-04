@@ -28,7 +28,7 @@ class D_Page extends React.Component {
     files.forEach((file, i) => {
       formData.append(i, file);
     });
-    fetch(`/api/imageUpload`, {
+    fetch(`${API_URL}/api/imageUpload`, {
       method: 'POST',
       body: formData
     })
