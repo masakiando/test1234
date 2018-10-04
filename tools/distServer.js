@@ -4,7 +4,9 @@ var express = require('express');
 var path = require('path');
 var open = require('open');
 var compression = require('compression');
-var bodyParser = require('body-parser');//
+var bodyParser = require('body-parser');
+const formData = require('express-form-data');
+const { CLIENT_ORIGIN } = require('./routes/config');
 //api Server
 var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
@@ -16,6 +18,7 @@ var imageUpload = require('./routes/imageUploadServer');
 
 const app = express();
 app.use(cors());
+app.use(formData.parse())
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 5000));//heroku port
 

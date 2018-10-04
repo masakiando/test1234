@@ -1,4 +1,5 @@
 require('dotenv').config()
+const cors = require('cors');
 import express from 'express';
 import webpack from 'webpack';
 import path from 'path';
@@ -6,7 +7,6 @@ import config from '../webpack.config.dev';
 import open from 'open';
 import bodyParser from 'body-parser';
 const formData = require('express-form-data');
-const cors = require('cors');
 const { CLIENT_ORIGIN } = require('./routes/config');
 
 //
@@ -23,7 +23,7 @@ const app = express();
 const compiler = webpack(config);
 app.use(cors({
   origin: CLIENT_ORIGIN
-}))
+}));
 app.use(formData.parse())
 app.use(bodyParser.json());
 app.use('/api/startkit', startkit);
