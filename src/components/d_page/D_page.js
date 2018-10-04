@@ -18,29 +18,38 @@ class D_Page extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.removeImage = this.removeImage.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.handleResponse = this.handleResponse.bind(this);
   }
 
   onChange(e) {
     const files = Array.from(e.target.files);
     this.setState({ uploading: true });
-
     const formData = new FormData();
-
     files.forEach((file, i) => {
       formData.append(i, file);
     });
-
-    fetch(`${API_URL}/image-upload`, {
+    fetch(`/api/imageUpload`, {
       method: 'POST',
       body: formData
     })
-    .then(res => res.json())
+    .then( (res) => this.handleResponse(res))
     .then(images => {
+      console.log(images);
       this.setState({
         uploading: false,
-        images
+        images: images
       });
     });
+  }
+
+  handleResponse(res) {
+    if (res.ok) {
+      return res.json();
+    } else {
+      let error = new Error(res.statusText);
+      error.res  = res;
+      throw(error);
+    }
   }
 
   removeImage(id){
@@ -57,7 +66,9 @@ class D_Page extends React.Component {
           case uploading:
             return <Spinner />;
           case images.length > 0:
-            return <Images images={images} removeImage={this.removeImage} />;
+            // return <Images images={images} removeImage={this.removeImage} />;
+            // return <div className="hihi">hihihi</div>;
+            return <img src={images[0].secure_url} alt="" />
           default:
             return <Buttons onChange={this.onChange} />;
         }

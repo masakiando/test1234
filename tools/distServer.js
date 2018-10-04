@@ -1,3 +1,4 @@
+require('dotenv').config()
 var cors = require('cors');
 var express = require('express');
 var path = require('path');
@@ -9,6 +10,8 @@ var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
 var acth = require('./routes/acthServer');
 var buy = require('./routes/buyServer');
+var imageUpload = require('./routes/imageUploadServer');
+
 /*eslint-disable no-console */
 
 const app = express();
@@ -20,6 +23,7 @@ app.use('/api/startkit', startkit);
 app.use('/api/users', users);
 app.use('/api/acth', acth);
 app.use('/api/buy', buy);
+app.use('/api/imageUpload', imageUpload);
 
 app.use(compression());
 app.use(express.static('dist'));
