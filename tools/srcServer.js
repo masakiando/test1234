@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const cors = require('cors');
 import express from 'express';
 import webpack from 'webpack';
@@ -15,6 +15,7 @@ var users = require('./routes/usersServer');
 var acth = require('./routes/acthServer');
 var buy = require('./routes/buyServer');
 var imageUpload = require('./routes/imageUploadServer');
+var categories= require('./routes/categoriesServer');
 
 /* eslint-disable no-console */
 
@@ -24,13 +25,14 @@ const compiler = webpack(config);
 app.use(cors({
   origin: CLIENT_ORIGIN
 }));
-app.use(formData.parse())
+app.use(formData.parse());
 app.use(bodyParser.json());
 app.use('/api/startkit', startkit);
 app.use('/api/users', users);
 app.use('/api/acth', acth);
 app.use('/api/buy', buy);
 app.use('/api/imageUpload', imageUpload);
+app.use('/api/categories', categories);
 
 //指定されたマウントミドルウェア指定されたパスに関数や機能を：要求されたパスのベースが一致したときに、ミドルウェア機能が実行されますpath。
 app.use(require('webpack-dev-middleware')(compiler, {

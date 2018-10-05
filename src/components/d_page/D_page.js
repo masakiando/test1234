@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Notifications, { notify } from 'react-notify-toast';
-import Spinner from './Spinner';
-import Images from './Images';
 import Buttons from './Buttons';
-import { API_URL } from './config';
-import WakeUp from './WakeUp';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import axios from 'axios';
 
 class D_Page extends React.Component {
   constructor(props) {
@@ -17,39 +15,30 @@ class D_Page extends React.Component {
     };
     this.onChange = this.onChange.bind(this);
     this.removeImage = this.removeImage.bind(this);
-    this.onChange = this.onChange.bind(this);
-    this.handleResponse = this.handleResponse.bind(this);
   }
 
   onChange(e) {
     const files = Array.from(e.target.files);
-    this.setState({ uploading: true });
     const formData = new FormData();
+    this.setState({ uploading: true });
+
     files.forEach((file, i) => {
       formData.append(i, file);
     });
-    fetch(`/api/imageUpload`, {
-      method: 'POST',
-      body: formData
-    })
-    .then( (res) => this.handleResponse(res))
-    .then(images => {
-      console.log(images);
-      this.setState({
-        uploading: false,
-        images: images
-      });
-    });
-  }
 
-  handleResponse(res) {
-    if (res.ok) {
-      return res.json();
-    } else {
-      let error = new Error(res.statusText);
-      error.res  = res;
-      throw(error);
-    }
+    axios(`/api/imageUpload`, {
+      method: 'POST',
+      header: {
+        'Context-Types': 'application/x-www-form-urlencoded'
+      },
+      data: formData
+    })
+    .then(res => {
+      console.log(res);
+      const images = res.data;
+      console.log(images);
+    })
+    .catch(err => console.log(err));
   }
 
   removeImage(id){
@@ -58,28 +47,25 @@ class D_Page extends React.Component {
     });
   }
 
-    render() {
+  render() {
       const { uploading, images } = this.state;
-
-      const content = () => {
-        switch(true) {
-          case uploading:
-            return <Spinner />;
-          case images.length > 0:
-            // return <Images images={images} removeImage={this.removeImage} />;
-            // return <div className="hihi">hihihi</div>;
-            return <img src={images[0].secure_url} alt="" />
-          default:
-            return <Buttons onChange={this.onChange} />;
-        }
-      };
 
       return (
         <div className="mycontainer">
           <div className="buttons">
-            {content()}
+            {images.map((image, i) =>
+              <div key={i} className="fadein">
+                <div
+                  onClick={this.removeImage(image.public_id)}
+                  className="delete"
+                >
+                 <FontAwesomeIcon icon={faTimesCircle} size="2x" />
+                </div>
+                <img id="image-pre"src={image.secure_url} alt="" />
+              </div>
+            )}
+            <Buttons onChange={this.onChange} />
           </div>
-
         </div>
       );
     }

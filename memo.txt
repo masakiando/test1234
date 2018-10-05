@@ -58,10 +58,10 @@ monocle -b src/index.js -c src/index.html
 http
 # data insert(post,put)する*.jsonはProjectsRootに置く
 $
-http -v get localhost:3000/api/startkit
+http -v get localhost:3000/api/categories
 $
 http -v get localhost:3000/api/startkit/49
-$
+
 http -v post localhost:3000/api/users < demoreq.json
 $ put
 http -v put localhost:3000/api/startkit/91<demoreq.json
@@ -93,6 +93,3 @@ knex seed:make categories --env test
 knex seed:run --env test
 
 knex migrate:rollback
-
-import Validator from 'validator';
-import isEmpty from 'lodash/isEmpty';
