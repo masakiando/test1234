@@ -28,7 +28,7 @@ app.use('/api/users', users);
 app.use('/api/acth', acth);
 app.use('/api/buy', buy);
 app.use('/api/imageUpload', imageUpload);
-app.use('/api/categories', categories);
+app.use('/categories', categories);
 
 app.use(compression());
 app.use(express.static('dist'));
