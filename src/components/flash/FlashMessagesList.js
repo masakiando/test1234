@@ -21,7 +21,7 @@ class FlashMessagesList extends React.Component {
         deleteFlashMessage={this.props.deleteFlashMessage}
       />
     );
-    debugger;
+    
     return (
       <ReactCSSTransitionGroup
         transitionName = "example"

@@ -88,7 +88,7 @@
 //   const paramsProductId = ownProps.params.id; // from the path get id
 //
 //   let product = {};
-//   debugger;
+//   
 //   if (paramsProductId && products.length > 0) {
 //     product = getProductsById(products, paramsProductId);
 //   }

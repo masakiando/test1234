@@ -5,7 +5,7 @@ import { addFlashMessage } from '../actions/flashMessagesActions';
 export default function(ComposedComponent) {
   class Authenticate extends React.Component {
     componentWillMount() {
-      debugger;
+      
       if (!this.props.isAuthenticated) { //logout状態でWorkshopsPageにアクセスした時
         this.props.addFlashMessage({
           type: 'error',
@@ -19,7 +19,7 @@ export default function(ComposedComponent) {
     // 更新あればnextPropsとし'/'へ返す
     // logoutイベントで'/'へ返す方法も有り。
     componentWillUpdate(nextProps) {
-      debugger;
+      
       if (!nextProps.isAuthenticated) {
         this.context.router.push('/');
       }

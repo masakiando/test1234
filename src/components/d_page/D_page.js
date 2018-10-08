@@ -11,13 +11,16 @@ class D_Page extends React.Component {
     this.state = {
       loading: true,
       uploading: false,
-      images: []
+      images: [
+
+      ]
     };
     this.onChange = this.onChange.bind(this);
     this.removeImage = this.removeImage.bind(this);
   }
 
   onChange(e) {
+    event.preventDefault();
     const files = Array.from(e.target.files);
     const formData = new FormData();
     this.setState({ uploading: true });
@@ -36,7 +39,14 @@ class D_Page extends React.Component {
     .then(res => {
       console.log(res);
       const images = res.data;
-      console.log(images);
+      console.log(images[0].secure_url);
+      var obj1 = {["secure_url"]: images[0].secure_url};
+      var test = []
+      test.push(obj1)
+      console.log(obj1);
+      this.setState({
+        images: test
+      });
     })
     .catch(err => console.log(err));
   }
@@ -48,6 +58,7 @@ class D_Page extends React.Component {
   }
 
   render() {
+      debugger;
       const { uploading, images } = this.state;
 
       return (

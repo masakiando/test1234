@@ -30,7 +30,7 @@ class ManageCoursePage extends React.Component {
   // componentがPropsを受け取る直前に呼ばれる。
   // render()が始まる前に、setStateをしておく。
   componentWillReceiveProps(nextProps) {
-    debugger;
+    
     if (this.props.course.id != nextProps.course.id) {
       // Necessary to populate form when existing course is loaded directly.
       this.setState({
@@ -40,7 +40,7 @@ class ManageCoursePage extends React.Component {
   }
 //
   updateCourseState(event) {
-    debugger;
+    
     const field = event.target.name;
     let course = this.state.course;
     course[field] = event.target.value;
@@ -68,7 +68,7 @@ class ManageCoursePage extends React.Component {
   }
 
   saveCourse(event) {
-    debugger;
+    
     event.preventDefault();
 
     if(!this.CourseFormIsValid()) {
@@ -87,7 +87,7 @@ class ManageCoursePage extends React.Component {
   }
 
   redirect() {
-    debugger;
+    
     this.setState({saving: false});
     toastr.success('Course saved');
     //React classはprops,contextを継承している
@@ -127,9 +127,9 @@ ManageCoursePage.contextTypes = {
 // 配列courseにはObjectが入っていてそのindex0をreturnする。
 // 内容が描画される
 function getCourseById(courses, id) {
-  debugger;
+  
   const course = courses.filter(course => course.id == id);
-  debugger;
+  
   if (course) return course[0];
   return null;
 }
@@ -137,7 +137,7 @@ function getCourseById(courses, id) {
 //stateからPropを作る
 //状態が変わるたびにストアからアプリケーション状態を受け取り、そのデータからそのデータをコンポーネントに利用できるようにしpropsます。
 function mapStateToProps(state, ownProps) {
-  debugger;
+  
   // ownPropsはObjectを多数持っていてその中のparams:Objectを使用する
   const courseId = ownProps.params.id; // from the path `/course/:id`
 

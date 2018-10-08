@@ -1,0 +1,37 @@
+// ************* Redux ******************* //
+
+ManageCoursePage.contextTypes = {
+  router: PropTypes.object
+};
+
+
+// ************* React ******************* //
+
+CCCCCCCCCC.propTypes = {
+  AAAAAAAAAA: PropTypes.array.isRequired
+};
+renderに追加する
+  const {AAAAAAAAAA} = this.props;
+
+CCCCCCCCCC.contextTypes = {
+  router: PropTypes.object
+};
+
+CCCCCCCCCC.defaultProps = {
+  abcde: 'hello'
+};
+// ************* React_Redux ******************* //
+
+function mapStateToProps(state, ownProps) {
+  return {
+    AAAAAAAAAA: state.AAAAAAAAAA
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(BBBBBBBBBB, dispatch)
+  };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(CCCCCCCCCC);

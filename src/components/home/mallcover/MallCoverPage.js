@@ -23,7 +23,7 @@ class MallCover extends React.Component {
     // ３回目のクリックでは条件式を一致させたいのでnewPositonValueの値１５と
     //一致させてlistPositonを０に戻します
     const newPositonValue = currentPositonValue + 5;
-    debugger;
+    
     if( newPositonValue === (malllist_length -2)/2 ) {
       this.setState({
           listPositon: 0

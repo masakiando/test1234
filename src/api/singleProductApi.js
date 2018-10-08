@@ -341,7 +341,7 @@ function getProductsById(productsImg, id) {
 class SingleProductImgApi {
   static getSingleProductImg(id) {
     // console.log(id);
-    debugger;
+    
     return new Promise((resolve, reject) => {
       // 指定された遅延の後に、コードの断片または関数を実行します。
 

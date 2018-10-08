@@ -13,8 +13,10 @@ import authentication from './authenticationReducer';
 import flashMessages from './flashMessagesReducer';
 import cart from './cartReducer';
 import shopIdList from './shopsReducer';
+import g_categories from './g_CategorReducer';
 
 const rootReducer = combineReducers({
+  g_categories: g_categories,
   courses: courses,
   authors: authors,
 

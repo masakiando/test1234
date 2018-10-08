@@ -17,12 +17,7 @@ function get(req, res, next) {
   Category.collection()
   .fetch()
   .then(function(data) {
-    res.status(200).
-    json({
-      data: data,
-      status: 'success',
-      message: 'Retrieved ALL Data'
-    });
+    res.status(200).json(data);
   })
   .catch(function(err) {
     return next(err);

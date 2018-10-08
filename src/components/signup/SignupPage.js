@@ -36,7 +36,7 @@ class SignupPage extends React.Component {
 
   // onBlur 一意生validations
   checkUserExists(event) {
-    // debugger;
+    // 
     // const field = event.target.name;
     // const val = event.target.value;
     // let errors = this.state.errors;
@@ -79,7 +79,7 @@ class SignupPage extends React.Component {
   }
 
   onSignup(event) {
-    debugger;
+    
     event.preventDefault();
     console.log(this.state);
     if(!this.SignupFormIsValid()) { //falseなら処理終了
@@ -99,7 +99,7 @@ class SignupPage extends React.Component {
   }
 
   redirect() {
-    debugger;
+    
     // toastr.success('Signup saved');
     this.props.flashMessagesActions.addFlashMessage({
       type: 'success',

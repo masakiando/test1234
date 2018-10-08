@@ -60,7 +60,7 @@ const generateId = (course) => {
 //こうやって書けばcourses取れる！！
 class CourseApi {
   static getAllCourses() {
-    debugger;
+    
     return new Promise((resolve, reject) => {
       // 指定された遅延の後に、コードの断片または関数を実行します。
       setTimeout(() => {
@@ -70,7 +70,7 @@ class CourseApi {
   }
 
   static saveCourse(course) {
-    debugger;
+    
     // courseを複製します。
     course = Object.assign({}, course); // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
@@ -99,7 +99,7 @@ class CourseApi {
           course.watchHref = `http://www.pluralsight.com/courses/${course.id}`;
           courses.push(course);
         }
-        debugger;
+        
         // 結果を返します。
         resolve(course);
         console.log(course);

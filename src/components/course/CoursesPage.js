@@ -30,14 +30,14 @@ class CoursesPage extends React.Component {
   } //.
 
   deleteCourse(courseId) {
-    debugger;
+    
     this.setState({saving: true});
     this.props.actions.deleteCourse(courseId)
     .then(() => this.redirect(courseId));
   } //. ※ bindを忘れない!
 
   redirect(courseId) {
-    debugger;
+    
     this.setState({saving: false});
     // toastr.success('Course deleted');
     toastr.options = {
@@ -49,7 +49,7 @@ class CoursesPage extends React.Component {
   }
 
   render() {
-    debugger;
+    
     const {courses} = this.props;//1つの時
 
     return (
@@ -84,7 +84,7 @@ CoursesPage.propTypes = {
 // このコンポーネントthis.props.coursesが利用できる。
 //ownPropsでいろいろもらう
 function mapStateToProps(state, ownProps) {
-  debugger;
+  
   return {
     courses: state.courses
     };
@@ -92,7 +92,7 @@ function mapStateToProps(state, ownProps) {
 //connectしてmapDispatchToPropsにMapすればこのComponentの
 //PropsにcreateCourseが登録される。
 function mapDispatchToProps(dispatch) {
-  debugger;
+  
   return {
     // createCourse: (course) => dispatch(courseActions.createCourse(course))
     // All ctionsにオートdispatchしてくれる。

@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux'; // Component(React)とReduxの接続
 import ProdcutForm from './ProdcutForm';
 
 class AddProdcut extends React.Component {
@@ -23,6 +24,7 @@ class AddProdcut extends React.Component {
   }
 
   render() {
+    const {g_categories} = this.props;
     return (
       <ProdcutForm
         product={this.state.product}
@@ -34,4 +36,16 @@ class AddProdcut extends React.Component {
   }
 }
 
-export default AddProdcut;
+AddProdcut.propTypes = {
+  g_categories: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  debugger;
+  return {
+    g_categories: state.g_categories
+  };
+}
+
+
+export default connect(mapStateToProps, null)(AddProdcut);

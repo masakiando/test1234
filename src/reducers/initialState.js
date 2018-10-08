@@ -8,6 +8,7 @@ export default {
   },
   hotwords: [],
   categories: [],
+  g_categories: [],
   products: [],
   saleproducts: [],
   popularproducts: [],

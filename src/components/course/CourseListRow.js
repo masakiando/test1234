@@ -7,7 +7,7 @@ const CourseListRow = ({
   saving
 }) => {
     const handleClick = (event) => {
-      debugger;
+      
       event.preventDefault();
       onDelete(course.id);
     };

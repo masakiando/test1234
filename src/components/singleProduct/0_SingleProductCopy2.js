@@ -28,7 +28,7 @@ componentDidMount() {
   this.props.actions.loadSingleProductImege(this.props.Id);
 }
   componentWillReceiveProps(nextProps) {
-    debugger;
+    
     if (this.props.product.id != nextProps.product.id) {
       // this.props.actions.loadSingleProductImege(nextProps.product.id);
       this.setState({
@@ -45,9 +45,9 @@ componentDidMount() {
   }
 /* このイベントでクリックされたvalueを取得してactiveを切り替える */
   imgChange(event) {
-    debugger;
+    
     const nextValue = event.target.value;
-    debugger;
+    
     if(nextValue === 0) this.setState({
       active: nextValue,
       img0: true, img1:false, img2:false, img3:false,img4: false,

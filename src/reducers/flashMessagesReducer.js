@@ -28,7 +28,7 @@ export default function flashMessagesReducer(
 
       //Array.prototype.slice()
       case types.DELETE_FLASH_MESSAGE:
-      debugger;
+      
       if (index >= 0) {
         return [
           ...state.slice(0, index),

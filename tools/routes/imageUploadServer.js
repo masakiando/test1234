@@ -15,13 +15,13 @@ cloudinary.config({
 
 router.post('/', (req, res) => {
 
-    const values = Object.values(req.files)
-    const promises = values.map(image => cloudinary.uploader.upload(image.path))
+    const values = Object.values(req.files);
+    const promises = values.map(image => cloudinary.uploader.upload(image.path));
 
     Promise
       .all(promises)
       .then(results => res.json(results))
-      .catch((err) => res.status(400).json(err))
-  })
+      .catch((err) => res.status(400).json(err));
+  });
 
 module.exports = router;

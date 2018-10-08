@@ -1,7 +1,7 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
-export default  function hotwordReducer(state = initialState.hotwords, action) {
+export default  function categorReducer(state = initialState.hotwords, action) {
   switch (action.type) {
 
     case types.LOAD_CATEGORIES_SUCCESS:

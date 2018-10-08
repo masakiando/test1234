@@ -3,7 +3,6 @@ import courseApi from '../api/mockCourseApi';
 import {beginAjaxCall, endAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 export function loadCoursesSuccess(courses) {
-  debugger;
   return { type: types.LOAD_COURSES_SUCCESS, courses};
 }
 
@@ -16,12 +15,10 @@ export function updateCourseSuccess(course) {
 }
 
 export function deleteCourseSuccess(courseId) {
-  debugger;
   return {type: types.DELETE_COURSE_SUCCESS, courseId};
 }
 
 export function loadCourses() {
-  debugger;
   return function(dispatch) {
     dispatch(beginAjaxCall());
     return courseApi.getAllCourses()
@@ -36,7 +33,6 @@ export function loadCourses() {
 }
 
 export function saveCourse(course) {
-  debugger;
   return function (dispatch, getState) {
     dispatch(beginAjaxCall());
     return courseApi.saveCourse(course)
@@ -54,7 +50,7 @@ export function saveCourse(course) {
 }
 
 export function deleteCourse(courseId) {
-  debugger;
+  
   return function (dispatch, getState) {
     dispatch(beginAjaxCall());
     return courseApi.deleteCourse(courseId)

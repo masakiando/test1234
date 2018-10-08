@@ -1,16 +1,16 @@
 import * as types from './actionTypes';
-import CategorApi from '../api/mockCategorApi';
+import axios from 'axios';
 
 export function loadCategoriesSuccess(categories) {
-
-  return { type: types.LOAD_CATEGORIES_SUCCESS, categories};
+  return { type: types.LOAD_G_CATEGORIES_SUCCESS, categories };
 }
 
-export function Categories() {
+export function loadCategories() {
   return function(dispatch) {
-    return CategorApi.getAllCategories()
-    .then(Categories => {
-      dispatch(loadCategoriesSuccess(Categories));
+    return axios.get('/categories')
+    .then(res => {
+      const categories = res.data;
+      dispatch(loadCategoriesSuccess(categories));
     }).catch(error => {
       throw(error);
     });
