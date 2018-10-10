@@ -6,13 +6,14 @@ import App from './components/App';
 import Home from './components/home/index';
 import CoursesPage from './components/course/CoursesPage';
 import ManageCoursePage from './components/course/ManageCoursePage';
-
+import ManageProductPage from './components/productRegistration/ManageProductPage';
 import SingleProduct from './components/singleProduct/ManageSingleProductPage';
 
 import A_Page from './components/a_page/A_page';
-import D_Page from './components/d_page/D_page';
+import imageUpload from './components/imageUpload/ManageimageUploadPage';
 import E_Page from './components/e_page/E_page';
-import AddProdcut from './components/addProdcut/index';
+import DevHome from './components/dev/DevHome';
+
 import ToolTip from './components/c_page/ToolTip';
 import Error404 from './components/errors/Error404Page.js';
 import SignupPage from './components/signup/SignupPage';
@@ -35,9 +36,9 @@ export default (
     <Route path="/singleproduct/:id" component={SingleProduct} />
 
     <Route path="/a" component={A_Page} />
-    <Route path="/b" component={AddProdcut} />
+    <Route path="/ManageProductPage" component={ManageProductPage} />
     <Route path="/c" component={ToolTip} />
-    <Route path="/d" component={D_Page} />
+    <Route path="/d" component={imageUpload} />
     <Route path="/e" component={E_Page} />
 
     <Route path="/SignupPage" component={SignupPage} />
@@ -46,6 +47,7 @@ export default (
     <Route path="/ManageCartPage" component={ManageCartPage} />
 
     <Route path="BuyPage" component={requireAuth(BuyPage)} />
+    <Route path="/dev" component={DevHome} />
 
     <Route path="/*" component={Error404} />
   </Route>

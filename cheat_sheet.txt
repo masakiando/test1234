@@ -1,37 +1,121 @@
-// ************* Redux ******************* //
+//配列から繰り返しハッシュオブジェクトを取り出し、あるA値とあるB値と値が一致した時ハッシュオブジェクトを返す
+// 参考:src/components/productRegistration/Dropdown.js
+get_array_hash() {
+  return this.props.categories.map( (item, index) => {
+    if( item.parent_id === this.state.category_list1 ) {
+      return  (
+        <div>
+          {item.category_name} <i className="fas fa-angle-right"></i>
+        </div>
+      )
+    }
+  });
+}
+// ************* React Redux Class Component ******************* //
+import React, {PropTypes} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as courseActions from '../../actions/courseActions';
+import toastr from 'toastr';
 
-ManageCoursePage.contextTypes = {
+class ComponentName extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      key: 'value'
+    };
+  this.updateState = this.updateState.bind(this);
+  this.saveCourse = this.saveCourse.bind(this);
+  }
+  //
+  updateState(event) {
+    console.log(event);
+    // const field = event.target.name;
+    // let course = this.state.course;
+    // course[field] = event.target.value;
+    // return this.setState({course: course});
+  }
+
+  saveCourse(event) {
+    console.log(event);
+    // event.preventDefault();
+    // if(!this.CourseFormIsValid()) {
+    //   return;
+    // }
+    // this.setState({saving: true});
+    // this.props.actions.saveCourse(this.state.course)
+    //   .then(() => this.redirect())
+    //   .catch(error => {
+    //     toastr.error(error);
+    //     this.setState({saving: false});
+    //   });
+  }
+
+  // CourseFormIsValid() {
+  //   let formIsValid = true;
+  //   let errors = {};
+  //
+  //   if (this.state.course.title.length < 5 ) {
+  //     errors.title = 'Title must be at least 5 characters.';
+  //     formIsValid = false;
+  //   }
+  //   this.setState({errors: errors});
+  //   return formIsValid;// FormIsValid errorsない時はtrueを返す// FormIsValid errorsある時はfalseを返す
+  // }
+
+  // redirect() {
+  //   this.setState({saving: false});
+  //   toastr.success('Course saved');
+  //   this.context.router.push('/courses');
+  // }
+
+  render() {
+    return (
+      <div>
+      </div>
+    );
+  }
+}
+
+ComponentName.propTypes = {
+  propName  : PropTypes.型
+};
+
+ComponentName.contextTypes = {
   router: PropTypes.object
 };
 
-
-// ************* React ******************* //
-
-CCCCCCCCCC.propTypes = {
-  AAAAAAAAAA: PropTypes.array.isRequired
+ComponentName.defaultProps = {
+  key: 'value'
 };
-renderに追加する
-  const {AAAAAAAAAA} = this.props;
-
-CCCCCCCCCC.contextTypes = {
-  router: PropTypes.object
-};
-
-CCCCCCCCCC.defaultProps = {
-  abcde: 'hello'
-};
-// ************* React_Redux ******************* //
 
 function mapStateToProps(state, ownProps) {
   return {
-    AAAAAAAAAA: state.AAAAAAAAAA
+    propName: state.storeStateName
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(BBBBBBBBBB, dispatch)
+    actions: bindActionCreators(actionFileName, dispatch)
   };
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(CCCCCCCCCC);
+export default connect(mapStateToProps,mapDispatchToProps)(ComponentName);
+
+// ************* React State レス Component ******************* //
+import React, {PropTypes} from 'react';
+
+const ComponentName = (
+//  {            }
+ ) => {
+  return (
+   <div></div>
+  );
+};
+
+//ComponentName.propTypes = {
+//  propName  : PropTypes.型
+//};
+
+export default ComponentName;

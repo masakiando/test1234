@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class E_page extends React.Component {
   constructor(props) {
      super(props);
      this.state = {file: '',imagePreviewUrl: ''};
+     this._handleSubmit = this._handleSubmit.bind(this);
+     this._handleImageChange = this._handleImageChange.bind(this);
    }
 
    _handleSubmit(e) {
@@ -23,9 +25,9 @@ class E_page extends React.Component {
          file: file,
          imagePreviewUrl: reader.result
        });
-     }
+     };
 
-     reader.readAsDataURL(file)
+     reader.readAsDataURL(file);
    }
 
    render() {
@@ -39,19 +41,19 @@ class E_page extends React.Component {
 
      return (
        <div className="previewComponent">
-         <form onSubmit={(e)=>this._handleSubmit(e)}>
+         <form onSubmit={this._handleSubmit}>
            <input className="fileInput"
              type="file"
-             onChange={(e)=>this._handleImageChange(e)} />
+             onChange={this._handleImageChange} />
            <button className="submitButton"
              type="submit"
-             onClick={(e)=>this._handleSubmit(e)}>Upload Image</button>
+             onClick={this._handleSubmit}>Upload Image</button>
          </form>
          <div className="imgPreview">
            {$imagePreview}
          </div>
        </div>
-     )
+     );
    }
  }
 

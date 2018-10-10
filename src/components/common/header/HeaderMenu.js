@@ -24,10 +24,11 @@ class HeaderMenu extends React.Component {
           <Nav role="navigation">
              <Ul>
                 <Li><Link to="/a">チャネル販売者</Link></Li>
-                <Li><Link to="/b">アプリケーションのダウンロード</Link></Li>
+                <Li><Link to="/ManageProductPage">アプリケーションのダウンロード</Link></Li>
                 <Li><Link to="/c">接続</Link></Li>
              </Ul>
              <Ul>
+              <Li><Link to="/dev">開発</Link></Li>
               <Li><Link to="/courses">test</Link></Li>
               <Li><Link to="/d">通知</Link></Li>
               <Li><Link to="/e">ヘルプ</Link></Li>

@@ -39,8 +39,8 @@ CREATE DATABASE 任意DB名;　テーブル名作成
 CREATE DATABASE　の　メッセージが出たらOK
 \l
 \c DB名
-\c test1234demotest
-\c test1234demodev
+\c test1234demotest;
+\c test1234demodev;
 \d
 \d 「テーブル名」
 SELECT * FROM
@@ -101,4 +101,6 @@ knex seed:make categories --env production
 knex seed:run --env production
 production
 
-knex migrate:rollback
+knex migrate:rollback --env development
+knex migrate:latest --env development
+knex seed:run --env development

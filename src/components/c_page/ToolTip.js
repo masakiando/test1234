@@ -28,7 +28,7 @@ const C_Page = () => {
 
       <Dvi>
         <DviItem>
-          <Card interactive={true} elevation={Elevation.TWO}>
+          <Card interactive elevation={Elevation.TWO}>
               <h5><a href="#">Card heading</a></h5>
               <p>Card content</p>
               <Button>Submit</Button>
@@ -36,21 +36,21 @@ const C_Page = () => {
         </DviItem>
         <DviItem>
           <Card
-            interactive={true} elevation={Elevation.TWO}>
+            interactive elevation={Elevation.TWO}>
               <h5><a href="#">Card heading</a></h5>
               <p>Card content</p>
               <Button>Submit</Button>
           </Card>
         </DviItem>
         <DviItem>
-          <Card interactive={true} elevation={Elevation.TWO}>
+          <Card interactive elevation={Elevation.TWO}>
               <h5><a href="#">Card heading</a></h5>
               <p>Card content</p>
               <Button>Submit</Button>
           </Card>
         </DviItem>
         <DviItem>
-          <Card interactive={true} elevation={Elevation.TWO}>
+          <Card interactive elevation={Elevation.TWO}>
               <h5><a href="#">Card heading</a></h5>
               <p>Card content</p>
               <Button>Submit</Button>

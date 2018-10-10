@@ -4,7 +4,8 @@ import {bindActionCreators} from 'redux';
 import SignupForm from './SignupForm';
 import * as signupActions from '../../actions/signupActions';
 import * as flashMessagesActions from '../../actions/flashMessagesActions';
-import commonValidations from '../../../tools/shared/validations/signupValidator';
+// import commonValidations from '../../../tools/shared/validations/signupValidator';
+var commonValidations = require('../../../tools/shared/validations/signupValidator');
 import toastr from 'toastr';
 
 class SignupPage extends React.Component {
@@ -36,7 +37,7 @@ class SignupPage extends React.Component {
 
   // onBlur 一意生validations
   checkUserExists(event) {
-    // 
+    //
     // const field = event.target.name;
     // const val = event.target.value;
     // let errors = this.state.errors;
@@ -79,7 +80,7 @@ class SignupPage extends React.Component {
   }
 
   onSignup(event) {
-    
+
     event.preventDefault();
     console.log(this.state);
     if(!this.SignupFormIsValid()) { //falseなら処理終了
@@ -99,7 +100,7 @@ class SignupPage extends React.Component {
   }
 
   redirect() {
-    
+
     // toastr.success('Signup saved');
     this.props.flashMessagesActions.addFlashMessage({
       type: 'success',
