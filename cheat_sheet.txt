@@ -119,3 +119,7 @@ const ComponentName = (
 //};
 
 export default ComponentName;
+style={
+    backgroundColor: grey
+  }
+}

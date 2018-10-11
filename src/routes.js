@@ -12,7 +12,6 @@ import SingleProduct from './components/singleProduct/ManageSingleProductPage';
 import A_Page from './components/a_page/A_page';
 import imageUpload from './components/imageUpload/ManageimageUploadPage';
 import E_Page from './components/e_page/E_page';
-import DevHome from './components/dev/DevHome';
 
 import ToolTip from './components/c_page/ToolTip';
 import Error404 from './components/errors/Error404Page.js';
@@ -24,6 +23,10 @@ import BuyPage from './components/buy/BuyPage';
 import ManageCartPage from './components/cart/ManageCartPage.js';
 
 import requireAuth from './utils/requireAuth';
+
+import DevHome from './components/dev/DevHome';
+import BootstrapGrid from './components/dev/BootstrapGrid';
+
 
 export default (
   <Route path="/" component={App}>
@@ -47,7 +50,9 @@ export default (
     <Route path="/ManageCartPage" component={ManageCartPage} />
 
     <Route path="BuyPage" component={requireAuth(BuyPage)} />
+
     <Route path="/dev" component={DevHome} />
+    <Route path="/BootstrapGrid" component={BootstrapGrid} />
 
     <Route path="/*" component={Error404} />
   </Route>

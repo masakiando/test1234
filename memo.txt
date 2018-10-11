@@ -79,18 +79,15 @@ curl -X PUT --data "name=Whisky&breed=annoying&age=3&sex=f" \http://127.0.0.1:30
 curl -X DELETE http://127.0.0.1:3000/api/startkit
 //
 // ***** migrate *****//
-生成
-knex migrate:make categories
-実行
+マイグれファイル　1生成 ⏩ 2実行　⏩　シードファイル　3生成　⏩ 4実行
+knex migrate:make connect_categories_and_attribute_keys
 knex migrate:latest --env development
+knex seed:make connect_categories_and_attribute_keys --env development
+knex seed:run --env development
+
 実行
 knex migrate:latest --env test
 
-// ***** シード *****//
-開発シード生成
-knex seed:make categories --env development
-開発シード実行
-knex seed:run --env development
 テストシード生成
 knex seed:make categories --env test
 テストシード実行
