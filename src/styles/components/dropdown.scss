@@ -25,10 +25,10 @@
 
 .dropdown {
 	box-shadow: 0 4px 10px rgba(#7C4DFF, .2);
-	margin: 50px auto;
+	// margin: 50px auto;
 	outline: none;
 	transition: box-shadow .1s linear;
-	width: 800px;
+	// width: 800px;
 
 	&.active {
 		box-shadow: 0 10px 30px rgba(#7C4DFF, .2);

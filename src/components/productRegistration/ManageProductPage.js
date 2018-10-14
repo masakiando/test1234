@@ -2,17 +2,15 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux'; // Component(React)とReduxの接続
 import ProdcutForm from './ProdcutForm';
 
-class AddProdcut extends React.Component {
+class ManageProductPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: {
-        product_name: '',
-        product_discrption: '',
-        category: ''
-      },
+      product: Object.assign({}, this.props.product),
       errors: {},
-      saving: false
+      saving: false,
+      myState1 : 'hihi',
+      myState2 : 'hih'
     };
     this.updateProductState = this.updateProductState.bind(this);
   }
@@ -21,6 +19,10 @@ class AddProdcut extends React.Component {
     let product = this.state.product;
     product[field] = event.target.value;
     return this.setState({product: product});
+  }
+
+  updateState(state){
+    this.setState(state);
   }
 
   render() {
@@ -32,21 +34,38 @@ class AddProdcut extends React.Component {
         saving={this.state.saving}
         onChange={this.updateProductState}
         categories={g_categories}
+        updateState={this.updateState.bind(this)}
       />
     );
   }
 }
 
-AddProdcut.propTypes = {
+ManageProductPage.propTypes = {
+  product: PropTypes.object.isRequired,
   g_categories: PropTypes.array.isRequired
 };
 
+function getProductById(products, id) {
+  const product = products.filter(product => product.id == id);
+  if (product) return product[0];
+  return null;
+}
+
 function mapStateToProps(state, ownProps) {
-  debugger;
+  const productId = ownProps.params.id;
+  let product = {
+                  product_name: '',
+                  product_discrption: '',
+                  category: '',
+                  price: 0
+              };
+  if( productId && state.product.length > 0 ) {
+    product = getProductById(state.product, productId);
+  }
   return {
+    product: product,
     g_categories: state.g_categories
   };
 }
 
-
-export default connect(mapStateToProps, null)(AddProdcut);
+export default connect(mapStateToProps, null)(ManageProductPage);

@@ -1,0 +1,40 @@
+.test_wrapper_001 {
+  margin: 10px 40px;
+  width: 93.8%;
+}
+
+.grid_basicinfo {
+  display: grid;
+  grid-template-rows: 50px 270px;//tate
+  grid-template-columns: 100px 1100px;//yoko
+  grid-template-areas:
+      "areaA areaA"
+      "areaB areaC";
+}
+
+.grid_basicinfo_title {
+  grid-area: areaA;
+}
+
+.grid_basicinfo_input {
+  grid-area: areaC;
+  width: 70%;
+}
+
+.gird_price_and_warehouse {
+  display: grid;
+  grid-template-rows: 50px 270px;//tate
+  grid-template-columns: 100px 1100px;//yoko
+  grid-template-areas:
+      "areaA areaA"
+      "areaB areaC";
+}
+
+.grid_price_and_warehouse {
+  grid-area: areaA;
+}
+
+.grid_price_and_warehouse_input {
+  grid-area: areaC;
+  width: 70%;
+}

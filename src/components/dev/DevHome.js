@@ -10,7 +10,7 @@ const DevHome = () => {
       <Dvi>
         <DviItem>
           <Card interactive elevation={Elevation.TWO}>
-              <h5><Link to="/bootstrapGrid">bootstrapGrid</Link></h5>
+              <h5><Link to="/Test_Grid">Test_Grid</Link></h5>
               <p>Card content</p>
               <Button>Submit</Button>
           </Card>

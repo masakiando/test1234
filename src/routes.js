@@ -25,7 +25,7 @@ import ManageCartPage from './components/cart/ManageCartPage.js';
 import requireAuth from './utils/requireAuth';
 
 import DevHome from './components/dev/DevHome';
-import BootstrapGrid from './components/dev/BootstrapGrid';
+import Test_Grid from './components/dev/Test_Grid';
 
 
 export default (
@@ -52,7 +52,7 @@ export default (
     <Route path="BuyPage" component={requireAuth(BuyPage)} />
 
     <Route path="/dev" component={DevHome} />
-    <Route path="/BootstrapGrid" component={BootstrapGrid} />
+    <Route path="/Test_Grid" component={Test_Grid} />
 
     <Route path="/*" component={Error404} />
   </Route>
