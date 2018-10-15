@@ -3,14 +3,16 @@ import styled from 'styled-components';
 import TextInput from '../common/TextInput.js';
 import Textarea from '../common/Textarea.js';
 import CategoryDropdown from './CategoryDropdown';
+import Dropdown from './Dropdown';
 
 class ProdcutForm extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
 			expanded: false,
-      myState1 : 'hihi',
-      myState2 : 'hihi'
+      attributeOptions: [],
+      attributeOptions2: [],
+      attributeOptionsOpen: false
 		};
     this.handleTriggerClick = this.handleTriggerClick.bind(this);
     this.collapse = this.collapse.bind(this);
@@ -28,6 +30,22 @@ class ProdcutForm extends React.Component {
         expanded: !this.state.expanded
       });
     }
+  }
+
+  attributeOptions2() {
+    return this.state.attributeOptions.map( (item, index) => {
+        return (
+          <Dropdown
+           key={item.attribute_key_id}
+           name={item.attribute_key_name}
+           label={item.attribute_key_name}
+           categories={this.props.categories}
+           options={this.state.attributeOptions2}
+           product={this.props.product}
+           updateState={this.updateState}
+          />
+                  );
+    });
   }
 
   collapse() {
@@ -78,6 +96,17 @@ class ProdcutForm extends React.Component {
              </div>
           </div>
           </div>
+          {this.state.attributeOptionsOpen &&
+            <div className="gird_price_and_warehouse">
+              <div className="grid_price_and_warehouse"><h2>属性オプション</h2></div>
+              <div className="grid_price_and_warehouse_input">
+                <div>
+                  <div>{this.attributeOptions2()}</div>
+                </div>
+              </div>
+            </div>
+          }
+
           <div className="gird_price_and_warehouse">
             <div className="grid_price_and_warehouse"><h2>価格と倉庫</h2></div>
             <div className="grid_price_and_warehouse_input">
@@ -88,6 +117,7 @@ class ProdcutForm extends React.Component {
               <div>hello</div>
             </div>
           </div>
+
       </form>
     </div>
     );

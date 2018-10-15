@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import axios from 'axios';
 
 class CategoryDropdown extends React.Component {
 	constructor(props) {
@@ -13,14 +14,8 @@ class CategoryDropdown extends React.Component {
       active: 0,
       active2: 0,
       active3: 0,
-      category_list1: 0,
-      category_list2: 0,
-      product: {
-        category: 'test',
-        id: 0
-      },
-      myState1 : 'まいすてーとdfdsad1',
-      myState2 : 'まいすてfdsafsdafーと2'
+      categoryList1_id: 0,
+      categoryList2_id: 0
 		};
 
     this.handleItemClick = this.handleItemClick.bind(this);
@@ -30,16 +25,29 @@ class CategoryDropdown extends React.Component {
     this.collapse = this.collapse.bind(this);
 	}
 
-  // componentWillMount() {
-  //   this.props.updateState(this.state);
-  // }
-
 	collapse() {
 		this.setState({
       expanded: false,
       expanded2: false,
       expanded3: false
     });
+    debugger;
+    if(this.state.categoryList2_id > 0) {
+      axios(`/api/attribute/${this.state.categoryList2_id}`)
+        .then(res => {
+          // res.status(200).json(results);
+          const attributeOptions = res.data.results1;
+          const attributeOptions2 = res.data.results2;
+          console.log(attributeOptions2);
+          debugger;
+
+          this.props.updateState({
+            attributeOptions: attributeOptions,
+            attributeOptions2: attributeOptions2,
+            attributeOptionsOpen: true
+          });
+        });
+    }
 	}
 
 
@@ -49,27 +57,23 @@ class CategoryDropdown extends React.Component {
     let itemIndex = event.target.value;
     let tableId = parseInt(event.target.id, 10);
     const newState = {
-      product:{
-        category: text,
-        id: tableId
-      },
       value1: text,
       active: itemIndex,
-      category_list1: tableId,
+      categoryList1_id: tableId,
 			expanded2: true,
       expanded3: false,
       value2: '', active2: 0,
       value3: '', active3: 0
-		}
+		};
 
 		this.setState(newState);
     debugger;
-    // this.props.updateState({
-    //   product:{
-    //     category: text,
-    //     id: tableId
-    //   }
-    // });
+    this.props.updateState({
+      product:{
+        categoryList1_name: text,
+        categoryList1_id: tableId
+      }
+    });
 	}
 
   handleItemClick_2(event) {
@@ -83,7 +87,7 @@ class CategoryDropdown extends React.Component {
       expanded3: true,
       value3: '',
       active3: 0,
-      category_list2: tableId
+      categoryList2_id: tableId
     });
   }
 
@@ -154,7 +158,7 @@ class CategoryDropdown extends React.Component {
 
   itemList_2() {
     return this.props.categories.map( (item, index) => {
-      if( item.parent_id === this.state.category_list1 ) {
+      if( item.parent_id === this.state.categoryList1_id ) {
         return  (
           <div
             key={index}
@@ -171,7 +175,7 @@ class CategoryDropdown extends React.Component {
   itemList_3() {
     debugger;
     return this.props.categories.map( (item, index) => {
-      if( item.parent_id === this.state.category_list2 ) {
+      if( item.parent_id === this.state.categoryList2_id ) {
         return  (
           <div
             key={index}
@@ -188,6 +192,7 @@ class CategoryDropdown extends React.Component {
 	render() {
 		return (
 			<div className={`dropdown ${this.state.expanded ? 'active' : ''}`}
+        style={{zIndex: 10000000}}
 				tabIndex="0"
 				onBlur={this.collapse}>
 				<div className="trigger"
@@ -195,7 +200,7 @@ class CategoryDropdown extends React.Component {
                borderWidth: '1px 1px 0px 1px',
                borderColor: '#00bfa5',
                borderStyle: 'solid'
-               } : {border: '1px solid #ff5722'}
+             } : {border: '1px solid #ff5722'}
              }
              onClick={this.handleTriggerClick}>
           <div className="trigger__inner">

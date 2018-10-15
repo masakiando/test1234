@@ -14,6 +14,7 @@ var acth = require('./routes/acthServer');
 var buy = require('./routes/buyServer');
 var imageUpload = require('./routes/imageUploadServer');
 var categories= require('./routes/categoriesServer');
+var attribute= require('./routes/attributeServer');
 
 /*eslint-disable no-console */
 
@@ -29,7 +30,7 @@ app.use('/api/acth', acth);
 app.use('/api/buy', buy);
 app.use('/api/imageUpload', imageUpload);
 app.use('/categories', categories);
-
+app.use('/api/attribute', attribute);
 app.use(compression());
 app.use(express.static('dist'));
 

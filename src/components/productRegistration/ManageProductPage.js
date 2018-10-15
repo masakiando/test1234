@@ -9,8 +9,7 @@ class ManageProductPage extends React.Component {
       product: Object.assign({}, this.props.product),
       errors: {},
       saving: false,
-      myState1 : 'hihi',
-      myState2 : 'hih'
+      attributeOptions: []
     };
     this.updateProductState = this.updateProductState.bind(this);
   }
@@ -56,7 +55,13 @@ function mapStateToProps(state, ownProps) {
   let product = {
                   product_name: '',
                   product_discrption: '',
-                  category: '',
+                  categoryList1_name: '',
+                  categoryList1_id: '',
+                  categoryList2_name: '',
+                  categoryList2_id: '',
+                  categoryList3_naem: '',
+                  categoryList3_id: '',
+                  attribute_key_name: '',
                   price: 0
               };
   if( productId && state.product.length > 0 ) {

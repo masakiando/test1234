@@ -16,6 +16,7 @@ var acth = require('./routes/acthServer');
 var buy = require('./routes/buyServer');
 var imageUpload = require('./routes/imageUploadServer');
 var categories= require('./routes/categoriesServer');
+var attribute= require('./routes/attributeServer');
 
 /* eslint-disable no-console */
 
@@ -33,6 +34,7 @@ app.use('/api/acth', acth);
 app.use('/api/buy', buy);
 app.use('/api/imageUpload', imageUpload);
 app.use('/categories', categories);
+app.use('/api/attribute', attribute);
 
 //指定されたマウントミドルウェア指定されたパスに関数や機能を：要求されたパスのベースが一致したときに、ミドルウェア機能が実行されますpath。
 app.use(require('webpack-dev-middleware')(compiler, {

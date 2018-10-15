@@ -64,7 +64,7 @@ http
 $
 http -v get localhost:3000/api/categories
 $
-http -v get localhost:3000/api/startkit/49
+http -v get localhost:3000/api/attribute/26
 
 http -v post localhost:3000/api/users < demoreq.json
 $ put
