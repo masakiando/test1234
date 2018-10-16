@@ -6,7 +6,8 @@ const TextInput = ({
   placeholder,
   value,
   onChange,
-  error
+  error,
+  type
 }) => {
 
   let wrapperClass = 'form-group';
@@ -24,11 +25,14 @@ const TextInput = ({
           value={value}
           onChange={onChange}
           className="form-control"
-          type="text"/>
+          type={type}/>
         {error && <div className="alert alert-danger">{error}</div>}
       </div>
     </div>
   );
+};
+TextInput.defaultProps = {
+  type: 'text'
 };
 
 TextInput.propTypes = {
@@ -37,7 +41,8 @@ TextInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
-  error: PropTypes.string
+  error: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'number', 'password'])
 };
 
 export default TextInput;

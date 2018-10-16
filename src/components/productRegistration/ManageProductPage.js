@@ -55,14 +55,16 @@ function mapStateToProps(state, ownProps) {
   let product = {
                   product_name: '',
                   product_discrption: '',
+                  product_price: 0,
+                  product_stock: 0,
+                  classificationGroup_name: '',
                   categoryList1_name: '',
                   categoryList1_id: '',
                   categoryList2_name: '',
                   categoryList2_id: '',
                   categoryList3_naem: '',
                   categoryList3_id: '',
-                  attribute_key_name: '',
-                  price: 0
+                  attribute_key_name: ''
               };
   if( productId && state.product.length > 0 ) {
     product = getProductById(state.product, productId);

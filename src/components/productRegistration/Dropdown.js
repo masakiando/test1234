@@ -6,7 +6,7 @@ class attributeValueDropdown extends React.Component {
 		super(props);
 		this.state = {
 			expanded: false,
-			value1: '属性値を選択してください',
+			value1: '選択してください',
       active: 0,
       categoryList1_id: 0
 		};
@@ -30,7 +30,8 @@ class attributeValueDropdown extends React.Component {
     const newState = {
       value1: text,
       active: itemIndex,
-      categoryList1_id: tableId
+      categoryList1_id: tableId,
+			expanded: false
 		};
 		this.setState(newState);
 	}
