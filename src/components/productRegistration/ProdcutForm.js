@@ -44,6 +44,7 @@ class ProdcutForm extends React.Component {
     return this.state.attributeOptions.map( (item, index) => {
         return (
           <Dropdown
+           className={`gird_dropdown_${index+1}`}
            key={item.attribute_key_id}
            name={item.attribute_key_name}
            label={item.attribute_key_name}
@@ -211,19 +212,15 @@ class ProdcutForm extends React.Component {
           </div>
           </div>
           {this.state.attributeOptionsOpen &&
-            <div className="gird_price_and_warehouse">
-              <div className="grid_price_and_warehouse"><h2>属性オプション</h2></div>
-              <div className="grid_price_and_warehouse_input">
-                <div>
-                  <div>{this.attributeOptions2()}</div>
-                </div>
-              </div>
+            <div className="">
+              <h2>属性オプション</h2>
+              <div>{this.attributeOptions2()}</div>
             </div>
           }
 
-          <div className="gird_price_and_warehouse">
-            <div className="grid_price_and_warehouse"><h2>価格と倉庫</h2></div>
-            <div className="grid_price_and_warehouse_input">
+          <div className="">
+            <div className=""><h2>価格と倉庫</h2></div>
+            <div className="">
               <div>
                 <div>
                   <TextInput

@@ -23,7 +23,7 @@
 
 .gird_price_and_warehouse {
   display: grid;
-  grid-template-rows: 50px 1000px;//tate
+  grid-template-rows: 50px 250px;//tate
   grid-template-columns: 100px 1100px;//yoko
   grid-template-areas:
       "areaA areaA"
@@ -42,6 +42,7 @@
 .testTd {
   height: 50px;
   padding: 0px;
+  color: blue;
 
   input {
     outline: 0;

@@ -1,0 +1,12 @@
+.evenly_side_by_side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    padding: 1em;
+  }
+  a {
+  color: rgba(0,0,0,.8);
+  }
+}

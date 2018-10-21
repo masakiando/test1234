@@ -216,7 +216,7 @@ class CategoryDropdown extends React.Component {
             </span>
           </div>
 				</div>
-        {this.state.expanded && <div className="boundary"><i className="fas fa-list"></i><spna>ALL SECTORS</spna></div>}
+        {this.state.expanded && <div className="category_boundary"><i className="fas fa-list"></i><spna>ALL SECTORS</spna></div>}
         <div className="contents"
             style={this.state.expanded ? {
               borderWidth: '0px 1px 1px 1px',

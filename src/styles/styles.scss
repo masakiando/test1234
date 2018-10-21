@@ -4,6 +4,9 @@
  @import './base/setting';
  @import './base/base';
  @import './base/basesite';
+ @import './debug';
+ @import './helper';
+ @import './grid';
  ///////////////////////////////////
  // components pages
  ///////////////////////////////////
@@ -12,6 +15,8 @@
  @import './components/hot-word.scss';
  @import './components/test_grid.scss';
  @import './components/prodcut_form.scss';
+ @import './components/user.scss';
+ @import './components/Bulma.scss';
  ///////////////////////////////////
  // components module
  ///////////////////////////////////
@@ -19,6 +24,7 @@
  @import './components/site-navbar';
  @import './components/bounce';
  @import './components/dropdown';
+ @import './components/Navigation';
   ///////////////////////////////////
  // libs module
  ///////////////////////////////////

@@ -1,0 +1,54 @@
+debug.css起動
+プロトタイプワーヤーフレーム見て使用する要素決める
+bulma.htmlから合うものコピペしていく
+
+まず全体枠から開始
+プロトタイプワーヤーフレーム見て使用する要素決める
+bulma.htmlから合うものコピペ準備
+コーディング　
+要素置く
+バックグラウンドイメージ配置
+デバイス別に画像を切り替える
+バックグラウンドカラーにはブラック
+
+次は１つ目hero-headコンポーネント開始
+プロトタイプワーヤーフレーム見て使用する要素決める
+全ての共通ヘルパーCSSを準備
+bulma.htmlから合うものコピペ準備
+例えばヘッド作るなら.hero-head .hero-body .hero-foot
+次は中のコン分1行を3つに分けるなら.columns>column*3
+モバイルもならis-mobile .columns.is-mobile
+is-marginless .columns.is-mobile.is-marginless
+要素位置が決まったら内部テキスト書く
+内部テキストの配置を共通ヘルパーCSSで調整 column center
+内部テキストにnavbar-itemでpadding: .5rem .75rem;
+モバイルデバイスで表示しないものに.desktop加える
+内部テキストの色や大きさをcolumnsに全体設定するheading has-text-weight-bold
+内部テキストの色や大きさをcolumnに個別設定するhas-text-black
+全体　個々の　配置完成、
+全体　個々の　スタイル完成、
+次はテキストでとりあえずPタグで配置した内部のアイコンや画像LOGOを正しい要素に変更する
+画像の配置
+画像の大きさををインラインスタイルで調整する
+アイコンの配置
+アイコンのスタイルをクラスでで調整する
+アイコンの大きさををクラスでで調整する
+アイコンの大きさををインラインスタイルで微調整する
+
+次は全体に擬似要素配置開始
+has-text-white　スタイルのみ　　JSまだ書かない
+
+次は２つ目hero-bodyコンポーネント開始
+全体<header class="hero-body">
+	個々<div class="is-overlay has-text-centered">
+		個々の個々<h1 class="subtitle is-4">Tesla</h1>
+		個々の個々<h2 class="title is-1">Roadster</h2>
+	</div>
+</header>
+全体
+配置　スタイル
+個々
+配置　スタイル
+個々の個々
+配置　スタイル
+を繰り返す

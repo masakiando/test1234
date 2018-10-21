@@ -18,21 +18,28 @@ const DevHome = () => {
         <DviItem>
           <Card
             interactive elevation={Elevation.TWO}>
-              <h5><a href="#">Card heading</a></h5>
+              <h5><a href="/bulma1">bulma1</a></h5>
+              <p>bulma_1</p>
+              <Button>Submit</Button>
+          </Card>
+        </DviItem>
+        <DviItem>
+          <Card interactive elevation={Elevation.TWO}>
+              <h5><a href="/bulma2">bulma2</a></h5>
               <p>Card content</p>
               <Button>Submit</Button>
           </Card>
         </DviItem>
         <DviItem>
           <Card interactive elevation={Elevation.TWO}>
-              <h5><a href="#">Card heading</a></h5>
+              <h5><a href="/bulma3">bulma3</a></h5>
               <p>Card content</p>
               <Button>Submit</Button>
           </Card>
         </DviItem>
         <DviItem>
           <Card interactive elevation={Elevation.TWO}>
-              <h5><a href="#">Card heading</a></h5>
+              <h5><a href="/bulma4">bulma4</a></h5>
               <p>Card content</p>
               <Button>Submit</Button>
           </Card>

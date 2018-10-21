@@ -17,9 +17,9 @@ class attributeValueDropdown extends React.Component {
 	}
 
 	collapse() {
-		this.setState({
-      expanded: false
-    });
+		// this.setState({
+    //   expanded: false
+    // });
 	}
 
 	handleItemClick(event) {
@@ -91,24 +91,31 @@ class attributeValueDropdown extends React.Component {
 
 	render() {
     const { expanded } = this.state;
-    const { label } = this.props;
+    const { label, className } = this.props;
 		return (
-			<div className={`dropdown ${expanded ? 'active' : ''}`} tabIndex="0" onBlur={this.collapse}>
-      <label htmlFor="test">{label}</label>
-				<div className="trigger" style={this.setTriggerStyles()} onClick={this.handleTriggerClick}>
-          <div className="trigger__inner">
-            <span >{this.state.value1}</span>
+			<div
+        className={`${className} dropdown ${expanded ? 'active' : ''}`} tabIndex="0" onBlur={this.collapse}>
+        <label className="gird_dropdown_1A" htmlFor="test">{label}</label>
+        <div className="ggird_dropdown_1B">
+          <div className="trigger" style={this.setTriggerStyles()} onClick={this.handleTriggerClick}>
+            <div className="trigger__inner">
+              <span >{this.state.value1}</span>
+            </div>
           </div>
-				</div>
-        {expanded && <div className="boundary"><i className="fas fa-list"></i><spna>ALL SECTORS</spna></div>}
-        <div className="contents" style={this.setContentsStyles()}>
-          {expanded && <div className="content">{this.itemList(label)}</div>}
-			</div>
+          <div className="contents" style={this.setContentsStyles()}>
+            {expanded && <div className="content">
+              <div className="dropdown__boundary"><i className="fas fa-list"></i><spna>ALL SECTORS</spna></div>
+              {this.itemList(label)}</div>
+          }
+          </div>
+        </div>
       </div>
 		);
 	}
 }
 attributeValueDropdown.propTypes = {
+  className: PropTypes.string.isRequired,
+  style: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
 	categories:  PropTypes.array.isRequired,
