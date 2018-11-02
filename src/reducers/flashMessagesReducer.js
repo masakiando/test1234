@@ -6,7 +6,6 @@ import findIndex from 'lodash/findIndex';
 export default function flashMessagesReducer(
   state = initialState.flashMessages, action) {
   const index = findIndex(state, { id: action.id });
-  console.log(index);
   let newMessageId = shortid.generate();
 
   switch (action.type) {
@@ -28,7 +27,7 @@ export default function flashMessagesReducer(
 
       //Array.prototype.slice()
       case types.DELETE_FLASH_MESSAGE:
-      
+
       if (index >= 0) {
         return [
           ...state.slice(0, index),

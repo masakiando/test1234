@@ -3,21 +3,23 @@ import rootReducer from '../reducers';//index
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from "redux-saga";
-// import rootSaga from "../sagas";
+import rootSaga from "../sagas/sagas";
+
 function configureStore(initialState) {
   const sagaMiddleware = createSagaMiddleware();
-  return createStore(
+  const Middleware = [
+    thunk, sagaMiddleware, reduxImmutableStateInvariant()
+  ];
+  const store = createStore(
     rootReducer,
     initialState,
-    compose(
-      applyMiddleware(
-        thunk,
-        sagaMiddleware,
-        reduxImmutableStateInvariant()
-      ),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
+    compose( applyMiddleware(...Middleware),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   );
-  // sagaMiddleware.run(rootSaga);
+  /* eslint-enable */
+  sagaMiddleware.run(rootSaga);
+  return store;
 }
+
 export default configureStore;
