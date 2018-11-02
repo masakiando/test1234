@@ -20,27 +20,35 @@ header {
 ul, ol {//aとbに対して
     list-style: none;
     padding-left: 0;
+
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 table{
    background: #fff;
 }
-table,thead,tbody,tfoot,tr, td,th{
-  text-align: center;
-  margin: auto;
-  border:1px solid #dedede;
-  padding: 1rem;
-  width: 1200px;
-}
+// table,thead,tbody,tfoot,tr, td,th{
+//   text-align: center;
+//   margin: auto;
+//   border:1px solid #dedede;
+//   padding: 1rem;
+//   width: 1200px;
+// }
 .app{
   position: relative;
 }
-container {
-    border: 1px solid black;
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: 100px 100px;
-}
+// .container {
+//     border: 1px solid black;
+//     display: grid;
+//     grid-gap: 5px;
+//     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+//     grid-template-rows: 100px 100px;
+// }
 
 .container2 {
     border: 1px solid black;
@@ -69,11 +77,11 @@ container {
   clear: both;
 }
 
-footer {
-  background-color: #fff;
-  border-top: 4px solid #ff5722;
-  color: rgba(0,0,0,.54);
-}
+// footer {
+//   background-color: #fff;
+//   border-top: 4px solid #ff5722;
+//   color: rgba(0,0,0,.54);
+// }
 
 nav {//footer
   overflow: hidden;

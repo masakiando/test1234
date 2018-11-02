@@ -32,6 +32,7 @@ import bulma1 from './components/dev/Bulma_1';
 import bulma2 from './components/dev/Bulma_2';
 import bulma3 from './components/dev/Bulma_3';
 import bulma4 from './components/dev/Bulma_4';
+import bulma5 from './components/dev/Bulma_5';
 
 
 
@@ -66,6 +67,7 @@ export default (
     <Route path="/bulma2" component={bulma2} />
     <Route path="/bulma3" component={bulma3} />
     <Route path="/bulma4" component={bulma4} />
+    <Route path="/bulma5" component={bulma5} />
 
     <Route path="/*" component={Error404} />
   </Route>

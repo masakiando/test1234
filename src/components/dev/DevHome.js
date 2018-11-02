@@ -44,6 +44,14 @@ const DevHome = () => {
               <Button>Submit</Button>
           </Card>
         </DviItem>
+        <DviItem>
+          <Card interactive elevation={Elevation.TWO}>
+              <h5><a href="/bulma5">bulma5</a></h5>
+              <p>Card content</p>
+              <Button>Submit</Button>
+          </Card>
+        </DviItem>
+
       </Dvi>
     </div>
   );

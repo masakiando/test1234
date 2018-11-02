@@ -10,6 +10,7 @@ export default {
   categories: [],
   g_categories: [],
   products: [],
+  productImages: [],
   saleproducts: [],
   popularproducts: [],
   malls: [],

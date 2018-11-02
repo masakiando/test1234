@@ -14,12 +14,13 @@ import flashMessages from './flashMessagesReducer';
 import cart from './cartReducer';
 import shopIdList from './shopsReducer';
 import g_categories from './g_CategorReducer';
+import productImages from './imegesIdUrlProductReducer';
 
 const rootReducer = combineReducers({
   g_categories: g_categories,
   courses: courses,
   authors: authors,
-
+  productImages: productImages,
   shopIdList: shopIdList,
   cart,
   flashMessages,

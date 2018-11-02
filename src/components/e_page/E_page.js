@@ -1,6 +1,6 @@
 import React from 'react';
 
-class E_page extends React.Component {
+class imageUploadSaveLocal extends React.Component {
   constructor(props) {
      super(props);
      this.state = {file: '',imagePreviewUrl: ''};
@@ -57,4 +57,4 @@ class E_page extends React.Component {
    }
  }
 
-export default E_page;
+export default imageUploadSaveLocal;

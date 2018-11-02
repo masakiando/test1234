@@ -1,15 +1,10 @@
-.test_wrapper_001 {
-  margin: 10px 40px;
-  width: 93.8%;
-}
-
 .grid_basicinfo {
   display: grid;
-  grid-template-rows: 50px 270px;//tate
-  grid-template-columns: 100px 1100px;//yoko
+  grid-template-rows: 40px 260px;//tate
+  grid-template-columns: 1fr ;//yoko
   grid-template-areas:
-      "areaA areaA"
-      "areaB areaC";
+      "areaA "
+      "areaC ";
 }
 
 .grid_basicinfo_title {
@@ -18,12 +13,11 @@
 
 .grid_basicinfo_input {
   grid-area: areaC;
-  width: 70%;
 }
 
 .gird_price_and_warehouse {
   display: grid;
-  grid-template-rows: 50px 250px;//tate
+  grid-template-rows: 50px 150px;//tate
   grid-template-columns: 100px 1100px;//yoko
   grid-template-areas:
       "areaA areaA"
@@ -37,15 +31,4 @@
 .grid_price_and_warehouse_input {
   grid-area: areaC;
   width: 70%;
-}
-
-.testTd {
-  height: 50px;
-  padding: 0px;
-  color: blue;
-
-  input {
-    outline: 0;
-    text-align: center;
-  }
 }

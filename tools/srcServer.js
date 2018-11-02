@@ -8,7 +8,6 @@ import open from 'open';
 import bodyParser from 'body-parser';
 const formData = require('express-form-data');
 const { CLIENT_ORIGIN } = require('./routes/config');
-
 //
 var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
@@ -19,7 +18,6 @@ var categories= require('./routes/categoriesServer');
 var attribute= require('./routes/attributeServer');
 
 /* eslint-disable no-console */
-
 const port = 3000;
 const app = express();
 const compiler = webpack(config);

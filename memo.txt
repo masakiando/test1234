@@ -1,7 +1,7 @@
 "open:src": "babel-node ./node_modules/.bin/nod tools/srcServer.js",
 "start": "npm-run-all --parallel knex test:watch open:src lint:watch",
 "knex": "knex migrate:rollback --env test && knex migrate:latest --env test && knex seed:run --env test",
-
+「atom-beautify」【Ctrl】+【Alt】+【B】
 yarn start
 srcServer.js書き換えしたならdistServer.jsも変更する
 yarn build

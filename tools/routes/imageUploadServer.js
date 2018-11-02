@@ -1,9 +1,6 @@
 require('dotenv').config();
 var express =  require('express');
 const cloudinary = require('cloudinary');
-const formData = require('express-form-data');
-const cors = require('cors');
-const { CLIENT_ORIGIN } = require('./config');
 
 var router = express.Router();
 
@@ -14,14 +11,23 @@ cloudinary.config({
 });
 
 router.post('/', (req, res) => {
+  const values = Object.values(req.files);
+  const promises = values.map(image => cloudinary.uploader.upload(image.path));
 
-    const values = Object.values(req.files);
-    const promises = values.map(image => cloudinary.uploader.upload(image.path));
+  Promise
+    .all(promises)
+    .then(results => res.json(results))
+    .catch((err) => res.status(400).json(err));
+});
 
-    Promise
-      .all(promises)
-      .then(results => res.json(results))
-      .catch((err) => res.status(400).json(err));
-  });
+router.delete('/:_id', (req, res) => {
+  console.log(req.params._id);
+  cloudinary.v2.uploader.destroy( req.params._id,
+    function(error, result){
+     console.log(result, error);
+   })
+   .then(results => res.json(results))
+   .catch((err) => res.status(400).json(err));
+});
 
 module.exports = router;

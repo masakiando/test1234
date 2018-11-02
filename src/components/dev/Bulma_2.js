@@ -23,7 +23,7 @@ const Bulma_2 = () => {
         <div className="columns">
           <div className="column is-4">
             <article className="media notification is-info">
-              <figure className="media-left">
+              <figure className="media-left is-marginless">
                 <span className="icon is-medium">
                   <i className="fab fa-2x fa-css3-alt"></i>
                 </span>

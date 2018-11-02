@@ -22,7 +22,7 @@ margin: 0px 40px;
 `;
 export const Grid = styled.div`
   display: grid;
-  grid-template-rows: 55px 45px;
+  grid-template-rows: 55px 25px;
   grid-template-columns: 162px 1fr 100px;
   grid-template-areas:
     "areaA areaB areaD"

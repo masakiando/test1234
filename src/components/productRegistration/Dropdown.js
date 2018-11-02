@@ -95,8 +95,10 @@ class attributeValueDropdown extends React.Component {
 		return (
 			<div
         className={`${className} dropdown ${expanded ? 'active' : ''}`} tabIndex="0" onBlur={this.collapse}>
-        <label className="gird_dropdown_1A" htmlFor="test">{label}</label>
-        <div className="ggird_dropdown_1B">
+        <label className="gird_dropdown_1A field-label is-normal left" htmlFor={name}>
+          <label className="label">{label}</label>
+        </label>
+        <div className="gird_dropdown_1B">
           <div className="trigger" style={this.setTriggerStyles()} onClick={this.handleTriggerClick}>
             <div className="trigger__inner">
               <span >{this.state.value1}</span>

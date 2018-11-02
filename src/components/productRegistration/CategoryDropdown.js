@@ -191,7 +191,11 @@ class CategoryDropdown extends React.Component {
 
 	render() {
 		return (
-			<div className={`dropdown ${this.state.expanded ? 'active' : ''}`}
+			<div>
+			<label className="is-normal" htmlFor="Categories">
+				<label className="label">Categories</label>
+			</label>
+			<div className={`c-dropdown ${this.state.expanded ? 'active' : ''}`}
         style={{zIndex: 10000000}}
 				tabIndex="0"
 				onBlur={this.collapse}>
@@ -232,6 +236,7 @@ class CategoryDropdown extends React.Component {
           {this.state.expanded3 &&
             <div className="content contentanime">{this.itemList_3()}</div>}
         </div>
+			</div>
 			</div>
 		);
 	}

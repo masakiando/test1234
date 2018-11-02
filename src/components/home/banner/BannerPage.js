@@ -19,11 +19,8 @@ class Banner extends React.Component {
             }
           ],
           active: 0,
-          show: true,
-          max: 0
-
+          show: true
       };
-      this.state.max = this.state.slides.length;
 
       this.prevOne = this.prevOne.bind(this);
       this.nextOne = this.nextOne.bind(this);
@@ -43,8 +40,8 @@ class Banner extends React.Component {
 
   intervalBetweenSlides() {
 
-        if (this.state.active === this.state.max - 1) {
-          this.state.active = 0;
+        if (this.state.active === this.state.slides.length - 1) {
+          this.setState({ active: 0 });
         } else {
             this.state.active++;
         }

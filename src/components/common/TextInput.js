@@ -10,23 +10,29 @@ const TextInput = ({
   type
 }) => {
 
-  let wrapperClass = 'form-group';
+  let wrapperClass = 'field is-horizontal';
   if (error && error.length > 0) {
     wrapperClass += " " + 'has-error';
   }
 
   return (
     <div className={wrapperClass}>
-      <label htmlFor={name}>{label}</label>
-      <div className="field">
-        <input
-          name={name}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-          className="form-control"
-          type={type}/>
-        {error && <div className="alert alert-danger">{error}</div>}
+      <label className="field-label is-normal" htmlFor={name}>
+        <label className="label">{label}</label>
+      </label>
+      <div className="field-body">
+        <div className="field">
+          <p className="control">
+            <input
+              name={name}
+              placeholder={placeholder}
+              value={value}
+              onChange={onChange}
+              className="input"
+              type={type}/>
+            {error && <div className="alert alert-danger">{error}</div>}
+          </p>
+        </div>
       </div>
     </div>
   );

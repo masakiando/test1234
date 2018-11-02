@@ -12,8 +12,10 @@ class ManageProductPage extends React.Component {
       attributeOptions: []
     };
     this.updateProductState = this.updateProductState.bind(this);
+    this.updateState = this.updateState.bind(this);
   }
   updateProductState(event) {
+    debugger;
     const field = event.target.name;
     let product = this.state.product;
     product[field] = event.target.value;
@@ -33,7 +35,7 @@ class ManageProductPage extends React.Component {
         saving={this.state.saving}
         onChange={this.updateProductState}
         categories={g_categories}
-        updateState={this.updateState.bind(this)}
+        updateState={this.updateState}
       />
     );
   }
@@ -57,7 +59,14 @@ function mapStateToProps(state, ownProps) {
                   product_discrption: '',
                   product_price: 0,
                   product_stock: 0,
+                  product_weight: 0,
+                  product_packsize_r: 0,
+                  product_packsize_d: 0,
+                  product_packsize_c: 0,
+                  product_statue: 'New',
+                  product_sku: '',
                   classificationGroup_name: '',
+                  classificationGroup_name2: '',
                   categoryList1_name: '',
                   categoryList1_id: '',
                   categoryList2_name: '',

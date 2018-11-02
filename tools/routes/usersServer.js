@@ -35,6 +35,7 @@ function post(req, res, next) {
               email,
               password
             } = req.body;
+      console.log(req.body);
       const password_digest = bcrypt.hashSync(password, 10);
       const shop_name = username;
 

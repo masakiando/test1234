@@ -13,15 +13,19 @@ const Textarea = ({
   onBlur
 }) => {
 
-  let wrapperClass = 'form-group ';
+  let wrapperClass = 'field is-horizontal ';
   if (error && error.length > 0) {
     wrapperClass += " " + 'has-error';
   }
 
   return (
     <div className={wrapperClass}>
-      <label htmlFor={name}>{label}</label>
-      <div className="field" >
+      <label className="field-label is-normal" htmlFor={name}>
+        <label className="label">{label}</label>
+      </label>
+      <div className="field-body">
+        <div className="field">
+          <p className="control">
         <textarea
           name={name}
           placeholder={placeholder}
@@ -29,12 +33,13 @@ const Textarea = ({
           onChange={onChange}
           onClick={onClick}
           onBlur={onBlur}
-
-          className="form-control"
+          className="textarea has-fixed-size"
           type="text"
-          style={expanded !== true ? {height: '38px',padding: '6px'} : {height: '124px',padding: '6px'}}
-          cols={40} rows={10} />
+           rows="4"
+        />
         {error && <div className="alert alert-danger">{error}</div>}
+      </p>
+      </div>
       </div>
     </div>
   );

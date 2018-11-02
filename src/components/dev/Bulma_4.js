@@ -6,13 +6,10 @@ import 'bulma/css/bulma.css';
 const Bulma4 = () => {
   return (
     <section className="hero is-fullheight is-fullheight-with-navbar">{ /* .hero */ }
-      { /* .hero-body */ }
-      <div className="hero-body">
-        <div className="container">
-          <div className="columns "style={{height: "70vh"}}>
+          <div className="columns is-marginless">
             <div className="column is-one-fifth">
-              <aside className="menu has-background-grey"style={{height: "100%"}}>
-                <ul className="menu-list">
+              <aside className="menu has-background-grey">
+                <ul className="menu-list is-marginless">
                   <li><a>Team Settings</a></li>
                   <li>
                     <a className="is-active">Manage Your Team</a>
@@ -29,30 +26,30 @@ const Bulma4 = () => {
               </aside>
             </div>
             <div className="column is-four-fifths">
-              <main className="has-background-grey "style={{height: "100%"}}>
+              <main className="has-background-grey" style={{height: "70vh"}}>
                 <div id="grid1">
                   <div id="a1" className="center-column">
-                  <p className="has-text-centered has-text-white">
-                     hello
+                  <p className="navbar-item has-text-white">
+                     確認
                   </p>
                   </div>
-                  <div id="b1" className="center-column">
-                    <p className="has-text-white">
-                      hello
+                  <div id="b1" className="center-column" style={{borderLeft: "1px solid white"}}>
+                    <p className="navbar-item has-text-white">
+                      受け取り
                     </p>
                   </div>
-                  <div id="c1" className="center-column" style={{borderLeft: "1px solid gray"}}>
-                    <p className="has-text-white">
-                      hello
+                  <div id="c1" className="center-column" style={{borderLeft: "1px solid white"}}>
+                    <p className="navbar-item has-text-white">
+                      レビュー待ち
                     </p>
                   </div>
-                  <div id="d1" className="center-column" style={{borderLeft: "1px solid gray"}}>
-                    <p className="has-text-white">
-                      hello
+                  <div id="d1" className="center-column" style={{borderLeft: "1px solid white"}}>
+                    <p className="navbar-item has-text-white">
+                      キャンセル
                     </p>
                   </div>
                 </div>
-                <table className="table has-background-grey" style={{borderTop: "1rem solid red"}}>
+                <table className="table table is-fullwidth table is-hoverable table is-bordered has-background-grey" style={{borderTop: "1rem solid red"}}>
                   <thead>
                     <tr>
                       <th>hello</th>
@@ -61,30 +58,6 @@ const Bulma4 = () => {
                       <th>hello</th>
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>hello</th>
-                      <th>hello</th>
-                      <th>hello</th>
-                      <th>hello</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>hello</td>
-                      <td>hello</td>
-                      <td>hello</td>
-                      <td>hello</td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr>
-                      <td>hello</td>
-                      <td>hello</td>
-                      <td>hello</td>
-                      <td>hello</td>
-                    </tr>
-                  </tbody>
                   <tbody>
                     <tr>
                       <td>hello</td>
@@ -129,10 +102,6 @@ const Bulma4 = () => {
               </main>
             </div>
           </div>
-        </div>
-      </div>
-      { /* /.hero-body */ }
-
     { /* /.hero */ }</section>
   );
 };

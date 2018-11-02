@@ -22,10 +22,10 @@ import setAuthenticationToken from './utils/setAuthenticationToken';
 import jwtDecode from 'jwt-decode';
 import { setCurrentUser } from './actions/authActions';
 //styles
-import 'normalize.css/normalize.css';
+// import 'normalize.css/normalize.css';
 import '@blueprintjs/core/dist/blueprint.css';
 import './styles/styles.scss';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 
 import App from './components/App';
