@@ -2,7 +2,7 @@ var express =  require('express');
 var colors =  require('colors');
 var isEmpty =  require('lodash/isEmpty');
 
-var Startkit = require('../model/startkitModel');
+var Startkit = require('../models/startkitModel');
 
 var commonControllers = require('../controller/commonControllers');
 var startkitServerControllers = require('../controller/startkitServerControllers');

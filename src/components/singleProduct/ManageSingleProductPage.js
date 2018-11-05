@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import { browserHistory } from 'react-router';
 import * as ProductActions from '../../actions/ProductActions';
 import * as CartActions from '../../actions/CartActions';
 import styled from 'styled-components';
@@ -20,6 +21,7 @@ class SingleProduct extends React.Component {
     };
     this.imgChange = this.imgChange.bind(this);
     this.addItemToCart = this.addItemToCart.bind(this);
+    this.redirectToXXXXXPage = this.redirectToXXXXXPage.bind(this);
   }
 
 componentDidMount() {
@@ -33,7 +35,7 @@ componentDidMount() {
   this.props.actions.loadSingleProductImege(this.props.Id);
 }
   componentWillReceiveProps(nextProps) {
-    
+
     if (this.props.product.id != nextProps.product.id) {
       // this.props.actions.loadSingleProductImege(nextProps.product.id);
       this.setState({
@@ -74,9 +76,9 @@ componentDidMount() {
   }
 
   imgChange(event) {
-    
+
     const nextValue = event.target.value;
-    
+
     if(nextValue === 0) this.setState({
       active: nextValue,
       img0: true, img1:false, img2:false, img3:false,img4: false,
@@ -147,6 +149,10 @@ componentDidMount() {
       );
     }
     return renderdots;
+  }
+
+  redirectToXXXXXPage() {
+    browserHistory.push('/cart');
   }
 
   render() {
@@ -299,7 +305,7 @@ componentDidMount() {
 
                         <AddItemtoCart onAdd={this.addItemToCart} />
 
-                        <button className="btn-buy">
+                        <button className="btn-buy" onClick={this.redirectToXXXXXPage}>
                           <span>buy now</span>
                         </button>
                     </div>

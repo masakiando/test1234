@@ -4,8 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { Router, browserHistory } from 'react-router';
 //mock
-import {loadCourses} from './actions/courseActions';
-import {loadAuthors} from './actions/authorActions';
+import {loadCourses, loadAuthors} from './modules/course/actions/Actions';
 import { loadHotwords } from './actions/HotwordActions';
 import { Categories } from './actions/mockCategorActions';
 import { loadProducts } from './actions/ProductActions';
@@ -20,7 +19,7 @@ import setAuthenticationToken from './utils/setAuthenticationToken';
 // jwt
 // import jwt from 'jsonwebtoken';
 import jwtDecode from 'jwt-decode';
-import { setCurrentUser } from './actions/authActions';
+import { setCurrentUser } from './modules/login/actions/Actions';
 //styles
 // import 'normalize.css/normalize.css';
 import '@blueprintjs/core/dist/blueprint.css';

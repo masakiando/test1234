@@ -1,7 +1,8 @@
 // helper functions//
+
 var jwt = require('jsonwebtoken');
 var config = require('../config');
-var User = require('../model/userModel');
+var User = require('../models/userModel');
 
 function authentication(req, res, next) {
   const authenticationHeader = req.headers['authentication'];

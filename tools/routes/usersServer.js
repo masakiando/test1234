@@ -1,8 +1,8 @@
 var express =  require('express');
 var commonControllers = require('../controller/commonControllers');
 var controllers = require('../controller/usersServerControllers');
-var User = require('../model/userModel');
-var Shop = require('../model/shopModel');
+var User = require('../models/userModel');
+var Shop = require('../models/shopModel');
 var bcrypt = require('bcrypt');
 
 var router = express.Router();

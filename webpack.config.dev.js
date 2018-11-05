@@ -27,6 +27,7 @@ export default {
     loaders: [
       {test: /\.js$/, include: [
         path.join(__dirname, 'src'),
+        path.join(__dirname, 'validations'),
         path.join(__dirname, 'tools/shared')
       ], loaders: ['babel']},
       {test: /(\.css)$/, loaders: ['style', 'css']},

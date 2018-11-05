@@ -1,7 +1,7 @@
-import Validator from 'validator';
-import isEmpty from 'lodash/isEmpty';
+var validator =  require('validator');
+var isEmpty =  require('lodash/isEmpty');
 
-export default function commonValidations(data) {
+function commonValidations(data) {
   let errors = {};
 
   if (!data.identifier) {
@@ -18,3 +18,5 @@ export default function commonValidations(data) {
     //errorsがない errors object空ならtrueを返す
   };
 }
+
+module.exports = commonValidations;

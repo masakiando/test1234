@@ -1,4 +1,4 @@
-var Startkit = require('../model/startkitModel');
+var Startkit = require('../models/startkitModel');
 var isEmpty =  require('lodash/isEmpty');
 
 // We guarantee that the ID parameter exists from the query string

@@ -1,8 +1,8 @@
 var express =  require('express');
 var colors =  require('colors');
 var isEmpty =  require('lodash/isEmpty');
-var Category = require('../model/categoryModel');
-var Startkit = require('../model/startkitModel');
+var Category = require('../models/categoryModel');
+var Startkit = require('../models/startkitModel');
 
 var commonControllers = require('../controller/commonControllers');
 var router = express.Router();

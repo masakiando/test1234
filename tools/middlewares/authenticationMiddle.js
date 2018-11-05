@@ -1,0 +1,40 @@
+import jwt from 'jsonwebtoken';
+const config = require('../config');
+const User = require('../models/userModel');
+
+// workshopeventServerでpost時に使用します。
+export default (req, res, next) => {
+  const authenticationHeader = req.headers['authentication'];
+  let token;
+
+  if (authenticationHeader) {
+    token = authenticationHeader.split(' ')[1];
+  }
+
+  if (token) {
+    jwt.verify(token, config.jwtSecret, (err, decoded) => {
+      if (err) {
+        res.status(401).json({ error: 'Failed to authenticate' });
+      } else {
+        // new User({ id: decoded.id }) 一致するデータすべて取得
+        // req.userID = decoded.id
+        User.query({
+          where: { id: decoded.id },
+          select: [ 'email', 'id', 'username' ]
+        }).fetch().then(user => {
+          if (!user) {
+            res.status(404).json({ error: 'No such user' });
+          } else {
+            req.currentUser = user;
+            next();
+          }
+
+        });
+      }
+    });
+  } else {
+    res.status(403).json({
+      error: 'No token provided'
+    });
+  }
+};

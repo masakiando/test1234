@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as authActions from '../../../actions/authActions';
+import * as Actions from '../../../modules/login/actions/Actions';
 import { Wrap, Container, Nav, Ul, Li } from './styled/HeaderMenuStyled';
 
 class HeaderMenu extends React.Component {
@@ -55,7 +55,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(authActions, dispatch)
+    actions: bindActionCreators(Actions, dispatch)
   };
 }
 

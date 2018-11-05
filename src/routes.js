@@ -4,8 +4,13 @@ import { render } from 'react-dom';
 import { Route, IndexRoute, Link, IndexLink } from 'react-router';
 import App from './components/App';
 import Home from './components/home/index';
-import CoursesPage from './components/course/CoursesPage';
-import ManageCoursePage from './components/course/ManageCoursePage';
+
+import CourseManageForm from './modules/course/ManageForm';
+import CourseManageList from './modules/course/ManageList';
+import LoginManageForm  from './modules/login/ManageForm';
+import SignupPage       from './modules/signup/ManageForm';
+import CartManageList from './modules/cart/ManageList.js';
+
 import ManageProductPage from './components/productRegistration/ManageProductPage';
 import SingleProduct from './components/singleProduct/ManageSingleProductPage';
 
@@ -15,14 +20,10 @@ import E_Page from './components/e_page/E_page';
 
 import ToolTip from './components/c_page/ToolTip';
 import Error404 from './components/errors/Error404Page.js';
-import SignupPage from './components/signup/SignupPage';
-import LoginPage from './components/login/LoginPage';
 
 import PurchasePage from './components/user/ManagePurchasePage';
 
 import BuyPage from './components/buy/BuyPage';
-
-import ManageCartPage from './components/cart/ManageCartPage.js';
 
 import requireAuth from './utils/requireAuth';
 
@@ -39,9 +40,10 @@ import bulma5 from './components/dev/Bulma_5';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
-      <Route path="courses" component={CoursesPage} />
-      <Route path="course" component={ManageCoursePage} />
-      <Route path="course/:id" component={ManageCoursePage} />
+      <Route path="courses" component={CourseManageList} />
+      <Route path="course" component={CourseManageForm} />
+      <Route path="course/:id" component={CourseManageForm} />
+      <Route path="/LoginPage" component={LoginManageForm} />
 
 
     <Route path="/singleproduct/:id" component={SingleProduct} />
@@ -53,9 +55,8 @@ export default (
     <Route path="/e" component={E_Page} />
 
     <Route path="/SignupPage" component={SignupPage} />
-    <Route path="/LoginPage" component={LoginPage} />
 
-    <Route path="/ManageCartPage" component={ManageCartPage} />
+    <Route path="/cart" component={CartManageList} />
 
     <Route path="/user/purchase" component={PurchasePage} />
 
