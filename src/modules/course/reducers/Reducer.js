@@ -1,16 +1,20 @@
-import * as types from '../constans/actionTypes';
-import initialState from './initialState';
+/* initialState */ const courses  = [];
+/* actionTypes  */ const LOAD_COURSES_SUCCESS = 'LOAD_COURSES_SUCCESS';
+/* actionTypes  */ const CREATE_COURSE_SUCCESS = 'CREATE_COURSE_SUCCESS';
+/* actionTypes  */ const UPDATE_COURSE_SUCCESS = 'UPDATE_COURSE_SUCCESS';
+/* actionTypes  */ const DELETE_COURSE_SUCCESS = 'DELETE_COURSE_SUCCESS';
+/* actionTypes  */ const LOAD_AUTHORS_SUCCESS = 'LOAD_AUTHORS_SUCCESS';
 
-export default function courseReducer(state = initialState.courses, action) {
+export default function courseReducer(state = courses, action) {
   switch (action.type) {
 
-    case types.LOAD_COURSES_SUCCESS:
+    case LOAD_COURSES_SUCCESS:
       return action.courses;
 
     //returnの第１引数で現在の...state複製する
     //第２引数で新しいcourse作る
     //第１、２引数合わせたObjectを返す
-    case types.CREATE_COURSE_SUCCESS:
+    case CREATE_COURSE_SUCCESS:
       return [
         ...state,
         Object.assign({}, action.course)
@@ -20,14 +24,14 @@ export default function courseReducer(state = initialState.courses, action) {
     //UPDATEするcourse以外のcoursesをfilterして取得する。そして全く新しい配列を作る。
     //そして、Object.assignを使用して渡されたコースのコピーを作成し、最終的に戻す配列にaction.courseを含めます。
     //  スプレッド演算子、マップ、フィルタ、およびObject.assignを使用して処理を行うことがよくあります。 これらの4つのツールを理解すると、状態を変えることなく本当に強力なタスクを達成できます。
-    case types.UPDATE_COURSE_SUCCESS:
+    case UPDATE_COURSE_SUCCESS:
 
       return [
         ...state.filter(course => course.id !== action.course.id),
         Object.assign({}, action.course)
       ];
     //missing id use!!!!
-    case types.DELETE_COURSE_SUCCESS:
+    case DELETE_COURSE_SUCCESS:
 
       // return action.courses;
       return [

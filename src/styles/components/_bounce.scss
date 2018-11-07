@@ -1,11 +1,9 @@
-
-
-.box{
+.bounce{
   position:relative;
   color: #000000;
   text-shadow: 4px 4px 10px #6f7070;
 }
-.box:before{
+.bounce:before{
   content:'';
   position:absolute;
   z-index:2;
@@ -16,14 +14,14 @@
   background:#c00;
   border-radius:2px;
   transform: rotate(45deg);
-  -webkit-animation:box .8s infinite ;
-  animation:box .8s infinite ;
+  -webkit-animation:bounce .8s infinite ;
+  animation:bounce .8s infinite ;
   background-image: url('./images/IMG_0568.jpg');
   background-size: 100% 100%;
 
 }
 
-@-webkit-keyframes box{
+@-webkit-keyframes bounce{
   0%{
     top:50px;
   }
@@ -42,7 +40,7 @@
   }
 }
 
-@keyframes box{
+@keyframes bounce{
   0%{
     top:50px;
   }
@@ -61,7 +59,7 @@
   }
 }
 
-.box:after{
+.bounce:after{
   content:'';
   position:absolute;
   z-index:1;
@@ -71,10 +69,10 @@
   height:3px;
   background:#eaeaea;
   border-radius:100%;
-  -webkit-animation:shadow .8s infinite ;
-  animation:shadow .8s infinite ;
+  -webkit-animation:bounceshadow .8s infinite ;
+  animation:bounceshadow .8s infinite ;
 }
-@-webkit-keyframes shadow{
+@-webkit-keyframes bounceshadow{
   0%,100%{
     left:54px;
     width:40px;
@@ -89,7 +87,7 @@
   }
 }
 
-@keyframes shadow{
+@keyframes bounceshadow{
   0%,100%{
     left:54px;
     width:40px;

@@ -1,33 +1,49 @@
+/*
+    base:
+    components pages:
+    components module:
+    devDemoComponets:
+    libs:
+*/
+
+
 ///////////////////////////////////
 // base
+  @import './base/setting';
+  @import './base/base';
+  @import './base/basesite';
+  @import './debug';
+  @import './helper';
+  @import './grid';
 ///////////////////////////////////
- @import './base/setting';
- @import './base/base';
- @import './base/basesite';
- @import './debug';
- @import './helper';
- @import './grid';
+
+///////////////////////////////////
+// components pages
+  @import './components/BannerPage';
+  @import './components/singleProduct.scss';
+  @import './components/hot-word.scss';
+  @import './components/prodcut_form.scss';
+  @import './components/user.scss';
+  @import './components/Bulma.scss';
+  @import './components/divtable.scss';
  ///////////////////////////////////
- // components pages
- ///////////////////////////////////
- @import './components/BannerPage';
- @import './components/singleProduct.scss';
- @import './components/hot-word.scss';
- @import './components/test_grid.scss';
- @import './components/prodcut_form.scss';
- @import './components/user.scss';
- @import './components/Bulma.scss';
- @import './components/divtable.scss';
- ///////////////////////////////////
+
+ ////////////////////////////////////
  // components module
- ///////////////////////////////////
- @import './components/buttons';
- @import './components/site-navbar';
- @import './components/bounce';
- @import './components/dropdown';
- @import './components/Navigation';
-  ///////////////////////////////////
+  @import './components/buttons';
+  @import './components/site-navbar';
+  @import './components/bounce';
+  @import './components/dropdown';
+  @import './components/Navigation';
+ ////////////////////////////////////
+
+ ////////////////////////////////////
+ // devDemoComponets
+  @import './devDemoComponents/test_grid';
+ /////////////////////////////////////////
+
+ /////////////////////////////////////////
  // libs module
- ///////////////////////////////////
  @import './components/fontawesome';
  @import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+ //////////////////////////////////////////////////////////////////////

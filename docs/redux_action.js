@@ -1,5 +1,7 @@
 /*
     Actions https://redux.js.org/basics/actions
+    action types import
+    action creators
 */
 
 // action types import

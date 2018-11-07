@@ -23,15 +23,14 @@ class HeaderMenu extends React.Component {
         <Container>
           <Nav role="navigation">
              <Ul>
-                <Li><Link to="/a">チャネル販売者</Link></Li>
+                <Li><Link to="/#">チャネル販売者</Link></Li>
                 <Li><Link to="/ManageProductPage">アプリケーションのダウンロード</Link></Li>
-                <Li><Link to="/c">接続</Link></Li>
+                <Li><Link to="/#">接続</Link></Li>
              </Ul>
              <Ul>
               <Li><Link to="/dev">開発</Link></Li>
-              <Li><Link to="/courses">test</Link></Li>
-              <Li><Link to="/d">通知</Link></Li>
-              <Li><Link to="/e">ヘルプ</Link></Li>
+              <Li><Link to="/#">通知</Link></Li>
+              <Li><Link to="/#">ヘルプ</Link></Li>
               {isAuthenticated ? <Li><Link to="/user/purchase">マイページ</Link></Li> : <Li><Link to="/SignupPage">サインアップ</Link></Li>}
               {isAuthenticated ? <Li><Link to="/" onClick={this.logout}>ログアウト</Link></Li> : <Li><Link to="/LoginPage">サインイン</Link></Li>}
              </Ul>

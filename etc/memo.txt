@@ -10,7 +10,7 @@ yarn start
 srcServer.js書き換えしたならdistServer.jsも変更する
 yarn build
 git add .
-git commit -m "saga Introduction & add redux in docs "
+git commit -m "action定数、reducer初期ステートを各ファイルに配置、フォルダ整理modulesへ移動 "
 git push
 heroku ps:scale web=1
 git push heroku master

@@ -14,28 +14,23 @@ import CartManageList from './modules/cart/ManageList.js';
 import ManageProductPage from './components/productRegistration/ManageProductPage';
 import SingleProduct from './components/singleProduct/ManageSingleProductPage';
 
-import A_Page from './components/a_page/A_page';
-import imageUpload from './components/imageUpload/ManageimageUploadPage';
-import E_Page from './components/e_page/E_page';
-
-import ToolTip from './components/c_page/ToolTip';
 import Error404 from './components/errors/Error404Page.js';
 
-import PurchasePage from './components/user/ManagePurchasePage';
+import OrderLog from './modules/user/OrderLog';
 
 import BuyPage from './components/buy/BuyPage';
 
 import requireAuth from './utils/requireAuth';
-
-import DevHome from './components/dev/DevHome';
-import Test_Grid from './components/dev/Test_Grid';
-import bulma1 from './components/dev/Bulma_1';
-import bulma2 from './components/dev/Bulma_2';
-import bulma3 from './components/dev/Bulma_3';
-import bulma4 from './components/dev/Bulma_4';
-import bulma5 from './components/dev/Bulma_5';
-
-
+// devDemoComponents
+import DevHome   from './devDemoComponents/DevHome';
+import TestGrid from './devDemoComponents/TestGrid';
+import Bulma1    from './devDemoComponents/Bulma1';
+import Bulma2    from './devDemoComponents/Bulma2';
+import Bulma3    from './devDemoComponents/Bulma3';
+import Bulma4    from './devDemoComponents/Bulma4';
+import Bounce    from './devDemoComponents/Bounce';
+import ToolTip    from './devDemoComponents/ToolTip';
+import ImgUpReader      from './devDemoComponents/ImageUploadSaveLocal';
 
 export default (
   <Route path="/" component={App}>
@@ -45,30 +40,27 @@ export default (
       <Route path="course/:id" component={CourseManageForm} />
       <Route path="/LoginPage" component={LoginManageForm} />
 
-
     <Route path="/singleproduct/:id" component={SingleProduct} />
 
-    <Route path="/a" component={A_Page} />
     <Route path="/ManageProductPage" component={ManageProductPage} />
-    <Route path="/c" component={ToolTip} />
-    <Route path="/d" component={imageUpload} />
-    <Route path="/e" component={E_Page} />
 
     <Route path="/SignupPage" component={SignupPage} />
 
     <Route path="/cart" component={CartManageList} />
 
-    <Route path="/user/purchase" component={PurchasePage} />
 
     <Route path="BuyPage" component={requireAuth(BuyPage)} />
+    <Route path="/user/purchase" component={OrderLog}/>
 
     <Route path="/dev" component={DevHome} />
-    <Route path="/Test_Grid" component={Test_Grid} />
-    <Route path="/bulma1" component={bulma1} />
-    <Route path="/bulma2" component={bulma2} />
-    <Route path="/bulma3" component={bulma3} />
-    <Route path="/bulma4" component={bulma4} />
-    <Route path="/bulma5" component={bulma5} />
+    <Route path="/TestGrid" component={TestGrid} />
+    <Route path="/bulma1" component={Bulma1} />
+    <Route path="/bulma2" component={Bulma2} />
+    <Route path="/bulma3" component={Bulma3} />
+    <Route path="/bulma4" component={Bulma4} />
+    <Route path="/bounce" component={Bounce} />
+    <Route path="/tooltip" component={ToolTip} />
+    <Route path="/imageUploadSaveLocal" component={ImgUpReader} />
 
     <Route path="/*" component={Error404} />
   </Route>
