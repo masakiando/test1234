@@ -8,8 +8,9 @@ import Home from './components/home/index';
 import CourseManageForm from './modules/course/ManageForm';
 import CourseManageList from './modules/course/ManageList';
 import LoginManageForm  from './modules/login/ManageForm';
-import SignupPage       from './modules/signup/ManageForm';
-import CartManageList from './modules/cart/ManageList.js';
+import SignupManageForm from './modules/signup/ManageForm';
+import CartManageList   from './modules/cart/ManageList.js';
+import BuyManageForm    from './modules/buy/ManageForm';
 
 import ManageProductPage from './components/productRegistration/ManageProductPage';
 import SingleProduct from './components/singleProduct/ManageSingleProductPage';
@@ -18,7 +19,6 @@ import Error404 from './components/errors/Error404Page.js';
 
 import OrderLog from './modules/user/OrderLog';
 
-import BuyPage from './components/buy/BuyPage';
 
 import requireAuth from './utils/requireAuth';
 // devDemoComponents
@@ -44,12 +44,10 @@ export default (
 
     <Route path="/ManageProductPage" component={ManageProductPage} />
 
-    <Route path="/SignupPage" component={SignupPage} />
-
+    <Route path="/SignupPage" component={SignupManageForm} />
     <Route path="/cart" component={CartManageList} />
+    <Route path="/buy" component={requireAuth(BuyManageForm)} />
 
-
-    <Route path="BuyPage" component={requireAuth(BuyPage)} />
     <Route path="/user/purchase" component={OrderLog}/>
 
     <Route path="/dev" component={DevHome} />

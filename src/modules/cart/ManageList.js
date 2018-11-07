@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 import DiscountMessage from './screens/DiscountMessage';
 import List from './screens/List';
 import styled from 'styled-components';
@@ -10,6 +11,7 @@ class CartPage extends React.Component {
     this.state = {
       saving: false
     };
+    this.redirectToBuyPage = this.redirectToBuyPage.bind();
   } //.
 
   test2(shop) {
@@ -37,6 +39,10 @@ class CartPage extends React.Component {
     );
   }
 
+  redirectToBuyPage() {
+    browserHistory.push('/buy');
+  }
+
   render() {
     const {cart, shopIdList} = this.props;
     return (
@@ -45,6 +51,11 @@ class CartPage extends React.Component {
            {this.test()}
            <DiscountMessage />
            <List cart={cart} shopIdList={shopIdList} />
+             <input
+               type="submit"
+               value="Buy"
+               className=""
+               onClick={this.redirectToBuyPage}/>
         </Container>
       </div>
     );
