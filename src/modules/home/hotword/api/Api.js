@@ -58,7 +58,7 @@ const hotwords = [
   }
 ];
 
-class hotwordApi {
+class Api {
   static getAllHotwords() {
     return new Promise((resolve, reject) => {
       // 指定された遅延の後に、コードの断片または関数を実行します。
@@ -69,4 +69,4 @@ class hotwordApi {
   }
 }
 
-export default hotwordApi;
+export default Api;

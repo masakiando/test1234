@@ -6,9 +6,9 @@ import { Router, browserHistory } from 'react-router';
 //mock
 import { loadCourses,
          loadAuthors} from './modules/course/actions/Actions';
-import { Categories } from './modules/home/categor/actions/mockCategorActions';
+import { loadCategoriesCover } from './modules/home/categor/actions/Actions';
+import { loadHotwords } from './modules/home/hotword/actions/Actions';
 
-import { loadHotwords } from './actions/HotwordActions';
 import { loadProducts } from './actions/ProductActions';
 import { saleProducts } from './actions/FlashSaleActions';
 import { popularProducts } from './actions/popularProductActions';
@@ -35,12 +35,15 @@ import App from './components/App';
 const store = configureStore();
 store.dispatch(loadCourses());
 store.dispatch(loadAuthors());
+store.dispatch(loadCategoriesCover());
 store.dispatch(loadHotwords());
-store.dispatch(Categories());
-store.dispatch(loadProducts());
+
+
+//mada
 store.dispatch(saleProducts());
 store.dispatch(popularProducts());
 store.dispatch(Malls());
+store.dispatch(loadProducts());
 
 store.dispatch(loadCategories());
 

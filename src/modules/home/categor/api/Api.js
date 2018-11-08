@@ -108,8 +108,8 @@ const Categories = [
   }
 ];
 
-class CategorApi {
-  static getAllCategories() {
+class CategoriesCover {
+  static getCategoriesCover() {
     return new Promise((resolve, reject) => {
       // 指定された遅延の後に、コードの断片または関数を実行します。
       setTimeout(() => {
@@ -119,4 +119,4 @@ class CategorApi {
   }
 }
 
-export default CategorApi;
+export default CategoriesCover;

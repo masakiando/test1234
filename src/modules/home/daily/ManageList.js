@@ -38,9 +38,8 @@ DailyDiscover.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  const { products } = state;
   return {
-   products
+   products: state.products
   };
 }
 
