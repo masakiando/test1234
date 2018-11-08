@@ -1,4 +1,3 @@
-import Api from '../api/mockApi';
 import ProductImagesMockApi from '../api/ProductImagesMockApi';
 import axios from 'axios';
 
