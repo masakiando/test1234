@@ -5,14 +5,15 @@ import configureStore from './store/configureStore';
 import { Router, browserHistory } from 'react-router';
 //mock
 import { loadCourses,
-         loadAuthors} from './modules/course/actions/Actions';
+         loadAuthors}          from './modules/course/actions/Actions';
 import { loadCategoriesCover } from './modules/home/categor/actions/Actions';
-import { loadHotwords } from './modules/home/hotword/actions/Actions';
-import { saleProducts } from './modules/home/flashsale/actions/Actions';
-
+import { loadHotwords }        from './modules/home/hotword/actions/Actions';
+import { saleProducts }        from './modules/home/flashsale/actions/Actions';
+import { loadMallsCover }      from './modules/home/mallcover/actions/Actions';
+//mada
 import { loadProducts } from './actions/ProductActions';
 import { popularProducts } from './actions/popularProductActions';
-import { Malls } from './actions/MallActions';
+
 //Genuine
 import { loadCategories } from './actions/categorActions';
 import routes from './routes';
@@ -35,14 +36,14 @@ import App from './components/App';
 const store = configureStore();
 store.dispatch(loadCourses());
 store.dispatch(loadAuthors());
+// home page
 store.dispatch(loadCategoriesCover());
 store.dispatch(loadHotwords());
-
+store.dispatch(loadMallsCover());
+store.dispatch(saleProducts());
 
 //mada
-store.dispatch(saleProducts());
 store.dispatch(popularProducts());
-store.dispatch(Malls());
 store.dispatch(loadProducts());
 
 store.dispatch(loadCategories());

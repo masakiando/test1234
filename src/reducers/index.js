@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
 
+import malls            from '../modules/home/mallcover/reducers/Reducer';
 import saleproducts     from '../modules/home/flashsale/reducers/Reducer';
 import hotwords         from '../modules/home/hotword/reducers/Reducer';
 import categoriesCover  from '../modules/home/categor/reducers/Reducer';
@@ -12,8 +13,6 @@ import authors from './authorReducer';
 import ajaxCallsInProgress from './ajaxStatusReducer';
 import products from './productReducer';
 import popularproducts from './popularReducer';
-import malls from './mallReducer';
-
 
 // import authentication from './authenticationReducer';
 import flashMessages from './flashMessagesReducer';

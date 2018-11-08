@@ -10,7 +10,7 @@ yarn start
 srcServer.js書き換えしたならdistServer.jsも変更する
 yarn build
 git add .
-git commit -m "home flashsale redux 移植"
+git commit -m "home mallcover redux 移植"
 git push
 heroku ps:scale web=1
 git push heroku master
