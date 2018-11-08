@@ -10,9 +10,9 @@ import { loadCategoriesCover } from './modules/home/categor/actions/Actions';
 import { loadHotwords }        from './modules/home/hotword/actions/Actions';
 import { saleProducts }        from './modules/home/flashsale/actions/Actions';
 import { loadMallsCover }      from './modules/home/mallcover/actions/Actions';
+import { loadPopularProducts }     from './modules/home/popular/actions/Actions';
 //mada
 import { loadProducts } from './actions/ProductActions';
-import { popularProducts } from './actions/popularProductActions';
 
 //Genuine
 import { loadCategories } from './actions/categorActions';
@@ -41,9 +41,9 @@ store.dispatch(loadCategoriesCover());
 store.dispatch(loadHotwords());
 store.dispatch(loadMallsCover());
 store.dispatch(saleProducts());
+store.dispatch(loadPopularProducts());
 
 //mada
-store.dispatch(popularProducts());
 store.dispatch(loadProducts());
 
 store.dispatch(loadCategories());

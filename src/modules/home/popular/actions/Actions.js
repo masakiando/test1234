@@ -1,14 +1,13 @@
-//src/actions/FlashSaleActions.js
-import * as types from './actionTypes';
-import popularProductApi from '../api/mockPopularProductsApi';
+import * as types from '../constans/actionTypes';
+import Api from '../api/Api';
 
 export function loadPopularProductsSuccess(popularproducts) {
   return { type: types.LOAD_POPULAR_PRODUCT_SUCCESS, popularproducts};
 }
 
-export function popularProducts() {
+export function loadPopularProducts() {
   return function(dispatch) {
-    return popularProductApi.getAllpopularProducts()
+    return Api.getAllpopularProducts()
     .then(popularproducts => {
       dispatch(loadPopularProductsSuccess(popularproducts));
     }).catch(error => {
