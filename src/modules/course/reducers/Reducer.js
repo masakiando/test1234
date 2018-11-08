@@ -1,11 +1,12 @@
-/* initialState */ const courses  = [];
+// commonReducers
+import initialState from '../../../reducers/initialState';
 /* actionTypes  */ const LOAD_COURSES_SUCCESS = 'LOAD_COURSES_SUCCESS';
 /* actionTypes  */ const CREATE_COURSE_SUCCESS = 'CREATE_COURSE_SUCCESS';
 /* actionTypes  */ const UPDATE_COURSE_SUCCESS = 'UPDATE_COURSE_SUCCESS';
 /* actionTypes  */ const DELETE_COURSE_SUCCESS = 'DELETE_COURSE_SUCCESS';
 /* actionTypes  */ const LOAD_AUTHORS_SUCCESS = 'LOAD_AUTHORS_SUCCESS';
 
-export default function courseReducer(state = courses, action) {
+export default function courseReducer(state = initialState.courses, action) {
   switch (action.type) {
 
     case LOAD_COURSES_SUCCESS:

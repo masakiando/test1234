@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import Header from './common/header/index';
-import FlashMessagesList from './flash/FlashMessagesList';
+import FlashMessagesList from '../commonScreens/flash/FlashMessagesList';
 
 class App extends React.Component {
   render() {

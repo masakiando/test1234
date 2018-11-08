@@ -4,9 +4,11 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { Router, browserHistory } from 'react-router';
 //mock
-import {loadCourses, loadAuthors} from './modules/course/actions/Actions';
+import { loadCourses,
+         loadAuthors} from './modules/course/actions/Actions';
+import { Categories } from './modules/home/categor/actions/mockCategorActions';
+
 import { loadHotwords } from './actions/HotwordActions';
-import { Categories } from './actions/mockCategorActions';
 import { loadProducts } from './actions/ProductActions';
 import { saleProducts } from './actions/FlashSaleActions';
 import { popularProducts } from './actions/popularProductActions';

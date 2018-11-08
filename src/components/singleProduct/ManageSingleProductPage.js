@@ -24,18 +24,11 @@ class SingleProduct extends React.Component {
     this.redirectToXXXXXPage = this.redirectToXXXXXPage.bind(this);
   }
 
-componentDidMount() {
-  console.log("Page location is " + window.location.href);
-  var foo = window.location.href;
-  var tmp = foo.replace(/[^0-9]/g, "");
-  var test = tmp + '';
-  var id = test.substr(4,10);
-  // console.log(test.substr(4,10));
-  // this.props.actions.loadSingleProductImege(this.props.id);
-  this.props.actions.loadSingleProductImege(this.props.Id);
-}
-  componentWillReceiveProps(nextProps) {
+  componentDidMount() {
+    this.props.actions.loadSingleProductImege(this.props.Id);
+  }
 
+  componentWillReceiveProps(nextProps) {
     if (this.props.product.id != nextProps.product.id) {
       // this.props.actions.loadSingleProductImege(nextProps.product.id);
       this.setState({

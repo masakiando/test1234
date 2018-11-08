@@ -1,14 +1,9 @@
 import * as types from './actionTypes';
 import ProductApi from '../api/mockProductApi';
-import SingleProductImgApi from '../api/singleProductApi';
 import axios from 'axios';
 
 export function loadProductsSuccess(products) {
   return { type: types.LOAD_PRODUCT_SUCCESS, products};
-}
-
-export function loadSingleProductImegeSuccess(img) {
-  return { type: types.LOAD_SINGLE_PRODUCT_IMEGESUCCESS, img};
 }
 
 export function createProductImagesSuccess(imegesIdUrl) {
@@ -20,18 +15,6 @@ export function loadProducts() {
     return ProductApi.getAllProducts()
     .then(Products => {
       dispatch(loadProductsSuccess(Products));
-    }).catch(error => {
-      throw(error);
-    });
-  };
-}
-
-
-export function loadSingleProductImege(id) {
-  return function(dispatch) {
-    return SingleProductImgApi.getSingleProductImg(id)
-    .then(img => {
-      dispatch(loadSingleProductImegeSuccess(img));
     }).catch(error => {
       throw(error);
     });

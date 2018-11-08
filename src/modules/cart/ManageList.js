@@ -70,7 +70,7 @@ CartPage.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     cart: state.cart,
-    shopIdList: state.shopIdList
+    shopIdList: state.shopIdStorage
   };
 }
 

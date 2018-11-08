@@ -1,11 +1,10 @@
 import isEmpty from 'lodash/isEmpty';
-
-/* initialState */ const authentication = [];
+import initialState from '../../../reducers/initialState';
 /* actionTypes  */ const SET_CURRENT_USER = 'SET_CURRENT_USER';
 
 // reducer
 export default function authenticationReducer(
-  state = authentication, action) {
+  state = initialState.authentication, action) {
   switch (action.type) {
     case SET_CURRENT_USER:
       return {

@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 import { render } from 'react-dom';
 import { Route, IndexRoute, Link, IndexLink } from 'react-router';
 import App from './components/App';
-import Home from './components/home/index';
+import Home from './modules/home/index';
 
 import CourseManageForm from './modules/course/ManageForm';
 import CourseManageList from './modules/course/ManageList';
@@ -13,12 +13,10 @@ import CartManageList   from './modules/cart/ManageList.js';
 import BuyManageForm    from './modules/buy/ManageForm';
 
 import ManageProductPage from './components/productRegistration/ManageProductPage';
-import SingleProduct from './components/singleProduct/ManageSingleProductPage';
-
-import Error404 from './components/errors/Error404Page.js';
+import SingleProductManageForm    from './modules/singleProduct/ManageForm';
 
 import OrderLog from './modules/user/OrderLog';
-
+import Error404 from './commonScreens/errors/Error404Page.js';
 
 import requireAuth from './utils/requireAuth';
 // devDemoComponents
@@ -38,28 +36,27 @@ export default (
       <Route path="courses" component={CourseManageList} />
       <Route path="course" component={CourseManageForm} />
       <Route path="course/:id" component={CourseManageForm} />
+      <Route path="/SignupPage" component={SignupManageForm} />
       <Route path="/LoginPage" component={LoginManageForm} />
-
-    <Route path="/singleproduct/:id" component={SingleProduct} />
+      <Route path="/singleproduct/:id" component={SingleProductManageForm} />
 
     <Route path="/ManageProductPage" component={ManageProductPage} />
 
-    <Route path="/SignupPage" component={SignupManageForm} />
-    <Route path="/cart" component={CartManageList} />
-    <Route path="/buy" component={requireAuth(BuyManageForm)} />
+      <Route path="/cart" component={CartManageList} />
+      <Route path="/buy" component={requireAuth(BuyManageForm)} />
 
-    <Route path="/user/purchase" component={OrderLog}/>
+      <Route path="/user/purchase" component={OrderLog}/>
 
-    <Route path="/dev" component={DevHome} />
-    <Route path="/TestGrid" component={TestGrid} />
-    <Route path="/bulma1" component={Bulma1} />
-    <Route path="/bulma2" component={Bulma2} />
-    <Route path="/bulma3" component={Bulma3} />
-    <Route path="/bulma4" component={Bulma4} />
-    <Route path="/bounce" component={Bounce} />
-    <Route path="/tooltip" component={ToolTip} />
-    <Route path="/imageUploadSaveLocal" component={ImgUpReader} />
+      <Route path="/dev" component={DevHome} />
+      <Route path="/TestGrid" component={TestGrid} />
+      <Route path="/bulma1" component={Bulma1} />
+      <Route path="/bulma2" component={Bulma2} />
+      <Route path="/bulma3" component={Bulma3} />
+      <Route path="/bulma4" component={Bulma4} />
+      <Route path="/bounce" component={Bounce} />
+      <Route path="/tooltip" component={ToolTip} />
+      <Route path="/imageUploadSaveLocal" component={ImgUpReader} />
 
-    <Route path="/*" component={Error404} />
+      <Route path="/*" component={Error404} />
   </Route>
 );

@@ -7,7 +7,7 @@ export default {
     user: {}
   },
   hotwords: [],
-  categories: [],
+  categoriesCover: [],
   g_categories: [],
   products: [],
   productImages: [],
@@ -17,5 +17,5 @@ export default {
   img: [],
   flashMessages: [],
   cart: [],
-  shopIdList: []
+  shopIdStorage: []
 };
