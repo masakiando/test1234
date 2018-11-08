@@ -2,7 +2,7 @@ import expect from 'expect';
 import {createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from '../reducers';
 import initialState from '../reducers/initialState';
-import * as HotwordActions from '../actions/HotwordActions';
+import * as HotwordActions from '../modules/home/hotword/actions/Actions';
 import thunk from 'redux-thunk';
 
 describe('Store', function() {

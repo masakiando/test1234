@@ -1,4 +1,3 @@
-//src/api/mockFlashSaleApi.js
 import delay from './delay';
 
 const arr = new Array(16)
@@ -6,11 +5,9 @@ const arr = new Array(16)
   .map((v,i)=>i + 1);
 
 const saleProducts = arr.map((element, index, array)=>{
-  //開発時coverのデータ全て用意できていないこともあり得るので一つの写真を使い回して描画する
   const saleProduct = {
     id: element,
     product_name: 'Product' + '_' + element,
-    // cover: `product_${element}.173.173.png`,
     cover: `product_0.173.173.png`,
     price: 500,
     discount_rate: 20,
@@ -21,10 +18,9 @@ const saleProducts = arr.map((element, index, array)=>{
   return saleProduct;
 });
 
-class saleProductApi {
+class Api {
   static getAllaleProducts() {
     return new Promise((resolve, reject) => {
-      // 指定された遅延の後に、コードの断片または関数を実行します。
       setTimeout(() => {
         resolve(Object.assign([], saleProducts));
       }, delay);
@@ -32,4 +28,4 @@ class saleProductApi {
   }
 }
 
-export default saleProductApi;
+export default Api;

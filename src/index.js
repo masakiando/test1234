@@ -8,9 +8,9 @@ import { loadCourses,
          loadAuthors} from './modules/course/actions/Actions';
 import { loadCategoriesCover } from './modules/home/categor/actions/Actions';
 import { loadHotwords } from './modules/home/hotword/actions/Actions';
+import { saleProducts } from './modules/home/flashsale/actions/Actions';
 
 import { loadProducts } from './actions/ProductActions';
-import { saleProducts } from './actions/FlashSaleActions';
 import { popularProducts } from './actions/popularProductActions';
 import { Malls } from './actions/MallActions';
 //Genuine

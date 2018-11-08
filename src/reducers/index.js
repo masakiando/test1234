@@ -1,16 +1,16 @@
 import {combineReducers} from 'redux';
 
-import hotwords     from '../modules/home/hotword/reducers/Reducer';
-import categoriesCover     from '../modules/home/categor/reducers/Reducer';
-import courses        from '../modules/course/reducers/Reducer';
-import login          from '../modules/login/reducers/Reducer';
-import img            from '../modules/singleProduct/reducers/productImagesReducer';
-import shopIdStorage   from './shopIdStorageReducer';
+import saleproducts     from '../modules/home/flashsale/reducers/Reducer';
+import hotwords         from '../modules/home/hotword/reducers/Reducer';
+import categoriesCover  from '../modules/home/categor/reducers/Reducer';
+import courses          from '../modules/course/reducers/Reducer';
+import login            from '../modules/login/reducers/Reducer';
+import img              from '../modules/singleProduct/reducers/productImagesReducer';
+import shopIdStorage    from './shopIdStorageReducer';
 
 import authors from './authorReducer';
 import ajaxCallsInProgress from './ajaxStatusReducer';
 import products from './productReducer';
-import saleproducts from './flashSaleReducer';
 import popularproducts from './popularReducer';
 import malls from './mallReducer';
 
@@ -35,7 +35,7 @@ const rootReducer = combineReducers({
   hotwords,
   categoriesCover: categoriesCover,
   products: products,
-  saleproducts,
+  saleproducts: saleproducts,
   popularproducts: popularproducts,
   malls: malls,
   img: img,

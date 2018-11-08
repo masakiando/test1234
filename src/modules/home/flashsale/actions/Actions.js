@@ -1,15 +1,13 @@
-//src/actions/FlashSaleActions.js
-import * as types from './actionTypes';
-import saleProductApi from '../api/mockFlashSaleApi';
+import * as types from '../constans/actionTypes';
+import Api from '../api/Api';
 
 export function loadsaleProductsSuccess(saleproducts) {
-
-  return { type: types.LOAD_SALEPRODUCT_SUCCESS, saleproducts};
+  return { type: types.LOAD_SALE_PRODUCT_SUCCESS, saleproducts};
 }
 
 export function saleProducts() {
   return function(dispatch) {
-    return saleProductApi.getAllaleProducts()
+    return Api.getAllaleProducts()
     .then(saleproducts => {
       dispatch(loadsaleProductsSuccess(saleproducts));
     }).catch(error => {
