@@ -2,6 +2,7 @@
     Reducers https://redux.js.org/basics/reducers
 */
 
+/*-- Reducers https://redux.js.org/basics/reducers --*/
 import * as types from '.actionTypes';
 import initState from './initialState';
 
