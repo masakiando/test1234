@@ -1,8 +1,5 @@
 import delay from './delay';
-// setTimeoutを使用して、AJAX呼び出しの遅延をシミュレートします。
-//すべての呼び出しが約束を返します。
-// It uses setTimeout to simulate the delay of an AJAX call.
-// All calls return promises.
+
 const arr = new Array(300)
   .fill(null)
   .map((v, i) => i + 1);
@@ -50,7 +47,6 @@ const products = arr.map(function(element, index, array) {
 class ProductApi {
   static getAllProducts() {
     return new Promise((resolve, reject) => {
-      // 指定された遅延の後に、コードの断片または関数を実行します。
       setTimeout(() => {
         resolve(Object.assign([], products));
       }, delay);

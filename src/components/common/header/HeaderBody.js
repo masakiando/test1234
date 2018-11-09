@@ -1,16 +1,10 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes}  from 'react';
 import { Link, IndexLink } from 'react-router';
-import TextInputSearch from '../TextInput_&_Search';
-import {
-         Wrap,Container,
-           Grid,
-             LogoSection,SearchSection,Form,Ul,CartSection
-} from './styled/HeaderBodyStyled';
-var logo = require('./images/site_log.png');
-var cocacola = require('./images/cocacola-mobile.png');
-import LoadingDots from '../LoadingDots';
-import {connect} from 'react-redux';
-
+import TextInputSearch     from '../TextInput_&_Search';
+import { Wrap, Container, Grid, LogoSection, SearchSection, Form, Ul, CartSection
+}                          from './styled/HeaderBodyStyled';
+var logo =              require('./images/site_log.png');
+var cocacola =          require('./images/cocacola-mobile.png');
 
 class HeaderBody extends React.Component {
   constructor(props) {
@@ -60,23 +54,9 @@ class HeaderBody extends React.Component {
          </CartSection>
         </Grid>
       </Container>
-      {this.props.loading &&<LoadingDots interval={100} dots={20}/>}
-      {!this.props.loading &&<span>&nbsp;</span>}
     </Wrap>
     );
   }
 }
 
-HeaderBody.propTypes = {
-  loading: PropTypes.bool.isRequired
-};
-
-function mapStateToProps(state, ownProps) {
-  
-  return {
-    courses: state.courses,
-    loading: state.ajaxCallsInProgress > 0
-  };
-}
-
-export default connect(mapStateToProps, null)(HeaderBody);
+export default HeaderBody;

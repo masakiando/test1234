@@ -4,33 +4,34 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
-//mock
-import { loadCourses,
-         loadAuthors}          from './modules/course/actions/Actions';
+
+// App Root
+import App from './components/App';
+
+//
 import { loadCategoriesCover } from './modules/home/categor/actions/Actions';
 import { loadHotwords }        from './modules/home/hotword/actions/Actions';
 import { saleProducts }        from './modules/home/flashsale/actions/Actions';
 import { loadMallsCover }      from './modules/home/mallcover/actions/Actions';
 import { loadPopularProducts } from './modules/home/popular/actions/Actions';
+import { loadProducts }        from './actions/ProductActions';
+import setAuthenticationToken  from './utils/setAuthenticationToken';
 
-//mada
-import { loadProducts } from './actions/ProductActions';
-import setAuthenticationToken from './utils/setAuthenticationToken';
+//devDemoComponents
+import { loadCourses,
+         loadAuthors }         from './devDemoComponents/course/actions/Actions';
 
-// jwt //////////////////////////////////////////////////////////
+// jwt
 // import jwt from 'jsonwebtoken';
 import jwtDecode from 'jwt-decode';
 import { setCurrentUser } from './modules/login/actions/Actions';
 
-// styles ///////////////////////////////////////////////////////
-// import 'normalize.css/normalize.css';
+// styles
 import '@blueprintjs/core/dist/blueprint.css';
 import './styles/styles.scss';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
-
-// App Root ///////////////////////////////////////////////////////
-import App from './components/App';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import 'normalize.css/normalize.css';
 
 //
 const store = configureStore();

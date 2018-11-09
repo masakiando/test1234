@@ -1,6 +1,8 @@
 import React, {PropTypes} from 'react';
-import Header from './common/header/index';
-import FlashMessagesList from '../commonScreens/flash/FlashMessagesList';
+import {connect}          from 'react-redux';
+import Header             from './common/header/index';
+import FlashMessagesList  from '../commonScreens/flash/FlashMessagesList';
+import LoadingDots        from './LoadingDots';
 
 class App extends React.Component {
   render() {
@@ -8,13 +10,22 @@ class App extends React.Component {
         <div className="app">
           <FlashMessagesList />
           <Header/>
+            {this.props.loading &&<LoadingDots interval={100} dots={20}/>}
+            {!this.props.loading &&<span>&nbsp;</span>}
             {this.props.children}
         </div>
     );
   }
 }
 App.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
-export default App;
+function mapStateToProps(state, ownProps) {
+  return {
+    loading: state.ajaxCallsInProgress > 0
+  };
+}
+
+export default connect(mapStateToProps, null)(App);

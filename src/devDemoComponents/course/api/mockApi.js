@@ -1,4 +1,4 @@
-import delay from './delay';
+import delay from '../../../api/delay';
 //このファイルは、以下のハードコードされたデータを使用してWeb APIをモックします。
 // setTimeoutを使用して、AJAX呼び出しの遅延をシミュレートします。
 //すべての呼び出しが約束を返します。
@@ -60,7 +60,7 @@ const generateId = (course) => {
 //こうやって書けばcourses取れる！！
 class CourseApi {
   static getAllCourses() {
-    
+
     return new Promise((resolve, reject) => {
       // 指定された遅延の後に、コードの断片または関数を実行します。
       setTimeout(() => {
@@ -70,7 +70,7 @@ class CourseApi {
   }
 
   static saveCourse(course) {
-    
+
     // courseを複製します。
     course = Object.assign({}, course); // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
@@ -99,7 +99,7 @@ class CourseApi {
           course.watchHref = `http://www.pluralsight.com/courses/${course.id}`;
           courses.push(course);
         }
-        
+
         // 結果を返します。
         resolve(course);
         console.log(course);
