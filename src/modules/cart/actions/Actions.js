@@ -1,8 +1,7 @@
-// actionTypes
-const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART';
+import * as types from '../constans/actionTypes';
 
 export function addItemToCart(item) {
   return function(dispatch) {
-    return dispatch({type: ADD_ITEM_TO_CART, item});
+    return dispatch({type: types.ADD_ITEM_TO_CART, item});
   };
 }

@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as Actions from '../../modules/login/actions/Actions';
+import * as Actions from './actions/Actions';
 import { Wrap, Container, Nav, Ul, Li } from './styles/MenuStyled';
 
 class HeaderMenu extends React.Component {

@@ -6,7 +6,7 @@ import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 
 // App Root
-import App from './components/App';
+import App from './App';
 
 //
 import { loadCategoriesCover } from './modules/home/categor/actions/Actions';

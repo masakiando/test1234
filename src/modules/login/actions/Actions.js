@@ -1,13 +1,11 @@
+import * as types from '../constans/actionTypes';
 import axios from 'axios';
 import setAuthenticationToken from '../../../utils/setAuthenticationToken';
 import jwtDecode from 'jwt-decode';
 
-// actionTypes
-const SET_CURRENT_USER = 'SET_CURRENT_USER';
-
 // action create
 export function setCurrentUser(user) {
-  return {type: SET_CURRENT_USER, user};
+  return {type: types.SET_CURRENT_USER, user};
 }
 
 // thunk middle
