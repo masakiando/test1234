@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect}          from 'react-redux';
-import Header             from './common/header/index';
+import Header             from '../commonScreens/header/index';
 import FlashMessagesList  from '../commonScreens/flash/FlashMessagesList';
 import LoadingDots        from './LoadingDots';
 

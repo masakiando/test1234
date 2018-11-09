@@ -2,9 +2,9 @@ import React, {PropTypes}  from 'react';
 import { Link, IndexLink } from 'react-router';
 import TextInputSearch     from '../TextInput_&_Search';
 import { Wrap, Container, Grid, LogoSection, SearchSection, Form, Ul, CartSection
-}                          from './styled/HeaderBodyStyled';
-var logo =              require('./images/site_log.png');
-var cocacola =          require('./images/cocacola-mobile.png');
+}                          from './styles/BodyStyled';
+var logo =              require('./pictures/site_log.png');
+var cocacola =          require('./pictures/cocacola-mobile.png');
 
 class HeaderBody extends React.Component {
   constructor(props) {

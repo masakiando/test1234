@@ -1,6 +1,6 @@
 import React from 'react';
-import HeaderMenu from './HeaderMenu';
-import HeaderBody from './HeaderBody';
+import Menu from './ManageMenu';
+import Body from './ManageBody';
 
 class ManageHeaderPage extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ class ManageHeaderPage extends React.Component {
   render() {
     return (
       <header id="top">
-        <HeaderMenu/>
-        <HeaderBody/>
+        <Menu/>
+        <Body/>
       </header>
     );
   }
