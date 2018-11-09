@@ -1,5 +1,5 @@
-import * as types from '../actions/actionTypes';
-import initialState from './initialState';
+import * as types from '../constans/actionTypes';
+import initialState from '../../../reducers/initialState';
 
 export default  function imegesIdUrlProductReducer(
   state = initialState.productImages, action) {

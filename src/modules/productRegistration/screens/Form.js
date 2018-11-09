@@ -1,12 +1,12 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
-import TextInput from '../common/TextInput.js';
-import TextInputNoLable from '../common/TextInputNoLable.js';
-import Textarea from '../common/Textarea.js';
-import CategoryDropdown from './CategoryDropdown';
-import Dropdown from './Dropdown';
-import ImageUploadSaveLocal from './ImageUploadSaveLocal';
-import ImageUploadCloudinary from './ImageUploadCloudinary';
+import TextInput             from './../../../commonScreens/TextInput';
+import TextInputNoLable      from './../../../commonScreens/TextInputNoLable';
+import Textarea              from './../../../commonScreens/TextArea';
+import CategoryDropdown      from '../screens/CategoryDropdown';
+import AttributeDropdown     from '../screens/AttributeDropdown';
+import LocalViewImageUpload  from '../screens/LocalViewImageUpload';
+import CloudinaryImageUpload from '../screens/CloudinaryImageUpload';
 
 class ProdcutForm extends React.Component {
   constructor(props, context) {
@@ -73,7 +73,7 @@ class ProdcutForm extends React.Component {
 
   attributeOptions2() {
     return this.state.attributeOptions.map((item, index) => {
-      return (<Dropdown className={`gird_dropdown_${index + 1}`} key={item.attribute_key_id} name={item.attribute_key_name} label={item.attribute_key_name} categories={this.props.categories} options={this.state.attributeOptions2} product={this.props.product} updateState={this.updateState}/>);
+      return (<AttributeDropdown className={`gird_dropdown_${index + 1}`} key={item.attribute_key_id} name={item.attribute_key_name} label={item.attribute_key_name} categories={this.props.categories} options={this.state.attributeOptions2} product={this.props.product} updateState={this.updateState}/>);
     });
   }
 
@@ -461,7 +461,7 @@ class ProdcutForm extends React.Component {
                   <div className="field-body">
                     <div className="field">
                       <div className="control">
-                        <ImageUploadSaveLocal product={product} updateState={this.updateState}/>
+                        <LocalViewImageUpload product={product} updateState={this.updateState}/>
                       </div>
                     </div>
                   </div>
@@ -473,7 +473,7 @@ class ProdcutForm extends React.Component {
                   <div className="field-body">
                     <div className="field">
                       <div className="control">
-                        <ImageUploadCloudinary product={product} updateState={this.updateState}/>
+                        <CloudinaryImageUpload product={product} updateState={this.updateState}/>
                       </div>
                     </div>
                   </div>
@@ -832,69 +832,3 @@ ProdcutForm.propTypes = {
 };
 
 export default ProdcutForm;
-
-// <td className="testTd">{product.classification_name_1}</td>
-// <td className="testTd"
-//     style={{padding: '0px'}}>
-//     <input
-//       style={{width:'100%', height: '100%'}}
-//       name="product_price"
-//       value={product.product_price}
-//       onChange={onChange}
-//       className=""
-//       type="number"/>
-//     {product.errors && <div className="alert alert-danger">error</div>}
-// </td>
-// <td className="testTd"
-//     style={{padding: '0px'}}>
-//     <input
-//       style={{width:'100%', height: '100%'}}
-//       name="product_stock"
-//       value={product.product_stock}
-//       onChange={onChange}
-//       className=""
-//       type="number"/>
-//     {product.errors && <div className="alert alert-danger">error</div>}
-// </td>
-// <td>aa</td>
-
-// <td className="testTd">{this.nameSet(i+1, product)}</td>
-// <td className="testTd" style={{padding: '0px'}}>
-//     <input
-//       style={{width:'100%', height: '100%'}}
-//       name={`product_price_${i+1}`}
-//       value={this.priceNameSet(i+1, product)}
-//       onChange={onChange}
-//       className=""
-//       type="number"/>
-//     {product.errors && <div className="alert alert-danger">error</div>}
-// </td>
-// <td className="testTd"
-//     style={{padding: '0px'}}>
-//     <input
-//       style={{width:'100%', height: '100%'}}
-//       name={`product_stock_${i+1}`}
-//       value={this.stockNameSet(i+1, product)}
-//       onChange={onChange}
-//       className=""
-//       type="number"/>
-//     {product.errors && <div className="alert alert-danger">error</div>}
-// </td>
-// <td>aa</td>
-
-
-
-// <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-//   <thead>
-//     <tr>
-//       <th>{product.classificationGroup_name}</th>
-//       <th>{product.classificationGroup_name2}</th>
-//       <th>価格</th>
-//       <th>倉庫</th>
-//       <th>SKU分類</th>
-//     </tr>
-//   </thead>
-//   <tbody>
-//     {this.renderclassificationRow()}
-//   </tbody>
-// </table>

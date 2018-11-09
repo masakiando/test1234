@@ -2,6 +2,9 @@
 "start": "npm-run-all --parallel knex test:watch open:src lint:watch",
 "knex": "knex migrate:rollback --env test && knex migrate:latest --env test && knex seed:run --env test",
 「atom-beautify」【Ctrl】+【Alt】+【B】
+symbols-tree-view package ctrl-alt-o
+tree ProjectsRoot コマンド-alt-o
+フルパス　コント-シフト-c
 
 JSONPlaceholder
 https://jsonplaceholder.typicode.com/
@@ -10,7 +13,7 @@ yarn start
 srcServer.js書き換えしたならdistServer.jsも変更する
 yarn build
 git add .
-git commit -m "home cart actions add 移植"
+git commit -m "productReg & singleProd in module  移植"
 git push
 heroku ps:scale web=1
 git push heroku master

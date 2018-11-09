@@ -1,8 +1,10 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux'; // Component(React)とReduxの接続
-import ProdcutForm from './ProdcutForm';
+import React, { PropTypes }   from 'react';
+import { connect }            from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as Actions           from './actions/Actions';
+import Form                   from './screens/Form';
 
-class ManageProductPage extends React.Component {
+class ManageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,6 +16,11 @@ class ManageProductPage extends React.Component {
     this.updateProductState = this.updateProductState.bind(this);
     this.updateState = this.updateState.bind(this);
   }
+
+  componentDidMount() {
+    this.props.actions.loadCategories();
+  }
+
   updateProductState(event) {
     debugger;
     const field = event.target.name;
@@ -27,23 +34,24 @@ class ManageProductPage extends React.Component {
   }
 
   render() {
-    const {g_categories} = this.props;
+    const {categories} = this.props;
     return (
-      <ProdcutForm
+      <Form
         product={this.state.product}
         errors={this.state.errors}
         saving={this.state.saving}
         onChange={this.updateProductState}
-        categories={g_categories}
+        categories={categories}
         updateState={this.updateState}
       />
     );
   }
 }
 
-ManageProductPage.propTypes = {
+ManageForm.propTypes = {
+  actions: PropTypes.object.isRequired,
   product: PropTypes.object.isRequired,
-  g_categories: PropTypes.array.isRequired
+  categories: PropTypes.array.isRequired
 };
 
 function getProductById(products, id) {
@@ -80,8 +88,14 @@ function mapStateToProps(state, ownProps) {
   }
   return {
     product: product,
-    g_categories: state.g_categories
+    categories: state.categories
   };
 }
 
-export default connect(mapStateToProps, null)(ManageProductPage);
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(Actions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ManageForm);

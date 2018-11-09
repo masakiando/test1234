@@ -1,11 +1,11 @@
 import * as types from '../constans/actionTypes';
 import initialState from '../../../reducers/initialState';
 
-export default  function df(state = initialState.img, action) {
+export default function categorReducer(state = initialState.categories, action) {
   switch (action.type) {
 
-    case types.LOAD_SINGLE_PRODUCT_IMEGESUCCESS:
-      return action.img;
+    case types.LOAD_CATEGORIES_SUCCESS:
+      return action.categories;
 
       default:
         return state;

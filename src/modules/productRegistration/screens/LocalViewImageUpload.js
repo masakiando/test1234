@@ -1,6 +1,6 @@
 import React from 'react';
 
-class imageUploadSaveLocal extends React.Component {
+class LocalViewImageUpload extends React.Component {
   constructor(props) {
      super(props);
      this.state = {file: '',imagePreviewUrl: ''};
@@ -60,4 +60,4 @@ class imageUploadSaveLocal extends React.Component {
    }
  }
 
-export default imageUploadSaveLocal;
+export default LocalViewImageUpload;

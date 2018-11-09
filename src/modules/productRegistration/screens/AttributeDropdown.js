@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
-import axios from 'axios';
 
-class attributeValueDropdown extends React.Component {
+class AttributeDropdown extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -115,7 +114,7 @@ class attributeValueDropdown extends React.Component {
 		);
 	}
 }
-attributeValueDropdown.propTypes = {
+AttributeDropdown.propTypes = {
   className: PropTypes.string.isRequired,
   style: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -126,4 +125,4 @@ attributeValueDropdown.propTypes = {
   product: PropTypes.object
 };
 
-export default attributeValueDropdown;
+export default AttributeDropdown;

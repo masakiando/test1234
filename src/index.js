@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 //mock
 import { loadCourses,
          loadAuthors}          from './modules/course/actions/Actions';
@@ -10,29 +11,28 @@ import { loadCategoriesCover } from './modules/home/categor/actions/Actions';
 import { loadHotwords }        from './modules/home/hotword/actions/Actions';
 import { saleProducts }        from './modules/home/flashsale/actions/Actions';
 import { loadMallsCover }      from './modules/home/mallcover/actions/Actions';
-import { loadPopularProducts }     from './modules/home/popular/actions/Actions';
+import { loadPopularProducts } from './modules/home/popular/actions/Actions';
+
 //mada
 import { loadProducts } from './actions/ProductActions';
-
-//Genuine
-import { loadCategories } from './actions/categorActions';
-import routes from './routes';
-
 import setAuthenticationToken from './utils/setAuthenticationToken';
-// jwt
+
+// jwt //////////////////////////////////////////////////////////
 // import jwt from 'jsonwebtoken';
 import jwtDecode from 'jwt-decode';
 import { setCurrentUser } from './modules/login/actions/Actions';
-//styles
+
+// styles ///////////////////////////////////////////////////////
 // import 'normalize.css/normalize.css';
 import '@blueprintjs/core/dist/blueprint.css';
 import './styles/styles.scss';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 
+// App Root ///////////////////////////////////////////////////////
 import App from './components/App';
-// import redux from './redux'; // redux check
 
+//
 const store = configureStore();
 store.dispatch(loadCourses());
 store.dispatch(loadAuthors());
@@ -42,11 +42,8 @@ store.dispatch(loadHotwords());
 store.dispatch(loadMallsCover());
 store.dispatch(saleProducts());
 store.dispatch(loadPopularProducts());
-
 //mada
 store.dispatch(loadProducts());
-
-store.dispatch(loadCategories());
 
 //リロード時localStorageにjwtTokenあれば
 //axios.defaults.headers.common Request headersにBearer追加

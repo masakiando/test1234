@@ -8,7 +8,7 @@ export default {
   },
   hotwords: [],
   categoriesCover: [],
-  g_categories: [],
+  categories: [],
   products: [],
   productImages: [],
   saleproducts: [],

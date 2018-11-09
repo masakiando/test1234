@@ -5,14 +5,14 @@ import { Route, IndexRoute, Link, IndexLink } from 'react-router';
 import App from './components/App';
 import Home from './modules/home/index';
 
-import CourseManageForm from './modules/course/ManageForm';
-import CourseManageList from './modules/course/ManageList';
-import LoginManageForm  from './modules/login/ManageForm';
-import SignupManageForm from './modules/signup/ManageForm';
-import CartManageList   from './modules/cart/ManageList.js';
-import BuyManageForm    from './modules/buy/ManageForm';
+import CourseManageForm  from './modules/course/ManageForm';
+import CourseManageList  from './modules/course/ManageList';
+import LoginManageForm   from './modules/login/ManageForm';
+import SignupManageForm  from './modules/signup/ManageForm';
+import CartManageList    from './modules/cart/ManageList.js';
+import BuyManageForm     from './modules/buy/ManageForm';
+import ManageProductPage from './modules/productRegistration/ManageForm';
 
-import ManageProductPage from './components/productRegistration/ManageProductPage';
 import SingleProductManageForm    from './modules/singleProduct/ManageForm';
 
 import OrderLog from './modules/user/OrderLog';

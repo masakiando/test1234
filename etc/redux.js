@@ -4,7 +4,7 @@ import {createStore,compose, applyMiddleware, combineReducers} from 'redux';
 // reducer  ni  oku
 // import {combineReducers} from 'redux';
 //  kaku reducer  ni oku
-import initialState from './reducers/initialState';
+// import initialState from './reducers/initialState';
 import thunk from 'redux-thunk';
 
 //mock api
@@ -61,8 +61,7 @@ function getAllCourses() {
   });
 }
 //Reducer
-const courses = function(
-  state = initialState.courses, action) {
+const courses = function(state = [], action) {
   switch (action.type) {//(6)
     case "LOAD_COURSES_SUCCESS":
       return action.courses;

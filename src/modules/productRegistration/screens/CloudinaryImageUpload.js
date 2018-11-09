@@ -1,10 +1,10 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as productActions from '../../actions/ProductActions';
-import ImageListRow from './ImageListRow';
+import * as Actions from '../actions/Actions';
+import CloudinaryImagesList from './CloudinaryImagesList';
 
-class D_Page extends React.Component {
+class CloudinaryImageUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,7 +46,7 @@ class D_Page extends React.Component {
           <input type="file" id="multi" onChange={this.onChange} multiple />
           <div className="columns">
           {images.map(image => (
-            <ImageListRow
+            <CloudinaryImagesList
               key={image.id}
               image={image}
               onDelete={this.deleteImeage}
@@ -58,7 +58,7 @@ class D_Page extends React.Component {
       );
     }
   }
-  D_Page.propTypes = {
+  CloudinaryImageUpload.propTypes = {
     images: PropTypes.array,
     actions: PropTypes.object.isRequired
   };
@@ -68,6 +68,6 @@ function mapStateToProps(state, ownProps) {
   return { images: productImages };
 }
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(productActions, dispatch) };
+  return { actions: bindActionCreators(Actions, dispatch) };
 }
-export default connect(mapStateToProps, mapDispatchToProps )(D_Page);
+export default connect(mapStateToProps, mapDispatchToProps )(CloudinaryImageUpload);
