@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import map from 'lodash/map';
 import classnames from 'classnames';
-import TextFieldGroup from '../../../commonScreens/TextFieldGroup';
+import TextFieldGroup from '../../../commonScreens/recycle/Form/Input/TextFieldGroup';
 
 const SignupForm = ({
   onChange,

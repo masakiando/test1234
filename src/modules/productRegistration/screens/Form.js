@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 import TextInput             from './../../../commonScreens/TextInput';
-import TextInputNoLable      from './../../../commonScreens/TextInputNoLable';
-import Textarea              from './../../../commonScreens/TextArea';
+import TextInputNoLable      from '../../../commonScreens/recycle/Form/Input/TextInputNoLable';
+import Textarea              from '../../../commonScreens/recycle/Form/Textarea/TextArea';
 import CategoryDropdown      from '../screens/CategoryDropdown';
 import AttributeDropdown     from '../screens/AttributeDropdown';
 import LocalViewImageUpload  from '../screens/LocalViewImageUpload';

@@ -1,6 +1,6 @@
 import React, {PropTypes}  from 'react';
 import { Link, IndexLink } from 'react-router';
-import TextInputSearch     from '../TextInput_&_Search';
+import TextInputSearch     from '../recycle/Form/Input/TextInput_&_Search';
 import { Wrap, Container, Grid, LogoSection, SearchSection, Form, Ul, CartSection
 }                          from './styles/BodyStyled';
 var logo =              require('./pictures/site_log.png');

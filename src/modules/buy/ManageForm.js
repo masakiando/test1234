@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import TextFieldGroup from './../../commonScreens/TextFieldGroup';
+import TextFieldGroup from './../../commonScreens/recycle/Form/Input/TextFieldGroup';
 import * as Actions from './actions/Actions';
 import * as flashMessagesActions from '../../actions/flashMessagesActions';
 

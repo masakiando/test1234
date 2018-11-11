@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import TextFieldGroup from '../../../commonScreens/TextFieldGroup';
+import TextFieldGroup from '../../../commonScreens/recycle/Form/Input/TextFieldGroup';
 
 const LoginForm = ({
   onChange,
