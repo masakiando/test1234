@@ -18,6 +18,44 @@
 ///////////////////////////////////
 
 ///////////////////////////////////
+// styles/modules/
+   @import './modules/buy/ManageForm';
+   @import './modules/cart/cart-helper';
+   @import './modules/cart/DiscountMessage';
+   @import './modules/cart/List';
+   @import './modules/cart/ListRow';
+   @import './modules/cart/ManageList';
+   @import './modules/home/banner/ManageList';
+   @import './modules/home/categor/List';
+   @import './modules/home/categor/ManageList';
+   @import './modules/home/daily/List';
+   @import './modules/home/daily/ManageList';
+   @import './modules/home/flashsale/List';
+   @import './modules/home/flashsale/ManageList';
+   @import './modules/home/hotword/List';
+   @import './modules/home/hotword/ManageList';
+   @import './modules/home/mallcover/List';
+   @import './modules/home/mallcover/ManageList';
+   @import './modules/login/Form';
+   @import './modules/login/ManageForm';
+   @import './modules/productRegistration/AttributeDropdown';
+   @import './modules/productRegistration/CategoryDropdown';
+   @import './modules/productRegistration/CloudinaryImagesList';
+   @import './modules/productRegistration/CloudinaryImageUpload';
+   @import './modules/productRegistration/Form';
+   @import './modules/productRegistration/LocalViewImageUpload';
+   @import './modules/productRegistration/ManageForm';
+   @import './modules/signup/Form';
+   @import './modules/signup/ManageForm';
+   @import './modules/singleProduct/AddtoCartButton';
+   @import './modules/singleProduct/ManageForm';
+   @import './modules/singleProduct/QuantityButton';
+   @import './modules/userMyPage/ImageAvatar';
+   @import './modules/userMyPage/Navigation';
+   @import './modules/userMyPage/OrderLog';
+///////////////////////////////////
+
+///////////////////////////////////
 // components pages
   @import './components/BannerPage';
   @import './components/singleProduct.scss';
@@ -35,7 +73,6 @@
   @import './components/site-navbar';
   @import './components/bounce';
   @import './components/dropdown';
-  @import './components/Navigation';
  ////////////////////////////////////
 
  ////////////////////////////////////
