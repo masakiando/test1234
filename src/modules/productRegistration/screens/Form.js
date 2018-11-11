@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
-import styled from 'styled-components';
-import TextInput             from './../../../commonScreens/TextInput';
+import React, {PropTypes}    from 'react';
+import styled                from 'styled-components';
+import TextInput             from '../../../commonScreens/recycle/Form/Input/TextInput';
 import TextInputNoLable      from '../../../commonScreens/recycle/Form/Input/TextInputNoLable';
 import Textarea              from '../../../commonScreens/recycle/Form/Textarea/TextArea';
 import CategoryDropdown      from '../screens/CategoryDropdown';

@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
-import TextInput          from '../../../commonScreens/TextInput';
-import TextInputNoLable   from '../../../commonScreens/recycle/Form/Input/TextInputNoLable';
+import TextInput     from '../../../commonScreens/recycle/Form/Input/TextInput';
+import SelectInput   from '../../../commonScreens/recycle/Form/Select/SelectInput';
 
 const CourseForm = ({
   onChange,
