@@ -5,7 +5,6 @@ import malls            from '../modules/home/mallcover/reducers/Reducer';
 import saleproducts     from '../modules/home/flashsale/reducers/Reducer';
 import hotwords         from '../modules/home/hotword/reducers/Reducer';
 import categoriesCover  from '../modules/home/categor/reducers/Reducer';
-import authors          from '../modules/course/reducers/authorReducer';
 import login            from '../modules/login/reducers/Reducer';
 import categories       from '../modules/productRegistration/reducers/Reducer';
 import productImages    from '../modules/productRegistration/reducers/imegesIdUrlProductReducer';
@@ -19,6 +18,7 @@ import flashMessages from './flashMessagesReducer';
 
 //devDemoComponents
 import courses          from '../devDemoComponents/course/reducers/Reducer';
+import authors          from '../devDemoComponents/course/reducers/authorReducer';
 
 const rootReducer = combineReducers({
   courses: courses,

@@ -6,8 +6,6 @@ import { Route, IndexRoute, Link, IndexLink }
 
 import App                from './App';
 import Home               from './modules/home/index';
-import CourseManageForm  from './modules/course/ManageForm';
-import CourseManageList  from './modules/course/ManageList';
 import LoginManageForm   from './modules/login/ManageForm';
 import SignupManageForm  from './modules/signup/ManageForm';
 import CartManageList    from './modules/cart/ManageList.js';
@@ -20,15 +18,17 @@ import Error404 from './commonScreens/errors/Error404Page.js';
 import requireAuth from './utils/requireAuth';
 
 // devDemoComponents
-import DevHome     from './devDemoComponents/DevHome';
-import TestGrid    from './devDemoComponents/TestGrid';
-import Bulma1      from './devDemoComponents/Bulma1';
-import Bulma2      from './devDemoComponents/Bulma2';
-import Bulma3      from './devDemoComponents/Bulma3';
-import Bulma4      from './devDemoComponents/Bulma4';
-import Bounce      from './devDemoComponents/Bounce';
-import ToolTip     from './devDemoComponents/ToolTip';
-import ImgUpReader from './devDemoComponents/ImageUploadSaveLocal';
+import DevHome           from './devDemoComponents/DevHome';
+import CourseManageForm  from './devDemoComponents/course/ManageForm';
+import CourseManageList  from './devDemoComponents/course/ManageList';
+import TestGrid          from './devDemoComponents/TestGrid';
+import Bulma1            from './devDemoComponents/Bulma1';
+import Bulma2            from './devDemoComponents/Bulma2';
+import Bulma3            from './devDemoComponents/Bulma3';
+import Bulma4            from './devDemoComponents/Bulma4';
+import Bounce            from './devDemoComponents/Bounce';
+import ToolTip           from './devDemoComponents/ToolTip';
+import ImgUpReader       from './devDemoComponents/ImageUploadSaveLocal';
 
 export default (
   <Route path="/" component={App}>
