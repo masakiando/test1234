@@ -1,4 +1,4 @@
-var commonValidations =  require('../shared/validations/signupValidator');
+var commonValidations =  require('../validations/signupValidator');
 var isEmpty =  require('lodash/isEmpty');
 
 function validPostObjectType(req, res, next) {

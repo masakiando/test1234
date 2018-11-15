@@ -1,12 +1,11 @@
-import React, {PropTypes} from 'react';
-import { connect } from 'react-redux';
-import {bindActionCreators} from 'redux';
-import Form from './screens/Form';
-import * as Actions from './actions/Actions';
-// common actions
+import React, { PropTypes }   from 'react';
+import { connect }            from 'react-redux';
+import { bindActionCreators } from 'redux';
+import Form                   from './screens/Form';
+import * as Actions           from './actions/Actions';
 import * as flashMessagesActions from './../../actions/flashMessagesActions';
-var commonValidations = require('./validations/Validator');
-import toastr from 'toastr';
+var commonValidations =          require('./validations/Validator');
+import toastr                    from 'toastr';
 
 class SignupPage extends React.Component {
   constructor(props, context) {
@@ -72,9 +71,9 @@ class SignupPage extends React.Component {
     let formIsValid = true;
     const { errors, isValid } = commonValidations(this.state);
 
-    if (!isValid) { //errors
+    if (!isValid) {
       this.setState({ errors: errors });
-      formIsValid = false;//2017 5/21 true からfales変更
+      formIsValid = false;
     }
     return formIsValid;
   }
