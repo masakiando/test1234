@@ -62,8 +62,8 @@ PopularList.propTypes = {
 };
 const Div = styled.div`
 margin: 1em 0em;
-width: 1080px;
-height: 313px;
+width: 1200px;
+
 overflow: hidden;
 position: relative;
 background-color:blue;
@@ -77,7 +77,6 @@ position: relative;
 `;
 const Li = styled.li`
 float: left;
-height:313px;
 width: 180px;
 margin: 0px;
 position: 'relative';

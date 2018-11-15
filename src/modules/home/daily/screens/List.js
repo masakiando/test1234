@@ -77,7 +77,7 @@ background-color: red;
 const Li = styled.li`
 float: left;
 height:313px;
-width: 180px;
+width: 200px;
 margin: 0px;
 position: 'relative';
 // background-color: rgba(0,0,0,.7);

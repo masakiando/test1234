@@ -5,7 +5,7 @@ import React, {PropTypes} from 'react';
 const Div = styled.div`
 border-radius: 3px;
 margin: 1em auto;
-width: 1080px;
+width: 1200px;
 height: 224px;
 overflow: hidden;
 position: relative;

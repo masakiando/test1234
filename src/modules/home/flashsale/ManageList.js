@@ -41,7 +41,7 @@ class FlashSale extends React.Component {
     const { saleproducts } = this.props;
     const { listPositon } = this.state;
     return (
-      <div className="flash-sale">
+      <section className="flash-sale home-container">
         <div className="flash-sale_title">
           <h2><span>Thanks for Flash Sale!</span></h2>
         </div>
@@ -53,7 +53,7 @@ class FlashSale extends React.Component {
           saleproducts={saleproducts}
           listPositon={this.state.listPositon}
         />
-      </div>
+    </section>
     );
   }
 }

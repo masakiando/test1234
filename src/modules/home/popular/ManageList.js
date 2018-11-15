@@ -38,7 +38,7 @@ class Popular extends React.Component {
   render() {
     const { popularproducts } = this.props;
     return (
-      <div className="popular-products">
+      <section className="popular-products home-container">
         <div className="popular-products__title">
           <h2><span>This is popular-products</span></h2>
         </div>
@@ -50,7 +50,7 @@ class Popular extends React.Component {
           popularproducts={popularproducts}
           listPositon={this.state.listPositon}
         />
-    </div>
+    </section>
     );
   }
 }

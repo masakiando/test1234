@@ -19,7 +19,7 @@ class DailyDiscover extends React.Component {
   render() {
     const { products } = this.props;
     return (
-      <div className="daily-discover">
+      <section className="daily-discover home-container">
         <div className="daily-discover__title">
           <h2><span>Thanks for DailyDiscover!</span></h2>
         </div>
@@ -28,7 +28,7 @@ class DailyDiscover extends React.Component {
           imageUrl={this.state.imageUrl}
           onError={this.onError}
         />
-      </div>
+    </section>
     );
   }
 }

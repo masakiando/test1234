@@ -149,9 +149,8 @@ class Banner extends React.Component {
 
   render() {
     return (
-      <div className="mycontainer  banner ">
+      <section className="banner home-container">
           <div className="test1">
-
             <div className="test1-1">
               <div className="banner__slider"
                 onMouseEnter={this.mouseEnter}
@@ -191,7 +190,7 @@ class Banner extends React.Component {
               <div className="test1-2-2"></div>
             </div>
           </div>
-      </div>
+      </section>
     );
   }
 }

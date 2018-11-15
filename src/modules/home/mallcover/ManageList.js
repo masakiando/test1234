@@ -38,7 +38,7 @@ class MallCover extends React.Component {
     const { malls } = this.props;
     const { listPositon } = this.state;
     return (
-      <div className="mall-cover">
+      <section className="mall-cover home-container">
         <div className="mall-cover_title">
           <h2><span>Thanks for mall-cover!</span></h2>
         </div>
@@ -50,7 +50,7 @@ class MallCover extends React.Component {
           malls={malls}
           listPositon={this.state.listPositon}
         />
-      </div>
+    </section>
     );
   }
 }

@@ -7,8 +7,9 @@ class ManageHeaderPage extends React.Component {
     super(props);
   }
   render() {
+
     return (
-      <header id="top">
+      <header className="hero">
         <Menu/>
         <Body/>
       </header>

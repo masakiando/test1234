@@ -10,16 +10,12 @@ class HotwordPage extends React.Component {
     const {HelloHotwordPage, hotwords} = this.props;
 
     return (
-      <div className="">
-        <div className="">
-          <h2><span>{HelloHotwordPage}</span></h2>
-        </div>
-        <div className="">
-         <List
-           hotwords={hotwords}
-          />
-        </div>
-      </div>
+      <section className="home-container">
+        <h2 className="subtitle is-3 has-text-weight-bold">
+          {HelloHotwordPage}
+        </h2>
+        <List hotwords={hotwords}/>
+      </section>
     );
   }
 }

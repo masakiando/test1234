@@ -9,14 +9,14 @@ class Categor extends Component {
   render() {
     const { HelloCategorPage, categoriesCover } = this.props;
     return (
-      <div className="categor mycontainer">
+      <section className="categor home-container">
         <div className="categor__title">
           <h2><span>{HelloCategorPage}</span></h2>
         </div>
         <div className="categor__content">
           <List categoriesCover={categoriesCover}/>
         </div>
-      </div>
+      </section>
     );
   }
   }
