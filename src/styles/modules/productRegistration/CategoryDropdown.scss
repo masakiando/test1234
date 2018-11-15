@@ -1,0 +1,34 @@
+// /* ---------------------
+//     x:
+//       y
+//     x:
+//       y
+// --------------------- */
+//
+// /*-- x: y --*/
+// .f_r_sb {
+//   display: flex;//初期値row
+//   flex-direction: row; //子要素を横並びさせる
+//   justify-content: space-between;
+// }
+// /*-- x: 既存fontawesomeの調整--*/
+// .fa-angle-right{
+//   padding: 0em 1em;
+// }
+//
+// .category-dropdown {
+//   position: relative;
+// 	box-shadow: 0 4px 10px rgba(#7C4DFF, .2);
+// 	outline: none;
+// 	transition: box-shadow .1s linear;
+//   border-color: #fff;
+//
+// 	&.active {
+// 		box-shadow: 0 10px 30px rgba(#7C4DFF, .2);
+// 	}
+//
+// 	&.active > .trigger {
+// 		border-bottom-right-radius: 0;
+// 		border-bottom-left-radius: 0;
+// 	}
+// }

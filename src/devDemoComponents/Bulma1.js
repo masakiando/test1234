@@ -6,7 +6,7 @@ const setStyle = {
 };
 const Bulma = () => {
   return (
-    <section className="hero  is-fullheight">{ /* .hero */ }
+    <section className="hero hero_devDemo_Bulma1  is-fullheight">{ /* .hero */ }
       { /* .hero-head */ }
       <nav className="hero-head">
         <div className="columns is-mobile is-marginless heading has-text-weight-bold">
@@ -83,8 +83,3 @@ const Bulma = () => {
 };
 
 export default Bulma;
-
-
-// <div class="columns is-mobile">
-//   <div class="column is-11 is-offset-1"></div>
-// </div>

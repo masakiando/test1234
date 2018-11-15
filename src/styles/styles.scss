@@ -11,10 +11,8 @@
 // base
   @import './base/setting';
   @import './base/base';
-  @import './base/basesite';
   @import './debug';
   @import './helper';
-  @import './grid';
 ///////////////////////////////////
 
 ///////////////////////////////////
@@ -32,18 +30,17 @@
    @import './modules/home/daily/ManageList';
    @import './modules/home/flashsale/List';
    @import './modules/home/flashsale/ManageList';
-   @import './modules/home/hotword/List';
-   @import './modules/home/hotword/ManageList';
+   @import './modules/home/hotword/ManageList_&_List';
    @import './modules/home/mallcover/List';
    @import './modules/home/mallcover/ManageList';
    @import './modules/login/Form';
    @import './modules/login/ManageForm';
-   @import './modules/productRegistration/AttributeDropdown';
-   @import './modules/productRegistration/CategoryDropdown';
-   @import './modules/productRegistration/CloudinaryImagesList';
-   @import './modules/productRegistration/CloudinaryImageUpload';
-   @import './modules/productRegistration/Form';
-   @import './modules/productRegistration/LocalViewImageUpload';
+   // @import './modules/productRegistration/AttributeDropdown';
+   // @import './modules/productRegistration/CategoryDropdown';
+   // @import './modules/productRegistration/CloudinaryImagesList';
+   // @import './modules/productRegistration/CloudinaryImageUpload';
+   // @import './modules/productRegistration/Form';
+   // @import './modules/productRegistration/LocalViewImageUpload';
    @import './modules/productRegistration/ManageForm';
    @import './modules/signup/Form';
    @import './modules/signup/ManageForm';
@@ -55,33 +52,20 @@
    @import './modules/userMyPage/OrderLog';
 ///////////////////////////////////
 
-///////////////////////////////////
-// components pages
-  @import './components/BannerPage';
-  @import './components/singleProduct.scss';
-  @import './components/hot-word.scss';
-  @import './components/prodcut_form.scss';
-  @import './components/user.scss';
-  @import './components/Bulma.scss';
-  @import './components/divtable.scss';
-  @import './components/transition.scss';
- ///////////////////////////////////
-
  ////////////////////////////////////
- // components module
-  @import './components/buttons';
-  @import './components/site-navbar';
-  @import './components/bounce';
-  @import './components/dropdown';
+ // part
+  @import './parts/Buttons';
  ////////////////////////////////////
 
  ////////////////////////////////////
  // devDemoComponets
-  @import './devDemoComponents/test_grid';
+  @import './devDemoComponents/Bounce';
+  @import './devDemoComponents/Bulma1';
+  @import './devDemoComponents/Bulma4';
+  @import './devDemoComponents/TestGrid';
  /////////////////////////////////////////
 
  /////////////////////////////////////////
  // libs module
- @import './components/fontawesome';
  @import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
  //////////////////////////////////////////////////////////////////////

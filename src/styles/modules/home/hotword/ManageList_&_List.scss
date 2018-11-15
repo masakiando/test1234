@@ -1,0 +1,38 @@
+/*  hot-word Component  */
+
+.hotword__item-list {
+  display: flex;
+  flex-direction: row;
+}
+.hotword__item {
+  width: 120px;
+}
+.hotword-label_to_hotword-limg {
+  position: relative;
+  z-index:1000;
+}
+.hotword-label{
+   position: absolute;
+   width: 110px;
+   z-index:1000;
+   // text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   bottom: 0;
+   background-color: rgba(0,0,0,.4);
+   left: 0;
+   right: 0;
+   color: #fff;
+   text-align: center;
+   padding: 0px 0;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+
+   &:hover {
+     background-color: rgba(0,0,0,.7);
+   }
+}
+.hotword-img {
+  background-image: url('./images/hotword.80.110.png');
+  background-size: 100% 100%;
+}

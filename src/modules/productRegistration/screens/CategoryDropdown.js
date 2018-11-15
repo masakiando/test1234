@@ -195,7 +195,7 @@ class CategoryDropdown extends React.Component {
 			<label className="is-normal" htmlFor="Categories">
 				<label className="label">Categories</label>
 			</label>
-			<div className={`c-dropdown ${this.state.expanded ? 'active' : ''}`}
+			<div className={`category-dropdown ${this.state.expanded ? 'active' : ''}`}
         style={{zIndex: 10000000}}
 				tabIndex="0"
 				onBlur={this.collapse}>

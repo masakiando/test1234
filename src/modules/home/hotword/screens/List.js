@@ -35,10 +35,3 @@ HotwordList.propTypes = {
 };
 
 export default HotwordList;
-// let hotwordImgStyle = {
-//   backgroundImage: `url(require("./images/hotwords/${hotword.cover}"))`,
-//   height:80,
-//   width: 110
-// };
-
-// backgroundImage: `url("./images/hotwords/${hotword.cover}")`},

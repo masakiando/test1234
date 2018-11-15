@@ -1,0 +1,35 @@
+.test_wrapper_001 {
+  margin: 0 40px;
+  width: 93.8%;
+}
+
+.test_cards_001 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.test_cards_001 li {
+  border: 2px solid #490A3D;
+  border-radius:5px;
+  background-color: #BD1550;
+  color: #fff;
+  flex: 1 1 200px;
+}
+
+.test_cards_001 h2 {
+  background-color: #490A3D;
+  margin: 0;
+  padding: 10px;
+}
+
+.test_cards_001 p {
+  padding: 10px;
+}
+
+.test_grid_001 {
+  display: grid;
+  grid-template-columns: repeat(12,90px);
+  /*grid-template-columns: repeat(auto-fill, minmax(200px 1fr));*/
+  grid-gap: 10px;
+}

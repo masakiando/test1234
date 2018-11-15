@@ -10,7 +10,7 @@ class HotwordPage extends React.Component {
     const {HelloHotwordPage, hotwords} = this.props;
 
     return (
-      <div className="hot-word mycontainer">
+      <div className="">
         <div className="">
           <h2><span>{HelloHotwordPage}</span></h2>
         </div>

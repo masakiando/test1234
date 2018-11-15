@@ -73,7 +73,15 @@ class ProdcutForm extends React.Component {
 
   attributeOptions2() {
     return this.state.attributeOptions.map((item, index) => {
-      return (<AttributeDropdown className={`gird_dropdown_${index + 1}`} key={item.attribute_key_id} name={item.attribute_key_name} label={item.attribute_key_name} categories={this.props.categories} options={this.state.attributeOptions2} product={this.props.product} updateState={this.updateState}/>);
+      return (<AttributeDropdown
+        className={`gird_dropdown_${index + 1}`}
+        key={item.attribute_key_id}
+        name={item.attribute_key_name}
+        label={item.attribute_key_name}
+        categories={this.props.categories}
+        options={this.state.attributeOptions2}
+        product={this.props.product}
+        updateState={this.updateState}/>);
     });
   }
 
@@ -257,7 +265,12 @@ class ProdcutForm extends React.Component {
     console.log(this.state.classificationGroup1);
     for (let i = 0; i < this.state.classificationGroup1; i++) {
       render.push(<li key={i}>
-        <TextInputNoLable name={`classification_name_${i + 1}`} placeholder="分類名を入力してください" value={this.nameSet(i + 1, product)} error={errors.classification_name_1} onChange={onChange}/>
+        <TextInputNoLable
+          name={`classification_name_${i + 1}`}
+          placeholder="分類名を入力してください"
+          value={this.nameSet(i + 1, product)}
+          error={errors.classification_name_1}
+          onChange={onChange}/>
       </li>);
     }
     return render;
@@ -268,7 +281,12 @@ class ProdcutForm extends React.Component {
     console.log(this.state.classificationGroup2);
     for (let i = 0; i < this.state.classificationGroup2; i++) {
       render.push(<li key={i}>
-        <TextInputNoLable name={`classification_name2_${i + 1}`} placeholder="分類名を入力してください" value={this.name2Set(i + 1, product)} error={errors.classification_name2_1} onChange={onChange}/>
+        <TextInputNoLable
+          name={`classification_name2_${i + 1}`}
+          placeholder="分類名を入力してください"
+          value={this.name2Set(i + 1, product)}
+          error={errors.classification_name2_1}
+          onChange={onChange}/>
       </li>);
     }
     return render;
@@ -383,20 +401,20 @@ class ProdcutForm extends React.Component {
     const render = [];
     debugger;
     for (var i = 0; i < this.state.classificationGroup1; i++) {
-      render.push(<div className="divTableRow ">
-        <div className="divTableCell">
+      render.push(<div className="mprsf_mprsf_divTableRow ">
+        <div className="mprsf_divTableCell">
           {this.nameSet(i + 1, product)}
         </div>
-        <div className="divTableCell">
+        <div className="mprsf_divTableCell">
           {this.renderclassificationRow2()}
         </div>
-        <div className="divTableCell is-fullwidth"style={{padding: "0px"}}>
+        <div className="mprsf_divTableCell is-fullwidth"style={{padding: "0px"}}>
           {this.renderclassificationRow_price2(i)}
         </div>
-        <div className="divTableCell is-fullwidth"style={{padding: "0px"}}>
+        <div className="mprsf_divTableCell is-fullwidth"style={{padding: "0px"}}>
           {this.renderclassificationRow_stock2(i)}
         </div>
-        <div className="divTableCell">
+        <div className="mprsf_divTableCell">
           {this.renderclassificationRow_sku2(i)}
         </div>
       </div>);
@@ -480,19 +498,38 @@ class ProdcutForm extends React.Component {
                 </div>
               </div>
 
-              <div className="grid_basicinfo ">
-                <div className="grid_basicinfo_title">
+              <div className="basicinfo ">
+                <div className="basicinfo__title">
                   <h2 className="title">基本情報</h2>
                 </div>
-                <div className="grid_basicinfo_input">
+                <div className="basicinfo__input">
                   <div>
-                    <TextInput name="product_name" label="product name" placeholder="商品名を入力してください" value={product.product_name} error={errors.product_name} onChange={onChange}/>
+                    <TextInput
+                      name="product_name"
+                      label="product name"
+                      placeholder="商品名を入
+                      力してください"
+                      value={product.product_name}
+                      error={errors.product_name}
+                      onChange={onChange}/>
                   </div>
                   <div>
-                    <Textarea name="product_discrption" label="product discrption" placeholder="商品説明を入力してください" value={product.product_discrption} error={errors.product_discrption} onChange={onChange} expanded={this.state.expanded} onClick={this.handleTriggerClick} onBlur={this.collapse}/>
+                    <Textarea
+                      name="product_discrption"
+                      label="product discrption"
+                      placeholder="商品説明を入力してください"
+                      value={product.product_discrption}
+                      error={errors.product_discrption}
+                      onChange={onChange}
+                      expanded={this.state.expanded}
+                      onClick={this.handleTriggerClick}
+                      onBlur={this.collapse}/>
                   </div>
                   <div>
-                    <CategoryDropdown categories={categories} product={product} updateState={this.updateState}/>
+                    <CategoryDropdown
+                      categories={categories}
+                      product={product}
+                      updateState={this.updateState}/>
                   </div>
                 </div>
               </div>
@@ -512,8 +549,23 @@ class ProdcutForm extends React.Component {
                 <div className="">
                   <div>
                     <div>
-                      <TextInput name="product_price" label="product price" placeholder="価格を入力してください" value={product.product_price} error={errors.product_price} onChange={onChange} type="number"/>
-                      <TextInput name="product_stock" label="product stock" placeholder="在庫数を入力してください" value={product.product_stock} error={errors.product_stock} onChange={onChange} type="number"/>
+                      <TextInput
+                        name="product_price"
+                        label="product price"
+
+                        placeholder="価格を入力してください"
+                        value={product.product_price}
+                        error={errors.product_price}
+                        onChange={onChange}
+                        type="number"/>
+                      <TextInput
+                        name="product_stock"
+                        label="product stock"
+                        placeholder="在庫数を入力してください"
+                        value={product.product_stock}
+                        error={errors.product_stock}
+                        onChange={onChange}
+                        type="number"/>
 
                       <div className="field is-horizontal" style={{margin: '0rem 2rem 1.5rem 2rem'}}>
                         <label className="field-label is-normal" htmlFor="Classification of goods">
@@ -534,7 +586,13 @@ class ProdcutForm extends React.Component {
 
                       <div className="ProductClassificationField1">
                         <label className="subtitle has-text-weight-bold" htmlFor="test">分類1</label>
-                        <TextInput name="classificationGroup_name" label="classification Group name" placeholder="分類グループ名を入力してください" value={product.classificationGroup_name} error={errors.classificationGroup_name} onChange={onChange}/>
+                        <TextInput
+                          name="classificationGroup_name"
+                          label="classification Group name"
+                          placeholder="分類グループ名を入力してください"
+                          value={product.classificationGroup_name}
+                          error={errors.classificationGroup_name}
+                          onChange={onChange}/>
 
                         <div className="field is-horizontal">
                           <label className="field-label is-normal" htmlFor="分類名">
@@ -569,7 +627,25 @@ class ProdcutForm extends React.Component {
 
                       <div className="ProductClassificationField2" >
                         <label className="subtitle has-text-weight-bold"htmlFor="test">分類2</label>
-                        <TextInput name="classificationGroup_name2" label="classification Group name2" placeholder="分類グループ名2を入力してください" value={product.classificationGroup_name2} error={errors.classificationGroup_name2} onChange={onChange}/>
+                        <TextInput
+
+
+                          name="classificationGroup_name2"
+
+
+                          label="classification Group name2"
+
+
+                          placeholder="分類グループ名2を入力してください"
+
+
+                          value={product.classificationGroup_name2}
+
+
+                          error={errors.classificationGroup_name2}
+
+
+                          onChange={onChange}/>
                           <div className="field is-horizontal">
                             <label className="field-label is-normal" htmlFor="分類名">
                               <label className="label">分類名</label>
@@ -627,17 +703,17 @@ class ProdcutForm extends React.Component {
                         </div>
                       </div>
 
-                      <div className="divTable">
-                        <div className="divTableHeading">
-                          <div className="divTableRow has-text-weight-bold has-text-centered has-text-white has-background-grey">
-                            <div className="divTableHead">&nbsp; {product.classificationGroup_name} </div>
-                            <div className="divTableHead">&nbsp; {product.classificationGroup_name2} </div>
-                            <div className="divTableHead"> &nbsp;価格 </div>
-                            <div className="divTableHead"> &nbsp;倉庫 </div>
-                            <div className="divTableHead"> &nbsp;SKU分類 </div>
+                      <div className="mprsf_divTable">
+                        <div className="mprsf_divTableHeading">
+                          <div className="mprsf_divTableRow has-text-weight-bold has-text-centered has-text-white has-background-grey">
+                            <div className="mprsf_divTableHead">&nbsp; {product.classificationGroup_name} </div>
+                            <div className="mprsf_divTableHead">&nbsp; {product.classificationGroup_name2} </div>
+                            <div className="mprsf_divTableHead"> &nbsp;価格 </div>
+                            <div className="mprsf_divTableHead"> &nbsp;倉庫 </div>
+                            <div className="mprsf_divTableHead"> &nbsp;SKU分類 </div>
                           </div>
                         </div>
-                        <div className="divTableBody">
+                        <div className="mprsf_divTableBody">
 
                           {this.renderclassificationRowDivTable()}
 
@@ -660,7 +736,21 @@ class ProdcutForm extends React.Component {
                   <div className="field-body">
                     <div className="field">
                       <div className="control has-icons-right">
-                        <input className="input" name="product_weight" placeholder="重量を入力してください" value={product.product_weight} error={errors.product_weight} onChange={onChange} type="number"/>
+                        <input
+
+                          className="input"
+
+                          name="product_weight"
+
+                          placeholder="重量を入力してください"
+
+                          value={product.product_weight}
+
+                          error={errors.product_weight}
+
+                          onChange={onChange}
+
+                          type="number"/>
                         <span className="icon is-small is-right">
                           <i className="fas">GR</i>
                         </span>
@@ -676,9 +766,30 @@ class ProdcutForm extends React.Component {
                   <div className="field-body">
                     <div className="field">
                       <div className="control has-icons-right center">
-                        <input className="input" name="product_packsize_r" placeholder="R" value={product.product_packsize_r} error={errors.product_packsize_r} onChange={onChange} type="number"/>
-                        <input className="input" name="product_packsize_d" placeholder="D" value={product.product_packsize_d} error={errors.product_packsize_d} onChange={onChange} type="number"/>
-                        <input className="input" name="product_packsize_c" placeholder="C" value={product.product_packsize_c} error={errors.product_packsize_c} onChange={onChange} type="number"/>
+                        <input
+                          className="input"
+                          name="product_packsize_r"
+                          placeholder="R"
+                          value={product.product_packsize_r}
+                          error={errors.product_packsize_r}
+                          onChange={onChange}
+                          type="number"/>
+                        <input
+                          className="input"
+                          name="product_packsize_d"
+                          placeholder="D"
+                          value={product.product_packsize_d}
+                          error={errors.product_packsize_d}
+                          onChange={onChange}
+                          type="number"/>
+                        <input
+                          className="input"
+                          name="product_packsize_c"
+                          placeholder="C"
+                          value={product.product_packsize_c}
+                          error={errors.product_packsize_c}
+                          onChange={onChange}
+                          type="number"/>
                         <span className="icon is-small is-right">
                           <i className="fas">cm</i>
                         </span>
