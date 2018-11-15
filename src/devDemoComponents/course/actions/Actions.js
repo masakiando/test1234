@@ -9,6 +9,8 @@ export function loadCoursesSuccess(courses) {
 }
 
 export function createCourseSuccess(course) {
+  console.log('hello couse');
+  console.log(course);
   return {type: types.CREATE_COURSE_SUCCESS, course};
 }
 

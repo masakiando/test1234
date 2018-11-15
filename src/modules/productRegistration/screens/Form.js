@@ -491,7 +491,9 @@ class ProdcutForm extends React.Component {
                   <div className="field-body">
                     <div className="field">
                       <div className="control">
-                        <CloudinaryImageUpload product={product} updateState={this.updateState}/>
+                        <CloudinaryImageUpload
+                          product={product}
+                          updateState={this.updateState}/>
                       </div>
                     </div>
                   </div>

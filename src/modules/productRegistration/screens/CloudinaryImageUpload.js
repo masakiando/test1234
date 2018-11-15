@@ -47,7 +47,7 @@ class CloudinaryImageUpload extends React.Component {
           <div className="columns">
           {images.map(image => (
             <CloudinaryImagesList
-              key={image.id}
+              key={image.public_id}
               image={image}
               onDelete={this.deleteImeage}
             />

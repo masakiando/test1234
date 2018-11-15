@@ -1,4 +1,5 @@
 import * as types from '../constans/actionTypes';
+import * as Selector from '../../../selectors/imegesSelectors';
 import axios from 'axios';
 
 export function loadCategoriesSuccess(categories) {
@@ -7,6 +8,10 @@ export function loadCategoriesSuccess(categories) {
 
 export function createProductImagesSuccess(imegesIdUrl) {
   return { type: types.CREATE_PRODUCT_IMAGES_SUCCESS, imegesIdUrl};
+}
+
+export function deleteProductImagesSuccess(identifier) {
+  return {type: types.DELETE_PRODUCT_IMAGES_SUCCESS, identifier};
 }
 
 export function loadCategories() {
@@ -21,15 +26,6 @@ export function loadCategories() {
   };
 }
 
-function handleResponse(res) {
-  if (res.ok) {
-    return res.json();
-  } else {
-    let error = new Error(res.statusText);
-    error.res  = res;
-    throw(error);
-  }
-}
 
 export function saveProductImeges(formData) {
   return function(dispatch) {
@@ -42,26 +38,16 @@ export function saveProductImeges(formData) {
           data: formData
     })
     .then(images => {
-      console.log(images);
       const imeges = images.data;
-      var obj1 = {}; var obj2 = {};
-
-      const imegesIdUrl = imeges.map( (data, i) => {
-        Object.keys(data).forEach((key)=> {
-          if ((/public_id/.test(key))) {
-            obj1 = {["public_id"]: data[key]};
-          }
-          if ((/secure_url/.test(key))) {
-            obj2 = {["secure_url"]: data[key]};
-          }
-        });
-        return Object.assign(obj1, obj2);
-      });
-      console.log(imegesIdUrl);
-      dispatch(createProductImagesSuccess(imegesIdUrl));
+      const imegesIdUrl = Selector.imegeXXXX(imeges);
+      for (let imegeIdUrl of imegesIdUrl) {
+        console.log('Selector imegesIdUrl');
+        console.log(imegeIdUrl);
+        dispatch(createProductImagesSuccess(imegeIdUrl));
+      }
     }).catch(error => {
-      // throw(error);
-      console.log('res error action saveProductImeges');
+      throw(error);
+      // console.log('res error action saveProductImeges');
     });
   };
 }
@@ -73,7 +59,26 @@ export function deletePostImage(identifier) {
       body: JSON.stringify({}),
       headers: {'Content-Type': 'application/json'}
     })
-    .then(handleResponse);
-    // .then(() => { dispatch(serahGamesSuccess(games))})
+    .then((res) => {
+      console.log(res);
+      console.log(identifier);
+      dispatch(deleteProductImagesSuccess(identifier));
+    })
+    .catch(error => {
+      throw(error);
+    });
   };
 }
+
+
+// const imegesIdUrl = imeges.map( (data, i) => {
+//   Object.keys(data).forEach((key)=> {
+//     if ((/public_id/.test(key))) {
+//       obj1 = {["public_id"]: data[key]};
+//     }
+//     if ((/secure_url/.test(key))) {
+//       obj2 = {["secure_url"]: data[key]};
+//     }
+//   });
+//   return Object.assign(obj1, obj2);
+// });
