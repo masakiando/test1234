@@ -1,11 +1,11 @@
 import React, { PropTypes }   from 'react';
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
+import toastr                 from 'toastr';
 import Form                   from './screens/Form';
 import * as Actions           from './actions/Actions';
+var commonValidations =       require('./validations/Validator');
 import * as flashMessagesActions from './../../actions/flashMessagesActions';
-var commonValidations =          require('./validations/Validator');
-import toastr                    from 'toastr';
 
 class SignupPage extends React.Component {
   constructor(props, context) {
@@ -79,14 +79,11 @@ class SignupPage extends React.Component {
   }
 
   onSignup(event) {
-
     event.preventDefault();
-    console.log(this.state);
     if(!this.SignupFormIsValid()) { //falseなら処理終了
       return;
     }
 
-    //Server Side userSignupRequest start
     this.setState({ errors: {}, isLoading: true });
     this.props.signupActions.userSignupRequest(this.state)
       .then(() => this.redirect())
@@ -99,32 +96,38 @@ class SignupPage extends React.Component {
   }
 
   redirect() {
-
     // toastr.success('Signup saved');
     this.props.flashMessagesActions.addFlashMessage({
       type: 'success',
       text: 'You signed up seccessfully. Welcome!'
     });
     this.context.router.push('/LoginPage');
-    }
+  }
+
   render() {
     return (
-      <div className="row">
-        <div className="col-md-4 offset-md-4">
-          <Form
-            onChange={this.updaTetargetState}
-            onSignup={this.onSignup}
-            username={this.state.username}
-            email={this.state.email}
-            password={this.state.password}
-            passwordConfirmation={this.state.passwordConfirmation}
-            errors={this.state.errors}
-            isLoading={this.state.isLoading}
-            inValid={this.state.inValid}
-            checkUserExists={this.checkUserExists}
-          />
+      <section className="section">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-half is-offset-one-quarter has-background-white">
+              <div className="box">
+              <Form
+                onChange={this.updaTetargetState}
+                onSignup={this.onSignup}
+                username={this.state.username}
+                email={this.state.email}
+                password={this.state.password}
+                passwordConfirmation={this.state.passwordConfirmation}
+                errors={this.state.errors}
+                isLoading={this.state.isLoading}
+                inValid={this.state.inValid}
+                checkUserExists={this.checkUserExists}
+              />
+            </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

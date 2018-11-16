@@ -401,20 +401,20 @@ class ProdcutForm extends React.Component {
     const render = [];
     debugger;
     for (var i = 0; i < this.state.classificationGroup1; i++) {
-      render.push(<div className="mprsf_mprsf_divTableRow ">
-        <div className="mprsf_divTableCell">
+      render.push(<div className="divTableRow ">
+        <div className="divTableCell">
           {this.nameSet(i + 1, product)}
         </div>
-        <div className="mprsf_divTableCell">
+        <div className="divTableCell">
           {this.renderclassificationRow2()}
         </div>
-        <div className="mprsf_divTableCell is-fullwidth"style={{padding: "0px"}}>
+        <div className="divTableCell is-fullwidth"style={{padding: "0px"}}>
           {this.renderclassificationRow_price2(i)}
         </div>
-        <div className="mprsf_divTableCell is-fullwidth"style={{padding: "0px"}}>
+        <div className="divTableCell is-fullwidth"style={{padding: "0px"}}>
           {this.renderclassificationRow_stock2(i)}
         </div>
-        <div className="mprsf_divTableCell">
+        <div className="divTableCell">
           {this.renderclassificationRow_sku2(i)}
         </div>
       </div>);
@@ -463,8 +463,9 @@ class ProdcutForm extends React.Component {
         </div>
     );
 
-    return (<section className="section">
-      <div className="container">
+    return (
+      <section className="section">
+       <div className="container">
         <div className="columns">
           <div className="column is-three-fifths is-offset-one-fifth has-background-white">
             <form>
@@ -630,23 +631,11 @@ class ProdcutForm extends React.Component {
                       <div className="ProductClassificationField2" >
                         <label className="subtitle has-text-weight-bold"htmlFor="test">分類2</label>
                         <TextInput
-
-
                           name="classificationGroup_name2"
-
-
                           label="classification Group name2"
-
-
                           placeholder="分類グループ名2を入力してください"
-
-
                           value={product.classificationGroup_name2}
-
-
                           error={errors.classificationGroup_name2}
-
-
                           onChange={onChange}/>
                           <div className="field is-horizontal">
                             <label className="field-label is-normal" htmlFor="分類名">
@@ -705,17 +694,17 @@ class ProdcutForm extends React.Component {
                         </div>
                       </div>
 
-                      <div className="mprsf_divTable">
-                        <div className="mprsf_divTableHeading">
-                          <div className="mprsf_divTableRow has-text-weight-bold has-text-centered has-text-white has-background-grey">
-                            <div className="mprsf_divTableHead">&nbsp; {product.classificationGroup_name} </div>
-                            <div className="mprsf_divTableHead">&nbsp; {product.classificationGroup_name2} </div>
-                            <div className="mprsf_divTableHead"> &nbsp;価格 </div>
-                            <div className="mprsf_divTableHead"> &nbsp;倉庫 </div>
-                            <div className="mprsf_divTableHead"> &nbsp;SKU分類 </div>
+                      <div className="divTable">
+                        <div className="divTableHeading">
+                          <div className="divTableRow has-text-weight-bold has-text-centered has-text-white has-background-grey">
+                            <div className="divTableHead">&nbsp; {product.classificationGroup_name} </div>
+                            <div className="divTableHead">&nbsp; {product.classificationGroup_name2} </div>
+                            <div className="divTableHead"> &nbsp;価格 </div>
+                            <div className="divTableHead"> &nbsp;倉庫 </div>
+                            <div className="divTableHead"> &nbsp;SKU分類 </div>
                           </div>
                         </div>
-                        <div className="mprsf_divTableBody">
+                        <div className="divTableBody">
 
                           {this.renderclassificationRowDivTable()}
 
@@ -739,19 +728,12 @@ class ProdcutForm extends React.Component {
                     <div className="field">
                       <div className="control has-icons-right">
                         <input
-
                           className="input"
-
                           name="product_weight"
-
                           placeholder="重量を入力してください"
-
                           value={product.product_weight}
-
                           error={errors.product_weight}
-
                           onChange={onChange}
-
                           type="number"/>
                         <span className="icon is-small is-right">
                           <i className="fas">GR</i>

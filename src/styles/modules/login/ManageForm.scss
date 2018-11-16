@@ -1,0 +1,19 @@
+.a-login { grid-area: a; }
+.b-login { grid-area: b; }
+
+.login-grid {
+  display: grid;
+  grid-template-areas:
+      "a b";
+
+      grid-gap: 1rem;
+}
+
+@media (max-width: 512px){
+  #grid {
+    display: grid;
+    grid-template-areas:
+        "a"
+        "b";
+  }
+}

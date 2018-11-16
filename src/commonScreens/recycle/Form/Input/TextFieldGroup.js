@@ -8,33 +8,36 @@ const TextFieldGroup = ({
   onChange,
   error,
   type,
-  checkUserExists //signupで利用
+  checkUserExists, //signupで利用
+  min,
+  icons,
+  fontawesome,
+  icons2,
+  fontawesome2
 }) => {
-
   return (
-    <div className={
-         classnames(
-           "form-group",
-           {'has-error': error}
-         )}>
-      <label className="control-label">
-        {label}
+    <div className="field is-marginless">
+      <label className={classnames("field-label is-normal", { 'is-danger': error })}>
+        <span>{label}</span>
       </label>
-      <input
-        value={value}
-        onChange={onChange}
-        onBlur={checkUserExists}
-        type={type}
-        name={name}
-        className={classnames(
-          "",
-          {'input-error': error}
-        )}
-        />
-      {error ?
-        <div className="error-message">
-          {error}
-        </div> : <div><br/></div>}
+      <div className="field-body">
+        <div className="field">
+          <div className="control has-icons-left">
+            <input
+              value={value}
+              onChange={onChange}
+              onBlur={checkUserExists}
+              type={type}
+              name={name}
+              className={classnames("input", {'is-danger': error})}
+              />
+            <span className={icons}>
+              <i className={fontawesome}></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      {error ? <div className="has-text-danger">{error}</div> : <div><br/></div>}
     </div>
   );
 };
@@ -46,7 +49,12 @@ TextFieldGroup.propTypes = {
   label: PropTypes.string.isRequired,
   error: PropTypes.string,
   type: PropTypes.string.isRequired,
-  checkUserExists: PropTypes.func
+  checkUserExists: PropTypes.func,
+  min: PropTypes.string,
+  icons: PropTypes.string,
+  fontawesome: PropTypes.string,
+  icons2: PropTypes.string,
+  fontawesome2: PropTypes.string
 };
 
 TextFieldGroup.defaultProps = {

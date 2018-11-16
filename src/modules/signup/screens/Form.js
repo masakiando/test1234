@@ -18,12 +18,8 @@ const SignupForm = ({
   // const { errors } = this.state;
   return (
     <form onSubmit={onSignup}>
-      <h1>Join our community!</h1>
-      {errors.form &&
-        <div className="alert alert-danger">
-          {errors.form}
-        </div>
-      }
+      <h1 className="title has-text-centered">Sign up!</h1>
+      {errors.form && <div className="alert alert-danger"> {errors.form} </div>}
       <TextFieldGroup
         onChange={onChange}
         name="username"
@@ -32,46 +28,80 @@ const SignupForm = ({
         error={errors.username}
         type="text"
         checkUserExists={checkUserExists}
+        min="5"
+        icons="icon is-small is-left"
+        fontawesome="fas fa-user"
       />
-
       <TextFieldGroup
-         onChange={onChange}
-         name="email"
-         label="Email"
-         value={email}
-         error={errors.email}
-         type="text"
-         checkUserExists={checkUserExists}
-        />
-
-    <TextFieldGroup
+        onChange={onChange}
+        name="email"
+        label="Email"
+        value={email}
+        error={errors.email}
+        type="text"
+        checkUserExists={checkUserExists}
+        icons="icon is-small is-left"
+        fontawesome="fas fa-envelope"
+      />
+      <TextFieldGroup
         onChange={onChange}
         name="password"
         label="Password"
         value={password}
         error={errors.password}
         type="password"
+        min="5"
+        icons="icon is-small is-left"
+        fontawesome="fas fa-lock"
       />
 
-    <TextFieldGroup
+      <TextFieldGroup
         onChange={onChange}
         name="passwordConfirmation"
         label="Password Confirmation"
         value={passwordConfirmation}
         error={errors.passwordConfirmation}
         type="password"
+        min="5"
+        icons="icon is-small is-left"
+        fontawesome="fas fa-lock"
       />
 
-        <div className="sp-card">
-          <button
-            className={classnames('btn-signup width-100',
-                                 { 'hello-error width-100': inValid.username || inValid.email || Object.keys(errors).length > 0},
-                                 { 'warning-error width-100': isLoading }
-                      )}
-            disabled={inValid.username || inValid.email || isLoading}>
-            {inValid.username == true || inValid.email == true || Object.keys(errors).length > 0 ? 'Disabled Sign up' : isLoading ? 'Sign up...' : 'Sign up'}
-          </button>
-        </div>
+      <div className="field">
+        <label className="checkbox">
+          <input type="checkbox"/>
+            I accept the <a href="#">terms</a>&<a href="#">privacy policy</a>
+        </label>
+      </div>
+
+      <input
+        type="submit"
+        disabled={isLoading}
+        value={isLoading ? 'Save...' : 'Save'}
+        className="button is-success is-rounded is-fullwidth"
+        onClick={onSignup}
+      />
+
+      <div className="field center">
+        <p className="has-text-centered ">
+          or sign up with
+        </p>
+      </div>
+
+      <div className="field login-grid">
+        <a className="button is-link a-login">
+          Save changes
+        </a>
+        <a className="button is-danger b-login">
+          Delete post
+        </a>
+      </div>
+
+      <div className="field center">
+        <p className="has-text-centered ">
+          <a href="#">terms</a>&<a href="#">Already have an account? Log in</a>
+        </p>
+      </div>
     </form>
   );
 };
@@ -87,7 +117,8 @@ SignupForm.propTypes = {
   errors: PropTypes.object,
   isLoading: PropTypes.bool,
   inValid: PropTypes.object,
-  checkUserExists: PropTypes.func
+  checkUserExists: PropTypes.func,
+  showPassword: PropTypes.bool
 };
 
 export default SignupForm;

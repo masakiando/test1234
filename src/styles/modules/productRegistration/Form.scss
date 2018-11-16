@@ -24,38 +24,38 @@
 }
 
 /*-- renderclassificationRowDivTable(): このスタイルは分類表に使用されます --*/
-.mprsf_divTable{
+.divTable{
 	display: table;
 	width: 100%;
 }
-.mprsf_divTableRow {
+.divTableRow {
 	display: table-row;
 }
-.mprsf_divTableHeading {
+.divTableHeading {
 	background-color: #EEE;
 	display: table-header-group;
 }
-.mprsf_divTableHead {
+.divTableHead {
 	border: 1px solid #999999;
 	display: table-cell;
 	padding: 5px 10px;
 }
-.mprsf_divTableCell{
+.divTableCell{
 	border: 1px solid #999999;
 	display: table-cell;
 	padding: 0px;
 }
 
-.mprsf_divTableHeading {
+.divTableHeading {
 	background-color: #EEE;
 	display: table-header-group;
 	font-weight: bold;
 }
-.mprsf_divTableFoot {
+.divTableFoot {
 	background-color: #EEE;
 	display: table-footer-group;
 	font-weight: bold;
 }
-.mprsf_divTableBody {
+.divTableBody {
 	display: table-row-group;
 }
