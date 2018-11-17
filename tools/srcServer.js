@@ -18,7 +18,7 @@ var categories= require('./routes/categoriesServer');
 var attribute= require('./routes/attributeServer');
 
 /* eslint-disable no-console */
-const port = 3333;
+const port = 3311;
 const app = express();
 const compiler = webpack(config);
 app.use(cors({

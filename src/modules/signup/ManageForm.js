@@ -28,6 +28,11 @@ class SignupPage extends React.Component {
     this.checkUserExists = this.checkUserExists.bind(this);
   }
 
+  componentDidMount() {
+    var getClass=document.getElementsByClassName("site-header");
+    console.log(getClass);
+  }
+
   updaTetargetState(event) {
     this.setState({
        [event.target.name]: event.target.value

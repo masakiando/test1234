@@ -21,7 +21,7 @@ const ToolTip = () => {
     <div className="">
       <h3> blueprintjs </h3>
       <Popover content={<h1>Popover!</h1>} position={Position.RIGHT}>
-          <Tooltip content="I has a popover!" position={Position.RIGHT}>
+          <Tooltip defaultIsOpen content="I has a popover!" position={Position.RIGHT}>
               <Button>Hover and click me</Button>
           </Tooltip>
       </Popover>

@@ -9,7 +9,7 @@ class ManageHeaderPage extends React.Component {
   render() {
 
     return (
-      <header className="hero">
+      <header className="hero site-header">
         <Menu/>
         <Body/>
       </header>

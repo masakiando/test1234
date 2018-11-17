@@ -21,6 +21,11 @@ class LoginPage extends React.Component {
     this.onLogin = this.onLogin.bind(this);
   }
 
+  componentDidMount() {
+    var getClass=document.getElementsByClassName("site-header");
+    console.log(getClass.clientHeight);
+  }
+
   updaTetargetState(event) {
     this.setState({
        [event.target.name]: event.target.value
@@ -52,18 +57,43 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-md-4 offset-md-4">
-          <Form
-            onChange={this.updaTetargetState}
-            onLogin={this.onLogin}
-            identifier={this.state.identifier}
-            password={this.state.password}
-            errors={this.state.errors}
-            isLoading={this.state.isLoading}
-          />
-        </div>
-      </div>
+          <section className="section login-form">
+
+            <div className="sun"></div>
+
+            <div className="cloud bottom-right"></div>
+            <div className="cloud top-right"></div>
+            <div className="cloud bottom-left"></div>
+
+            <airplane className="airplane">
+              <div className="head"></div>
+              <div className="body">
+                <div className="window"></div>
+                <div className="window"></div>
+                <div className="window"></div>
+              </div>
+              <div className="lwing"></div>
+              <div className="rwing"></div>
+              <div className="tale"></div>
+            </airplane>
+
+            <div className="container">
+              <div className="columns">
+                <div className="column is-half is-offset-one-quarter has-background-white">
+                  <div className="box">
+                  <Form
+                    onChange={this.updaTetargetState}
+                    onLogin={this.onLogin}
+                    identifier={this.state.identifier}
+                    password={this.state.password}
+                    errors={this.state.errors}
+                    isLoading={this.state.isLoading}
+                  />
+                </div >
+                </div>
+              </div>
+            </div>
+          </section>
     );
   }
 }

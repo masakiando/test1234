@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import TextFieldGroup from '../../../commonScreens/recycle/Form/Input/TextFieldGroup';
+var AvatarImgPng = require('../pictures/Avatar.png');
 
 const LoginForm = ({
   onChange,
@@ -11,12 +12,8 @@ const LoginForm = ({
 }) => {
   return (
     <form onSubmit={onLogin}>
-      <h1>LoginForm</h1>
-        {errors.form &&
-          <div className="alert alert-danger">
-            {errors.form}
-          </div>
-        }
+      <h1 className="title has-text-centered">Login!</h1>
+      {errors.form && <div className="alert alert-danger"> {errors.form} </div>}
       <TextFieldGroup
         onChange={onChange}
         name="identifier"
@@ -33,12 +30,13 @@ const LoginForm = ({
         error={errors.password}
         type="password"
       />
-      <div className="form-group">
-        <button disabled={isLoading}
-                className="btn btn-primary btn-lg">
-          {isLoading ? 'Loging...' : 'Login'}
-        </button>
-      </div>
+      <input
+        type="submit"
+        disabled={isLoading}
+        value={isLoading ? 'Login...' : 'Login'}
+        className="button is-success is-rounded is-fullwidth has-text-weight-bold"
+        onClick={onLogin}
+      />
     </form>
   );
 };

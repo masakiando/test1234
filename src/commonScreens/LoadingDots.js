@@ -32,7 +32,7 @@ class LoadingDots extends React.Component {
       text += '☕️';
       dots--;
     }
-    return <span {...this.props}>{text}&nbsp;</span>;
+    return <span className="loading center" {...this.props}>{text}&nbsp;</span>;
   }
 }
 //親props設定ない時defaultProps使う

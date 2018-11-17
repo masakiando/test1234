@@ -24,7 +24,7 @@ class ManageForm extends React.Component {
   render() {
     return (
       <div>
-        <input type="text" name='name' value={this.state.name}/>
+        <input type="text" name='name' value={this.state.name} onChange={this.updateState}/>
       </div>
     );
   }

@@ -9,7 +9,7 @@ class ManageForm extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      name: 'hello state'
+      name: "hello state"
     };
     this.updateState = this.updateState.bind(this);
   }
@@ -21,7 +21,7 @@ class ManageForm extends React.Component {
   render() {
     return (
       <div>
-        <input type="text" name='name' value={this.state.name}/>
+        <input type="text" name="name" value={this.state.name} onChange={this.updateState}/>
       </div>
     );
   }

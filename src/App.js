@@ -11,7 +11,6 @@ class App extends React.Component {
           <FlashMessagesList />
           <Header/>
             {this.props.loading &&<LoadingDots interval={100} dots={20}/>}
-            {!this.props.loading &&<span>&nbsp;</span>}
             {this.props.children}
         </div>
     );

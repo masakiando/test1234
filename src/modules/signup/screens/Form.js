@@ -77,25 +77,10 @@ const SignupForm = ({
       <input
         type="submit"
         disabled={isLoading}
-        value={isLoading ? 'Save...' : 'Save'}
-        className="button is-success is-rounded is-fullwidth"
+        value={isLoading ? 'Create Account...' : 'Create Account'}
+        className="button is-success is-rounded is-fullwidth has-text-weight-bold"
         onClick={onSignup}
       />
-
-      <div className="field center">
-        <p className="has-text-centered ">
-          or sign up with
-        </p>
-      </div>
-
-      <div className="field login-grid">
-        <a className="button is-link a-login">
-          Save changes
-        </a>
-        <a className="button is-danger b-login">
-          Delete post
-        </a>
-      </div>
 
       <div className="field center">
         <p className="has-text-centered ">
