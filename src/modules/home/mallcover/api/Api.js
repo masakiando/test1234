@@ -15,7 +15,7 @@ const cover = [
   'url("https://cf.shopee.ph/file/8851e38101c59906b64fd27c1fc149b0")',
   'url("https://cf.shopee.ph/file/8851e38101c59906b64fd27c1fc149b0")',
   'url("https://cf.shopee.ph/file/8851e38101c59906b64fd27c1fc149b0")'
-]
+];
 const malls = arr.map(function(element, index, array) {
     const product = {
       id: element,

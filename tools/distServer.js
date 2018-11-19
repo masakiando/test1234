@@ -12,10 +12,9 @@ var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
 var acth = require('./routes/acthServer');
 var buy = require('./routes/buyServer');
-var imageUpload = require('./routes/imageUploadServer');
+// var imageUpload = require('./routes/imageUploadServer');
 var categories= require('./routes/categoriesServer');
 var attribute= require('./routes/attributeServer');
-var payment= require('./routes/payment');
 
 /*eslint-disable no-console */
 
@@ -29,7 +28,7 @@ app.use('/api/startkit', startkit);
 app.use('/api/users', users);
 app.use('/api/acth', acth);
 app.use('/api/buy', buy);
-app.use('/api/imageUpload', imageUpload);
+// app.use('/api/imageUpload', imageUpload);
 app.use('/categories', categories);
 app.use('/api/attribute', attribute);
 app.use(compression());
