@@ -120,8 +120,6 @@ $sky: #54b2dc;
 	left: -10%;
 	top: 35%;
 	z-index: 3;
-	-webkit-animation: plainfly 10s linear infinite;
-	-o-animation: plainfly 10s linear infinite;
 	animation: plainfly 10s linear infinite;
 }
 .airplane div {
@@ -228,35 +226,35 @@ div.window:nth-child(2):after {
   }
 }
 
-@-webkit-keyframes plainfly {
+@keyframes plainfly {
 	0% {
 		left: -10%;
-		-webkit-transform: scale(.4);
-		-ms-transform: scale(.4);
-		-o-transform: scale(.4);
+		// -webkit-transform: scale(.4);
+		// -ms-transform: scale(.4);
+		// -o-transform: scale(.4);
 		transform: scale(.4);
     z-index: 0;
 	}
 	50% {
 		left: 110%;
-		-webkit-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
+		// -webkit-transform: scale(1);
+		// -ms-transform: scale(1);
+		// -o-transform: scale(1);
 		transform: scale(1);
     z-index: 0;
 	}
 	51% {
-		-webkit-transform: rotateY(180deg);
-		-webkit-transform: rotateY(180deg);
-		-ms-transform: rotateY(180deg);
-		-o-transform: rotateY(180deg);
+		// -webkit-transform: rotateY(180deg);
+		// -webkit-transform: rotateY(180deg);
+		// -ms-transform: rotateY(180deg);
+		// -o-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
 	100% {
 		left: -10%;
-		-webkit-transform: scale(1.4) rotateY(180deg);
-		-ms-transform: scale(1.4) rotateY(180deg);
-		-o-transform: scale(1.4) rotateY(180deg);
+		// -webkit-transform: scale(1.4) rotateY(180deg);
+		// -ms-transform: scale(1.4) rotateY(180deg);
+		// -o-transform: scale(1.4) rotateY(180deg);
 		transform: scale(1.4) rotateY(180deg);
 	}
 }
