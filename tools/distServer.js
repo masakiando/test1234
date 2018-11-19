@@ -15,6 +15,7 @@ var buy = require('./routes/buyServer');
 var imageUpload = require('./routes/imageUploadServer');
 var categories= require('./routes/categoriesServer');
 var attribute= require('./routes/attributeServer');
+var payment= require('./routes/payment');
 
 /*eslint-disable no-console */
 
