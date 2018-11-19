@@ -55,7 +55,9 @@ const MallCoverList = ({
           <Li key={mall.id}>
             <a href="">
               <DviImgFrame>
-                <Img src={MallCover} alt=""/>
+                <Img style={{
+                    backgroundImage: mall.cover
+                  }} alt=""/>
               </DviImgFrame>
             </a>
           </Li>

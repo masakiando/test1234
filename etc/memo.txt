@@ -13,7 +13,7 @@ yarn start
 srcServer.js書き換えしたならdistServer.jsも変更する
 yarn build
 git add .
-git commit -m "longin signup pageをbulma化"
+git commit -m "README.md修正"
 git push
 heroku ps:scale web=1
 git push heroku master

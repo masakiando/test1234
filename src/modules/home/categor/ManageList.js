@@ -14,7 +14,8 @@ class Categor extends Component {
           <h2><span>{HelloCategorPage}</span></h2>
         </div>
         <div className="categor__content">
-          <List categoriesCover={categoriesCover}/>
+          <List
+            categoriesCover={categoriesCover} />
         </div>
       </section>
     );

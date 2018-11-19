@@ -72,7 +72,7 @@ nav {//footer
   // height: 3em;
 }
 
-nav a {//aの中にあるすべてのbに対して
+nav a {
     color: #fff;
     text-decoration: none;
     font-size: medium;
@@ -82,8 +82,8 @@ nav a {//aの中にあるすべてのbに対して
       opacity: 0.8;
     }
 }
-main {//aに対して
-    // padding: 20px;
+main {
+  background-color: #fff
 }
 
 h1 {
@@ -170,13 +170,14 @@ h3 {
   .categor__item {
     padding: 0px 5px;
     margin-bottom: 1em;
+    border: .5px solid rgba(0,0,0,.05);
   }
 }
 .categor__container {
   position: relative;
   z-index:1000;
   height: 150px;
-  width: 110px;
+  width: 109px;
   background-color: rgba(255,255,255,1);
 }
 .categor_img__container {
@@ -188,22 +189,23 @@ h3 {
   margin: auto;
 }
 .categor__card-label {
+   word-break: normal;
    position: absolute;
    z-index:1000;
    // text-overflow: ellipsis;
    overflow: hidden;
-   white-space: nowrap;
+   // white-space: nowrap;
    background-color: rgba(255,255,255,1);
    left: 0;
    right: 0;
    color: rgba(0,0,0,.8);
    text-align: center;
-   padding: 5px 0;
+   padding: 0px;
    -moz-box-sizing: border-box;
    box-sizing: border-box;
 
    &:hover {
-     background-color: rgba(0,0,0,.7);
+     // background-color: rgba(0,0,0,.7);
    }
 }
 .categor_img {

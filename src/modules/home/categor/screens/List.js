@@ -5,21 +5,22 @@ const CategorList  = ({
 }) => {
   return (
     <ul className="categor__item-list">
-      {categoriesCover.map(cover =>
+      {categoriesCover.map((item) =>
         <li className="categor__item"
-            key={cover.id}>
+            key={item.id}>
            <a href="" className="categor__card">
              <div className="categor__container">
                <div className="categor_img__container">
                <div className="categor_img"
-                  style={
-                    {backgroundImage: `url("./images/categories/${cover.cover}")`},
-                     categorImgStyle
-                  }
+                  style={{
+                      backgroundImage: item.cover,
+                      height:85,
+                      width: 75
+                  }}
                     />
                </div>
                <div className="categor__card-label">
-                {cover.label}
+                 {item.label}
                </div>
              </div>
            </a>
