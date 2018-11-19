@@ -8,7 +8,8 @@ import open from 'open';
 import bodyParser from 'body-parser';
 const formData = require('express-form-data');
 const { CLIENT_ORIGIN } = require('./routes/config');
-//
+// const CORS_WHITELIST = require('./constants/frontend');
+
 var startkit = require('./routes/startkitServer');
 var users = require('./routes/usersServer');
 var acth = require('./routes/acthServer');
@@ -16,16 +17,19 @@ var buy = require('./routes/buyServer');
 var imageUpload = require('./routes/imageUploadServer');
 var categories= require('./routes/categoriesServer');
 var attribute= require('./routes/attributeServer');
+var payment= require('./routes/payment');
 
 /* eslint-disable no-console */
-const port = 3311;
+const port = 3000;
 const app = express();
 const compiler = webpack(config);
 app.use(cors({
   origin: CLIENT_ORIGIN
 }));
+
 app.use(formData.parse());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api/startkit', startkit);
 app.use('/api/users', users);
 app.use('/api/acth', acth);
@@ -33,6 +37,7 @@ app.use('/api/buy', buy);
 app.use('/api/imageUpload', imageUpload);
 app.use('/categories', categories);
 app.use('/api/attribute', attribute);
+app.use('/api/payment', payment);
 
 //指定されたマウントミドルウェア指定されたパスに関数や機能を：要求されたパスのベースが一致したときに、ミドルウェア機能が実行されますpath。
 app.use(require('webpack-dev-middleware')(compiler, {

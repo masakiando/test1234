@@ -30,6 +30,7 @@ import Bounce            from './devDemoComponents/Bounce';
 import ToolTip           from './devDemoComponents/ToolTip';
 import ImgUpReader       from './devDemoComponents/ImageUploadSaveLocal';
 import GoogleSignin      from './devDemoComponents/GoogleSignin';
+import ManageCheckout          from './devDemoComponents/ManageCheckout';
 
 export default (
   <Route path="/" component={App}>
@@ -58,6 +59,7 @@ export default (
       <Route path="/tooltip" component={ToolTip} />
       <Route path="/imageUploadSaveLocal" component={ImgUpReader} />
       <Route path="/devgooglesignin" component={GoogleSignin} />
+      <Route path="/devstripe" component={ManageCheckout} />
 
       <Route path="/*" component={Error404} />
   </Route>

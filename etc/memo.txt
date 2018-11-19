@@ -13,7 +13,7 @@ yarn start
 srcServer.js書き換えしたならdistServer.jsも変更する
 yarn build
 git add .
-git commit -m "src/commonScreens/recycle内のフォルダ構造 分類はbulma参考そのまま使う"
+git commit -m "longin signup pageをbulma化"
 git push
 heroku ps:scale web=1
 git push heroku master
@@ -69,7 +69,7 @@ monocle -b src/index.js -c src/index.html
 http
 # data insert(post,put)する*.jsonはProjectsRootに置く
 $
-http -v get localhost:3000/api/categories
+http -v get localhost:3311/categories
 $
 http -v get localhost:3000/api/attribute/26
 
