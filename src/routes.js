@@ -30,7 +30,10 @@ import Bounce            from './devDemoComponents/Bounce';
 import ToolTip           from './devDemoComponents/ToolTip';
 import ImgUpReader       from './devDemoComponents/ImageUploadSaveLocal';
 import GoogleSignin      from './devDemoComponents/GoogleSignin';
+import Dynamic_Controlled_Form from './devDemoComponents/Dynamic_Controlled_Form';
 import ManageCheckout          from './devDemoComponents/ManageCheckout';
+
+import ManagePortfolio   from './modules/portfolio/ManagePortfolio';
 
 export default (
   <Route path="/" component={App}>
@@ -60,6 +63,8 @@ export default (
       <Route path="/imageUploadSaveLocal" component={ImgUpReader} />
       <Route path="/devgooglesignin" component={GoogleSignin} />
       <Route path="/devstripe" component={ManageCheckout} />
+      <Route path="/Dynamic_Controlled_Form" component={Dynamic_Controlled_Form} />
+      <Route path="/pf" component={ManagePortfolio} />
 
       <Route path="/*" component={Error404} />
   </Route>

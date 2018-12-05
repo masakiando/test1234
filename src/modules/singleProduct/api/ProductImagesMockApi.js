@@ -23,7 +23,7 @@ const productsImg = [
   {
     id: "2",
     product_id: "2",
-    cover0: "categor_0.80.110.png",
+    cover0: "https://cf.shopee.ph/file/8dd9fccc26dc3229526a088fb5a18016",
     cover1: "categor_0.80.110.png",
     cover2: "categor_0.80.110.png",
     cover3: "categor_0.80.110.png",

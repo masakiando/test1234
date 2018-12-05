@@ -71,6 +71,7 @@ function mapStateToProps(state, ownProps) {
                   product_packsize_r: 0,
                   product_packsize_d: 0,
                   product_packsize_c: 0,
+                  product_delivery_time: 0,
                   product_statue: 'New',
                   product_sku: '',
                   classificationGroup_name: '',

@@ -17,77 +17,77 @@ const SignupForm = ({
 }) => {
   // const { errors } = this.state;
   return (
-    <form onSubmit={onSignup}>
-      <h1 className="title has-text-centered">Sign up!</h1>
-      {errors.form && <div className="alert alert-danger"> {errors.form} </div>}
-      <TextFieldGroup
-        onChange={onChange}
-        name="username"
-        label="Username"
-        value={username}
-        error={errors.username}
-        type="text"
-        checkUserExists={checkUserExists}
-        min="5"
-        icons="icon is-small is-left"
-        fontawesome="fas fa-user"
-      />
-      <TextFieldGroup
-        onChange={onChange}
-        name="email"
-        label="Email"
-        value={email}
-        error={errors.email}
-        type="text"
-        checkUserExists={checkUserExists}
-        icons="icon is-small is-left"
-        fontawesome="fas fa-envelope"
-      />
-      <TextFieldGroup
-        onChange={onChange}
-        name="password"
-        label="Password"
-        value={password}
-        error={errors.password}
-        type="password"
-        min="5"
-        icons="icon is-small is-left"
-        fontawesome="fas fa-lock"
-      />
+              <form onSubmit={onSignup}>
+                <h1 className="title has-text-centered">Sign up!</h1>
+                {errors.form && <div className="alert alert-danger"> {errors.form} </div>}
+                <TextFieldGroup
+                  onChange={onChange}
+                  name="username"
+                  label="Username"
+                  value={username}
+                  error={errors.username}
+                  type="text"
+                  checkUserExists={checkUserExists}
+                  min="5"
+                  icons="icon is-small is-left"
+                  fontawesome="fas fa-user"
+                />
+                <TextFieldGroup
+                  onChange={onChange}
+                  name="email"
+                  label="Email"
+                  value={email}
+                  error={errors.email}
+                  type="text"
+                  checkUserExists={checkUserExists}
+                  icons="icon is-small is-left"
+                  fontawesome="fas fa-envelope"
+                />
+                <TextFieldGroup
+                  onChange={onChange}
+                  name="password"
+                  label="Password"
+                  value={password}
+                  error={errors.password}
+                  type="password"
+                  min="5"
+                  icons="icon is-small is-left"
+                  fontawesome="fas fa-lock"
+                />
 
-      <TextFieldGroup
-        onChange={onChange}
-        name="passwordConfirmation"
-        label="Password Confirmation"
-        value={passwordConfirmation}
-        error={errors.passwordConfirmation}
-        type="password"
-        min="5"
-        icons="icon is-small is-left"
-        fontawesome="fas fa-lock"
-      />
+                <TextFieldGroup
+                  onChange={onChange}
+                  name="passwordConfirmation"
+                  label="Password Confirmation"
+                  value={passwordConfirmation}
+                  error={errors.passwordConfirmation}
+                  type="password"
+                  min="5"
+                  icons="icon is-small is-left"
+                  fontawesome="fas fa-lock"
+                />
 
-      <div className="field">
-        <label className="checkbox">
-          <input type="checkbox"/>
-            I accept the <a href="#">terms</a>&<a href="#">privacy policy</a>
-        </label>
-      </div>
+                <div className="field">
+                  <label className="checkbox">
+                    <input type="checkbox"/>
+                      I accept the <a href="#">terms</a>&<a href="#">privacy policy</a>
+                  </label>
+                </div>
 
-      <input
-        type="submit"
-        disabled={isLoading}
-        value={isLoading ? 'Create Account...' : 'Create Account'}
-        className="button is-success is-rounded is-fullwidth has-text-weight-bold"
-        onClick={onSignup}
-      />
+                <input
+                  type="submit"
+                  disabled={isLoading}
+                  value={isLoading ? 'Create Account...' : 'Create Account'}
+                  className="button is-success is-rounded is-fullwidth has-text-weight-bold"
+                  onClick={onSignup}
+                />
 
-      <div className="field center">
-        <p className="has-text-centered ">
-          <a href="#">terms</a>&<a href="#">Already have an account? Log in</a>
-        </p>
-      </div>
-    </form>
+                <div className="field center">
+                  <p className="has-text-centered ">
+                    <a href="#">terms</a>&<a href="#">Already have an account? Log in</a>
+                  </p>
+                </div>
+              </form>
   );
 };
 

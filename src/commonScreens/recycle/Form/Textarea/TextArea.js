@@ -6,10 +6,7 @@ const Textarea = ({
   placeholder,
   value,
   onChange,
-  error,
-  onClick,
-  expanded,
-  onBlur
+  error
 }) => {
 
   let wrapperClass = 'field is-horizontal ';
@@ -30,8 +27,6 @@ const Textarea = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          onClick={onClick}
-          onBlur={onBlur}
           className="textarea has-fixed-size"
           type="text"
            rows="4"
@@ -48,12 +43,9 @@ Textarea.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  onClick: PropTypes.func.isRequired,
-  onBlur: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
-  error: PropTypes.string,
-  expanded: PropTypes.bool.isRequired
+  error: PropTypes.string
 };
 
 export default Textarea;

@@ -5,12 +5,13 @@ import styled from 'styled-components';
 const PopularList  = ({
   products,
   imageUrl,
-  onError
+  onError,
+  itemNumber
 }) => {
   return (
     <Div>
       <Ul>
-      {products.slice(0,60).map(product =>
+      {products.slice(0,itemNumber).map(product =>
         <Li key={product.id}>
           <Link to={`/singleproduct/${product.id}`}>
           <Figure>
@@ -58,7 +59,8 @@ const PopularList  = ({
 PopularList.propTypes = {
   products: PropTypes.array,
   imageUrl: PropTypes.string,
-  onError: PropTypes.func
+  onError: PropTypes.func,
+  itemNumber: PropTypes.number.isRequired
 };
 const Div = styled.div`
 border-radius: 3px;

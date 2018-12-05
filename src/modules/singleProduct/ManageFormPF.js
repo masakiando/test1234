@@ -1,11 +1,13 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import * as Actions from './actions/Actions';
-import styled from 'styled-components';
 import QuantityButton from './screens/QuantityButton';
 import AddtoCartButton from './screens/AddtoCartButton';
+
+import styled from 'styled-components';
+import {Button, Popover, Position, Tooltip,Card, Elevation} from "@blueprintjs/core";
 
 class ManageSingleProduct extends React.Component {
   constructor(props, context) {
@@ -151,166 +153,41 @@ class ManageSingleProduct extends React.Component {
     const { product } = this.props;
      return (
         <div>
-          <Container>
-            <div className="padding-bottom_1em padding-top_1em">
-              <a href="/">A</a>
-              <a href="/">B</a>
-              <a href="/">C</a>
-              <a href="/">D</a>
-              <a href="/">E</a>
-            </div>
-              <Grid>
-                <GridA>
-                  <DivImagesDotsWrap>
-                    <DviProductTopImgWrap>
-                      {this.state.img0 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover0}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover0}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img1 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover1}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover1}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img2 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover2}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover2}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img3 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover3}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover3}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img4 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover4}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover4}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img5 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover5}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover5}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img6 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover6}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover6}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img7 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover7}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover7}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img8 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover8}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover8}`} alt=""/>
-                        </picture>
-                      }
-                      {this.state.img9 &&
-                        <picture>
-                          <source srcSet={`${this.props.im[0].cover9}`}  media="(max-width: 450px)"/>
-                          <Img src={`${this.props.im[0].cover9}`} alt=""/>
-                        </picture>
-                      }
-                    </DviProductTopImgWrap>
-                    <ul className="dots">
-                      {this.renderDots()}
-                    </ul>
-                  </DivImagesDotsWrap>
-                  <div className="_3GXLnx card v-cente">
-                    <h3>hello</h3>
-                  </div>
-                  <div className="_3GXLnx card v-cente">
-                    <h3>hello</h3>
-                  </div>
-                </GridA>
-
-                <GridB className="product-info">
-
-                  <DivProductInfoHeader>
-                    <H1>{product.product_name}</H1>
-                    <div>
-                      {product.sale_status === true ? <SpanPproductPrice style={a}>₱{product.price}</SpanPproductPrice> : <SpanPproductPrice>₱{product.price}</SpanPproductPrice>}
-                      {product.sale_status === true && <SpanPproductRealPrice>₱{product.discount_price}</SpanPproductRealPrice>}
-                    </div>
-                    <div>
-                      <SpanPproductStarScore>⭐️⭐️⭐️⭐️{product.starScore}  / 5</SpanPproductStarScore>
-                    </div>
-                  </DivProductInfoHeader>
-
-                  <DivProductInfoBody>
-
-                    <DivProductInfoBodyOrderBlock>
-                      <div className="clearfix padding-bottom_1em">
-                        <div className="itemA">Colour:</div>
-                        <div className="itemB grid5">
-                            <button className="btn-OrangeRed">AAAAA</button>
-                            <button className="btn-OrangeRed">BBBBB</button>
-                            <button className="btn-OrangeRed">CCCCC</button>
-                            <button className="btn-OrangeRed">DDDDD</button>
-                            <button className="btn-OrangeRed">EEEEE</button>
-                            <button className="btn-OrangeRed">AAAAA</button>
-                            <button className="btn-OrangeRed">AAAAA</button>
-                            <button className="btn-OrangeRed">AAAAA</button>
-                            <button className="btn-OrangeRed">AAAAA</button>
-                            <button className="btn-OrangeRed">AAAAA</button>
-                        </div>
-                      </div>
-                      <div className="clearfix padding-bottom_1em">
-                        <div className="itemA">Size:</div>
-                        <div className="itemB grid5">
-                            <button className="btn-OrangeRed">S</button>
-                            <button className="btn-OrangeRed">M</button>
-                            <button className="btn-OrangeRed">L</button>
-                            <button className="btn-OrangeRed">XL</button>
-                            <button className="btn-OrangeRed">XXL</button>
-                        </div>
-                      </div>
-                      <div className="clearfix">
-                        <div className="itemA">Quantity:</div>
-                        <div className="itemB itemB-grid">
-                          <QuantityButton product={this.state.product} quantity={this.state.quantity}/>
-                          <span className="order-quantity__stock-count">
-                            {product.produc_quantity}piece available
-                          </span>
-                        </div>
-                      </div>
-                    </DivProductInfoBodyOrderBlock>
-                  </DivProductInfoBody>
-
-                  <div className="purchasing-related">
-                    <div className="grid3">
-                        <button className="btn-chat">
-                          <span>chat now</span>
-                        </button>
-
-                        <AddtoCartButton onAdd={this.addItemToCart} />
-
-                        <button className="btn-buy" onClick={this.redirectToXXXXXPage}>
-                          <span>buy now</span>
-                        </button>
-                    </div>
-                  </div>
-
-                  <a className="_3GXLnx sp-card v-center"href="">
-                    <span className="_2p1gKo">shopee guarantee</span>
-                    <span>Get the items you ordered or get your money back.</span>
-                  </a>
-
-                </GridB>
-              </Grid>
-          </Container>
+          <Card
+            interactive elevation={Elevation.TWO}>
+              <figure className="image is-256x256 is-5by4 is-marginless">
+              { /* <img style={{backgroundSize: "100% 100%"}} src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"/> */ }
+              <img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image"/>
+              </figure>
+              <div className="content">
+                <table className="table-profile has-text-dark">
+                  <tr>
+                    <th colSpan="1"></th>
+                    <th colSpan="2"></th>
+                  </tr>
+                  <tr>
+                    <td>Address:</td>
+                    <td>Guru's Lab</td>
+                  </tr>
+                  <tr>
+                    <td>Phone:</td>
+                    <td>0123-456789</td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td>minion@despicable.me</td>
+                  </tr>
+                </table>
+              </div>
+              <br/>
+              <div className="buttons has-addons is-centered">
+                <a href="#" className="button is-link">Github</a>
+                <Link className="button is-link" to={`/singleproduct/${product.id}`}>
+                  LinkedIn
+                </Link>
+                <a href="#" className="button is-link">CodeTrace</a>
+              </div>
+          </Card>
         </div>
     );
   }
@@ -335,7 +212,7 @@ function getProductsById(products, id) {
 
 function mapStateToProps(state, ownProps) {
   const { products, img } = state;
-  let paramsProductId = ownProps.params.id; // from the path get id
+  let paramsProductId = 1; // from the path get id
 
   let product = {};
   let im = [{

@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-const TextInput = ({
+const HorizontalField = ({
   name,
   label,
   placeholder,
@@ -37,11 +37,11 @@ const TextInput = ({
     </div>
   );
 };
-TextInput.defaultProps = {
+HorizontalField.defaultProps = {
   type: 'text'
 };
 
-TextInput.propTypes = {
+HorizontalField.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
@@ -51,4 +51,4 @@ TextInput.propTypes = {
   type: PropTypes.oneOf(['text', 'number', 'password'])
 };
 
-export default TextInput;
+export default HorizontalField;

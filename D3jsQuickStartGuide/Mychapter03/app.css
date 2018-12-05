@@ -1,0 +1,10 @@
+circle {
+    r:5;
+    fill: black;
+    /*  transitions to make growing and changing color look nice */
+    /* transition: r 0.5s linear, fill 0.5s linear; */
+}
+
+svg {
+    border: 1px solid black;
+}
